@@ -1,0 +1,27 @@
+Export-Package: org.eclipse.ecr.dublincore,
+ org.eclipse.ecr.dublincore.listener,
+ org.eclipse.ecr.dublincore.service
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Name: ECR Dublincore support
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Nuxeo
+Bundle-Version: 0.5.4.qualifier
+Nuxeo-Component: OSGI-INF/nxdublincore-service.xml
+Bundle-ManifestVersion: 2
+Import-Package: org.apache.commons.logging,
+ org.eclipse.ecr.core;api=split,
+ org.eclipse.ecr.core.api;api=split,
+ org.eclipse.ecr.core.api.event,
+ org.eclipse.ecr.core.api.impl,
+ org.eclipse.ecr.core.api.security,
+ org.eclipse.ecr.core.event,
+ org.eclipse.ecr.core.event.impl,
+ org.eclipse.ecr.core.schema,
+ org.eclipse.ecr.core.schema.types,
+ org.eclipse.ecr.runtime,
+ org.eclipse.ecr.runtime.api,
+ org.eclipse.ecr.runtime.model
+Bundle-SymbolicName: org.eclipse.ecr.dublincore

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.versioning.VersioningDocumentAdapter"
+  version="1.0">
+
+  <extension target="org.eclipse.ecr.core.api.DocumentAdapterService"
+    point="adapters">
+
+    <documentation>
+      Defines an adapter for documents having versioning
+      info. The adapter
+      interface is VersioningDocument and could be
+      retrieved in a standard way
+      from a document model with
+      getAdapter(VersioningDocument.class)
+    </documentation>
+
+    <adapter class="org.eclipse.ecr.core.api.facet.VersioningDocument"
+      factory="org.eclipse.ecr.core.versioning.VersioningDocumentAdapterFactory" />
+  </extension>
+
+</component>

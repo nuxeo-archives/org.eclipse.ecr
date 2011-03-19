@@ -1,0 +1,14 @@
+Export-Package: org.eclipse.ecr.convert.api
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Name: ECR Convert API
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Nuxeo
+Bundle-Version: 0.5.4.qualifier
+Bundle-ManifestVersion: 2
+Import-Package: org.eclipse.ecr.core;api=split,
+ org.eclipse.ecr.core.api;api=split,
+ org.eclipse.ecr.core.api.blobholder
+Bundle-SymbolicName: org.eclipse.ecr.convert.api

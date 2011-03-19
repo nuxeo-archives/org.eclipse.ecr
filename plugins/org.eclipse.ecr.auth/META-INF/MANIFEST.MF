@@ -1,0 +1,23 @@
+Export-Package: org.eclipse.ecr.auth
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Name: ECR Authentication Support
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: 0.5.4.qualifier
+Bundle-ManifestVersion: 2
+Import-Package: javax.security.auth,
+ javax.security.auth.callback,
+ javax.security.auth.login,
+ javax.security.auth.spi,
+ org.eclipse.ecr.core.api;api=split,
+ org.eclipse.ecr.runtime.api.login,
+ org.nuxeo.common,
+ org.nuxeo.common.utils,
+ org.nuxeo.common.xmap,
+ org.nuxeo.common.xmap.annotation,
+ org.osgi.framework
+Require-Bundle: org.eclipse.ecr.core.api
+Bundle-SymbolicName: org.eclipse.ecr.auth
+Bundle-Activator: org.eclipse.ecr.auth.Activator

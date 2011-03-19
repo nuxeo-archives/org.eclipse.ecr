@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.operation.OperationServiceComponent"
+  version="1.0">
+  <!-- TODO: cannot rename this component since studio is using the old name - fix this
+    <component name="org.eclipse.ecr.automation.core.AutomationComponent" version="1.0">
+  -->
+
+  <documentation>@author Bogdan Stefanescu (bs@nuxeo.com)</documentation>
+
+  <implementation class="org.eclipse.ecr.automation.core.AutomationComponent" />
+
+  <service>
+    <provide interface="org.eclipse.ecr.automation.AutomationService" />
+    <provide
+      interface="org.eclipse.ecr.automation.core.events.EventHandlerRegistry" />
+  </service>
+
+  <extension-point name="operations">
+    <documentation>Operation registration</documentation>
+    <object class="org.eclipse.ecr.automation.core.OperationContribution" />
+  </extension-point>
+
+  <extension-point name="adapters">
+    <documentation>Type adapter registration</documentation>
+    <object class="org.eclipse.ecr.automation.core.TypeAdapterContribution" />
+  </extension-point>
+
+  <extension-point name="chains">
+    <documentation>Operation Chain registration</documentation>
+    <object class="org.eclipse.ecr.automation.core.OperationChainContribution" />
+  </extension-point>
+
+  <extension-point name="event-handlers">
+    <documentation>Core Event Handlers bound to operations</documentation>
+    <object class="org.eclipse.ecr.automation.core.events.EventHandler" />
+  </extension-point>
+
+  <extension target="org.eclipse.ecr.core.operation.OperationServiceComponent"
+    point="adapters">
+    <adapter class="org.eclipse.ecr.automation.core.impl.adapters.StringToDocRef"
+      accept="java.lang.String" produce="org.eclipse.ecr.core.api.DocumentRef" />
+    <adapter
+      class="org.eclipse.ecr.automation.core.impl.adapters.StringToDocModel"
+      accept="java.lang.String" produce="org.eclipse.ecr.core.api.DocumentModel" />
+    <adapter
+      class="org.eclipse.ecr.automation.core.impl.adapters.DocModelToDocRef"
+      accept="org.eclipse.ecr.core.api.DocumentModel"
+      produce="org.eclipse.ecr.core.api.DocumentRef" />
+    <adapter
+      class="org.eclipse.ecr.automation.core.impl.adapters.DocRefToDocModel"
+      accept="org.eclipse.ecr.core.api.DocumentRef"
+      produce="org.eclipse.ecr.core.api.DocumentModel" />
+    <adapter
+      class="org.eclipse.ecr.automation.core.impl.adapters.DocModelListToDocRefList"
+      accept="org.eclipse.ecr.core.api.DocumentModelList"
+      produce="org.eclipse.ecr.core.api.DocumentRefList" />
+    <adapter
+      class="org.eclipse.ecr.automation.core.impl.adapters.DocModelToDocRefList"
+      accept="org.eclipse.ecr.core.api.DocumentModel"
+      produce="org.eclipse.ecr.core.api.DocumentRefList" />
+    <adapter
+      class="org.eclipse.ecr.automation.core.impl.adapters.DocModelToDocModelList"
+      accept="org.eclipse.ecr.core.api.DocumentModel"
+      produce="org.eclipse.ecr.core.api.DocumentModelList" />
+    <adapter
+      class="org.eclipse.ecr.automation.core.impl.adapters.DocRefListToDocModelList"
+      accept="org.eclipse.ecr.core.api.DocumentRefList"
+      produce="org.eclipse.ecr.core.api.DocumentModelList" />
+    <adapter
+      class="org.eclipse.ecr.automation.core.impl.adapters.DocRefToDocModelList"
+      accept="org.eclipse.ecr.core.api.DocumentRef"
+      produce="org.eclipse.ecr.core.api.DocumentModelList" />
+    <adapter
+      class="org.eclipse.ecr.automation.core.impl.adapters.DocRefToDocRefList"
+      accept="org.eclipse.ecr.core.api.DocumentRef"
+      produce="org.eclipse.ecr.core.api.DocumentRefList" />
+    <adapter
+      class="org.eclipse.ecr.automation.core.impl.adapters.StringToProperties"
+      accept="java.lang.String"
+      produce="org.eclipse.ecr.automation.core.util.Properties" />
+    <adapter class="org.eclipse.ecr.automation.core.impl.adapters.StringToURL"
+      accept="java.lang.String" produce="java.net.URL" />
+    <adapter class="org.eclipse.ecr.automation.core.impl.adapters.StringToDate"
+      accept="java.lang.String" produce="java.util.Date" />
+    <adapter class="org.eclipse.ecr.automation.core.impl.adapters.CalendarToDate"
+      accept="java.util.Calendar" produce="java.util.Date" />
+    <adapter class="org.eclipse.ecr.automation.core.impl.adapters.StringToList"
+      accept="java.lang.String"
+      produce="org.eclipse.ecr.automation.core.util.StringList" />
+    <adapter class="org.eclipse.ecr.automation.core.impl.adapters.StringToBoolean"
+      accept="java.lang.String"
+      produce="java.lang.Boolean" />
+    <adapter class="org.eclipse.ecr.automation.core.impl.adapters.StringToInteger"
+      accept="java.lang.String"
+      produce="java.lang.Integer" />
+  </extension>
+
+
+  <extension target="org.eclipse.ecr.core.event.EventServiceComponent"
+    point="listener">
+
+    <listener name="opchainlistener" async="false" postCommit="false"
+      class="org.eclipse.ecr.automation.core.events.OperationEventListener"
+      priority="200">
+    </listener>
+
+    <listener name="opchainpclistener" async="true" postCommit="true"
+      class="org.eclipse.ecr.automation.core.events.PostCommitOperationEventListener"
+      priority="200">
+    </listener>
+
+  </extension>
+
+</component>

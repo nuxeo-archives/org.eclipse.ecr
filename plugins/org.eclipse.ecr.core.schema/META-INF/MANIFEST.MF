@@ -1,0 +1,25 @@
+Export-Package: org.eclipse.ecr.core.schema,
+ org.eclipse.ecr.core.schema.types,
+ org.eclipse.ecr.core.schema.types.constraints,
+ org.eclipse.ecr.core.schema.types.primitives,
+ org.eclipse.ecr.core.schema.utils
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Name: ECR Core Schema
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: 0.5.4.qualifier
+Bundle-ManifestVersion: 2
+Nuxeo-Component: OSGI-INF/SchemaService.xml
+Import-Package: com.sun.xml.xsom,
+ com.sun.xml.xsom.impl,
+ com.sun.xml.xsom.parser,
+ org.apache.commons.logging,
+ org.eclipse.ecr.runtime,
+ org.eclipse.ecr.runtime.api,
+ org.eclipse.ecr.runtime.model,
+ org.nuxeo.common.utils,
+ org.nuxeo.common.xmap.annotation,
+ org.xml.sax
+Bundle-SymbolicName: org.eclipse.ecr.core.schema;singleton:=true

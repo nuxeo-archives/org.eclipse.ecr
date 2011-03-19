@@ -1,0 +1,36 @@
+Export-Package: org.eclipse.ecr.core.storage.sql.ra
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Category: core
+Bundle-Name: ECR Core Storage RA
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: 0.5.4.qualifier
+Bundle-ManifestVersion: 2
+Import-Package: javax.annotation,
+ javax.naming,
+ javax.resource,
+ javax.resource.cci,
+ javax.resource.spi,
+ javax.resource.spi.endpoint,
+ javax.security.auth,
+ javax.transaction.xa,
+ org.apache.commons.logging,
+ org.eclipse.ecr.core.query,
+ org.eclipse.ecr.core.schema,
+ org.eclipse.ecr.core.storage,
+ org.eclipse.ecr.core.storage.sql,
+ org.eclipse.ecr.core.storage.sql.coremodel,
+ org.eclipse.ecr.core.storage.sql.net,
+ org.eclipse.ecr.runtime.api,
+ org.nuxeo.common.collections,
+ org.nuxeo.common.xmap,
+ org.eclipse.ecr.core,
+ org.eclipse.ecr.core.api,
+ org.eclipse.ecr.core.model,
+ org.eclipse.ecr.core.repository,
+ org.eclipse.ecr.core.security
+Bundle-SymbolicName: org.eclipse.ecr.core.storage.sql.ra;singleton:=true
+Eclipse-RegisterBuddy: org.eclipse.ecr.core.storage.sql,
+  org.nuxeo.runtime

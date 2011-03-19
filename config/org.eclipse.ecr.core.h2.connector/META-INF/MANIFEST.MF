@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ECR H2 Database Support
+Bundle-SymbolicName: org.eclipse.ecr.core.h2.connector;singleton:=true
+Bundle-Version: 0.5.4.qualifier
+Bundler-Vendor: Nuxeo
+Require-Bundle: org.h2
+Import-Package: org.apache.geronimo.transaction.manager
+Fragment-Host: org.eclipse.ecr.core.storage.sql.ra;bundle-version="0.5.4.qualifier"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,22 @@
+Export-Package: org.eclipse.ecr.core.query,
+ org.eclipse.ecr.core.query.sql,
+ org.eclipse.ecr.core.query.sql.model,
+ org.eclipse.ecr.core.query.sql.parser
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Name: ECR Core Query
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: 0.5.4.qualifier
+Bundle-ManifestVersion: 2
+Import-Package: java_cup.runtime,
+ org.eclipse.ecr.core;api=split,
+ org.eclipse.ecr.core.api;api=split,
+ org.eclipse.ecr.core.api.impl,
+ org.joda.time,
+ org.joda.time.base,
+ org.joda.time.format,
+ org.nuxeo.common.collections,
+ org.nuxeo.common.utils
+Bundle-SymbolicName: org.eclipse.ecr.core.query;singleton:=true

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<component name="org.eclipse.ecr.platform.cmisWebConfig" version="1.0" bundle="org.eclipse.ecr.web.jaxrs">
+  <documentation>
+  OpenCmis Bridge Web configuration.
+  @author Bogdan Stefanescu (bs@nuxeo.com)
+  </documentation>
+
+  <extension target="org.eclipse.ecr.web.jaxrs.servlet.config.ServletRegistryComponent" point="servlets">
+    <servlet name="opencmis" path="/nuxeo/atom/cmis" 
+        class="org.apache.chemistry.opencmis.chemistry-opencmis-server-bindings:org.apache.chemistry.opencmis.server.impl.atompub.CmisAtomPubServlet">
+      <listeners>
+         <listener class="org.eclipse.ecr.opencmis.bindings:org.eclipse.ecr.opencmis.bindings.NuxeoCmisContextListener" />
+      </listeners>
+      <filters>
+        <filter class="org.eclipse.ecr.web.jaxrs.login.AuthenticationFilter" />
+        <filter class="org.eclipse.ecr.web.jaxrs.tx.TransactionFilter" />
+      </filters>      
+      <properties>
+        <property name="callContextHandler">org.eclipse.ecr.opencmis.bindings.NuxeoAuthCallContextHandler</property>
+      </properties>
+    </servlet>  
+  </extension>
+
+
+</component>
+

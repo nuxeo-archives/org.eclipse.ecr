@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ECR Core OpenCMIS Bindings
+Bundle-SymbolicName: org.eclipse.ecr.opencmis.bindings;singleton:=true
+Bundle-Vendor: Nuxeo
+Export-Package: org.eclipse.ecr.opencmis.bindings
+Bundle-ActivationPolicy: lazy
+Eclipse-ExtensibleAPI: true
+Nuxeo-Component: OSGI-INF/atom-contrib.xml,
+ OSGI-INF/soap-contrib.xml
+Bundle-Version: 0.5.4.qualifier
+Import-Package: com.sun.xml.ws.api.handler;resolution:=optional,
+ javax.servlet,
+ javax.servlet.http,
+ org.apache.chemistry.opencmis.commons.impl.server,
+ org.apache.chemistry.opencmis.commons.server,
+ org.apache.chemistry.opencmis.server.impl,
+ org.apache.chemistry.opencmis.server.impl.atompub,
+ org.apache.chemistry.opencmis.server.impl.webservices,
+ org.apache.chemistry.opencmis.server.shared,
+ org.apache.chemistry.opencmis.server.support,
+ org.apache.commons.logging,
+ org.eclipse.ecr.opencmis.impl.server,
+ org.eclipse.ecr.runtime.api,
+ org.eclipse.ecr.runtime.api.login
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

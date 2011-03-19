@@ -1,0 +1,30 @@
+Export-Package: org.eclipse.ecr.runtime.jtajca
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Category: runtime
+Bundle-Name: ECR Runtime JTA/JCA Support
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: 0.5.4.qualifier
+Eclipse-BuddyPolicy: registered
+Bundle-ManifestVersion: 2
+Import-Package: javax.annotation,
+ javax.naming,
+ javax.naming.spi,
+ javax.resource,
+ javax.resource.spi,
+ javax.security.auth,
+ javax.transaction,
+ org.apache.commons.beanutils,
+ org.apache.commons.logging,
+ org.apache.geronimo.connector.outbound,
+ org.apache.geronimo.connector.outbound.connectionmanagerconfig,
+ org.apache.geronimo.connector.outbound.connectiontracking,
+ org.apache.geronimo.transaction,
+ org.apache.geronimo.transaction.manager,
+ org.eclipse.ecr.runtime.api,
+ org.eclipse.ecr.runtime.transaction,
+ org.nuxeo.common.jndi,
+ org.osgi.framework
+Bundle-SymbolicName: org.eclipse.ecr.runtime.jtajca;singleton:=true

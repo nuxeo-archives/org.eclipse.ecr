@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.opencmis.impl.server.NuxeoRepositories">
+
+  <implementation
+    class="org.eclipse.ecr.opencmis.impl.server.NuxeoRepositories" />
+
+</component>

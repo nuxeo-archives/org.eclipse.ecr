@@ -1,0 +1,39 @@
+Export-Package: org.eclipse.ecr.web.rendering.api,
+ org.eclipse.ecr.web.rendering.fm,
+ org.eclipse.ecr.web.rendering.fm.adapters,
+ org.eclipse.ecr.web.rendering.fm.extensions,
+ org.eclipse.ecr.web.rendering.fm.i18n,
+ org.eclipse.ecr.web.rendering.wiki,
+ org.eclipse.ecr.web.rendering.wiki.extensions
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Name: ECR Rendering Support
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: 0.5.4.qualifier
+Bundle-ManifestVersion: 2
+Nuxeo-Component: OSGI-INF/freemarker-engine.xml
+Import-Package: freemarker.cache,
+ freemarker.core,
+ freemarker.ext.beans,
+ freemarker.template,
+ org.apache.commons.logging,
+ org.eclipse.ecr.core;api=split,
+ org.eclipse.ecr.core.api;api=split,
+ org.eclipse.ecr.core.api.impl,
+ org.eclipse.ecr.core.api.impl.blob,
+ org.eclipse.ecr.core.api.model,
+ org.eclipse.ecr.core.api.model.impl,
+ org.eclipse.ecr.core.api.model.impl.primitives,
+ org.eclipse.ecr.core.schema,
+ org.eclipse.ecr.core.schema.types,
+ org.eclipse.ecr.core.schema.types.primitives,
+ org.eclipse.ecr.runtime.api,
+ org.eclipse.ecr.runtime.model,
+ org.nuxeo.common.utils,
+ org.nuxeo.common.xmap.annotation,
+ org.wikimodel.wem;resolution:=optional,
+ org.wikimodel.wem.common;resolution:=optional
+Bundle-SymbolicName: org.eclipse.ecr.web.rendering;singleton:=true
+Originally-Created-By: 1.6.0_20 (Sun Microsystems Inc.)

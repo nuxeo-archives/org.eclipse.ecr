@@ -1,0 +1,27 @@
+Export-Package: org.eclipse.ecr.convert.cache,
+ org.eclipse.ecr.convert.extension,
+ org.eclipse.ecr.convert.service
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.eclipse.ecr.convert.service.CacheCGTaskActivator
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Category: core
+Bundle-Name: ECR Convert
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: 0.5.4.qualifier
+Eclipse-BuddyPolicy: dependent
+Nuxeo-Component: OSGI-INF/convert-service-framework.xml
+Bundle-ManifestVersion: 2
+Import-Package: org.apache.commons.logging,
+ org.eclipse.ecr.convert.api,
+ org.eclipse.ecr.core;api=split,
+ org.eclipse.ecr.core.api;api=split,
+ org.eclipse.ecr.core.api.blobholder,
+ org.eclipse.ecr.core.api.impl.blob,
+ org.eclipse.ecr.runtime.api,
+ org.eclipse.ecr.runtime.model,
+ org.nuxeo.common.utils,
+ org.nuxeo.common.xmap.annotation,
+ org.osgi.framework
+Bundle-SymbolicName: org.eclipse.ecr.convert

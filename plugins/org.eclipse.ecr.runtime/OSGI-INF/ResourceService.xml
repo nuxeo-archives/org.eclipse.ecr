@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<component name="org.eclipse.ecr.runtime.services.resource.ResourceService" version="1.0">
+  <documentation>
+  An event notification service. Notifications are grouped by topics.
+  @author Bogdan Stefanescu (bs@nuxeo.com)
+  </documentation>
+
+  <implementation class="org.eclipse.ecr.runtime.services.resource.ResourceService"/>
+
+  <service>
+	  <provide interface="org.eclipse.ecr.runtime.services.resource.ResourceService" />
+  </service>
+
+
+  <extension-point name="resources">
+    <documentation>Enable clients to register resources contained in their bundle under a name</documentation>
+    <object class="org.eclipse.ecr.runtime.services.resource.ResourceDescriptor"/>
+  </extension-point>
+
+</component>
+

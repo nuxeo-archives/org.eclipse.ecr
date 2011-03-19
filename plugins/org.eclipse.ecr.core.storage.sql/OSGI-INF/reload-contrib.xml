@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.storage.sql.reload">
+
+    <extension target="org.eclipse.ecr.runtime.EventService" point="listeners">
+        <listener class="org.eclipse.ecr.core.storage.sql.reload.RepositoryReloader">
+            <topic>org.eclipse.ecr.runtime.reload</topic>
+            <topic>reloadRepositories</topic>
+        </listener>
+    </extension>
+
+</component>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.event.EventServiceComponent" version="1.0">
+  <documentation>
+    Mock Event service
+
+    @author Bogdan Stefanescu (bs@nuxeo.com)
+  </documentation>
+
+  <implementation class="org.eclipse.ecr.core.event.EventServiceComponent"/>
+
+  <service>
+    <provide interface="org.eclipse.ecr.core.event.EventService"/>
+    <provide interface="org.eclipse.ecr.core.event.EventProducer"/>
+    <provide interface="org.eclipse.ecr.core.event.EventServiceAdmin"/>
+  </service>
+
+  <extension-point name="listener">
+    <documentation>Event listeners</documentation>
+    <object class="org.eclipse.ecr.core.event.impl.EventListenerDescriptor"/>
+  </extension-point>
+
+</component>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.opencmis.impl.server.querymaker"
+  version="1.0.0">
+
+  <extension target="org.eclipse.ecr.core.storage.sql.jdbc.QueryMakerService"
+    point="queryMaker">
+    <queryMaker name="CMISQL">
+      org.eclipse.ecr.opencmis.impl.server.CMISQLQueryMaker
+    </queryMaker>
+  </extension>
+
+</component>

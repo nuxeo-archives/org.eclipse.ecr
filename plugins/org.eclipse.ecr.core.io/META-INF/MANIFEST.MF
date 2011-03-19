@@ -1,0 +1,30 @@
+Export-Package: org.eclipse.ecr.core.io,
+ org.eclipse.ecr.core.io.exceptions,
+ org.eclipse.ecr.core.io.impl,
+ org.eclipse.ecr.core.io.impl.plugins
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Name: ECR IO Support
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: 0.5.4.qualifier
+Bundle-ManifestVersion: 2
+Import-Package: javax.security.auth.login,
+ org.apache.commons.logging,
+ org.dom4j,
+ org.dom4j.io,
+ org.eclipse.ecr.core;api=split,
+ org.eclipse.ecr.core.api;api=split,
+ org.eclipse.ecr.core.api.impl,
+ org.eclipse.ecr.core.api.impl.blob,
+ org.eclipse.ecr.core.api.repository,
+ org.eclipse.ecr.core.api.security,
+ org.eclipse.ecr.core.api.security.impl,
+ org.eclipse.ecr.core.schema,
+ org.eclipse.ecr.core.schema.types,
+ org.eclipse.ecr.runtime.api,
+ org.eclipse.ecr.runtime.services.streaming,
+ org.nuxeo.common.collections,
+ org.nuxeo.common.utils
+Bundle-SymbolicName: org.eclipse.ecr.core.io

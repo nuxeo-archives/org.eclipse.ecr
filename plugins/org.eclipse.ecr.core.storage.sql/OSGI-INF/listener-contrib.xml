@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.storage.sql.listener">
+
+  <require>org.eclipse.ecr.convert.service.ConversionServiceImpl</require>
+
+  <extension target="org.eclipse.ecr.core.event.EventServiceComponent"
+    point="listener">
+    <listener name="sql-storage-binary-text" async="true"
+      postCommit="true" priority="500"
+      class="org.eclipse.ecr.core.storage.sql.coremodel.BinaryTextListener">
+    </listener>
+  </extension>
+
+</component>

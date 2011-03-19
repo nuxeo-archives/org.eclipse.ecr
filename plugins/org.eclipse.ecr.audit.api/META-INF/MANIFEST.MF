@@ -1,0 +1,19 @@
+Export-Package: org.eclipse.ecr.audit.api,
+ org.eclipse.ecr.audit.api.delegate,
+ org.eclipse.ecr.audit.api.job,
+ org.eclipse.ecr.audit.api.query,
+ org.eclipse.ecr.audit.api.remote
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Name: ECR Audit API
+Created-By: 1.6.0_20 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Nuxeo
+Bundle-Version: 0.5.4.qualifier
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.ecr.audit.api
+Import-Package: org.eclipse.ecr.core.api;api=split,
+ org.eclipse.ecr.core.api.security,
+ org.eclipse.ecr.core.event,
+ org.eclipse.ecr.runtime.api

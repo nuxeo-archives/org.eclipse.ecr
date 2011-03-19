@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.trash.TrashService"
+  version="1.0">
+
+  <service>
+    <provide interface="org.eclipse.ecr.core.trash.TrashService" />
+  </service>
+
+  <implementation class="org.eclipse.ecr.core.trash.TrashServiceImpl" />
+
+  <documentation>
+    The trash service is responsible for deleting, purging and undeleting documents
+    based on the lifecycle state.
+  </documentation>
+
+</component>
