@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.6"?>
+
+<target name="Nuxeo OSGI Core Server Platform" sequenceNumber="2">
+<locations>
+<location includeAllPlatforms="false" includeMode="slicer" includeSource="false" type="InstallableUnit">
+<unit id="org.nuxeo.osgi.core.opencmis.feature.group" version="5.4.1.201103181533"/>
+<unit id="org.nuxeo.osgi.core.opencmis.sdk.feature.group" version="5.4.1.201103181533"/>
+<unit id="org.nuxeo.osgi.core.web.sdk.feature.group" version="5.4.1.201103181533"/>
+<unit id="org.nuxeo.osgi.core.base.feature.group" version="5.4.1.201103181533"/>
+<unit id="org.nuxeo.osgi.core.base.sdk.feature.group" version="5.4.1.201103181533"/>
+<unit id="org.nuxeo.osgi.core.h2.feature.group" version="5.4.1.201103181533"/>
+<unit id="org.nuxeo.osgi.core.h2.sdk.feature.group" version="5.4.1.201103181533"/>
+<unit id="org.nuxeo.osgi.core.web.feature.group" version="5.4.1.201103181533"/>
+<repository location="http://localhost/p2/core-server/current/repository"/>
+</location>
+<location path="${eclipse_home}" type="Directory"/>
+</locations>
+<launcherArgs>
+<vmArgs>-Dosgi.requiredJavaVersion=1.6 -XX:MaxPermSize=256m -Xms40m -Xmx512m</vmArgs>
+</launcherArgs>
+</target>

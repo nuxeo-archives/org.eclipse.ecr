@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.eclipse.ecr</groupId>
+  <groupId>org.eclipse.ecr.plugins</groupId>
   <artifactId>org.eclipse.ecr.opencmis.bindings</artifactId>
   <version>0.5.4-SNAPSHOT</version>
   <name>Eclipse ECR Chemistry OpenCMIS Bindings</name>

@@ -9,7 +9,7 @@
   <artifactId>org.eclipse.ecr.build</artifactId>
   <version>0.5.4-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Eclipse ECR Tycho</name>
+  <name>Eclipse ECR Build</name>
   <description>Provide common OSGi tycho build directives.</description>
 
   <modules>
@@ -36,6 +36,12 @@
     <module>../plugins/org.eclipse.ecr.runtime.jtajca</module>
     <module>../plugins/org.eclipse.ecr.web.jaxrs</module>
     <module>../plugins/org.eclipse.ecr.web.rendering</module>
+    <module>../config/org.eclipse.ecr.configuration</module>
+    <module>../features/org.eclipse.ecr</module>
+    <module>../features/org.eclipse.ecr.sdk</module>
+    <module>../features/org.eclipse.ecr.base</module>
+    <module>../features/org.eclipse.ecr.base.sdk</module>
+    <module>../repository</module>
   </modules>
 
   <scm>

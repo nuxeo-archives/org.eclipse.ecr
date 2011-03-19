@@ -2,11 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.eclipse.ecr.plugins</groupId>
-  <artifactId>org.eclipse.ecr.audit.api</artifactId>
-  <version>0.5.4-SNAPSHOT</version>
-  <name>Eclipse ECR Audit API</name>
-  <packaging>eclipse-plugin</packaging>
+  <groupId>org.eclipse.ecr.features</groupId>
+  <artifactId>org.eclipse.ecr.sdk</artifactId>
+  <name>Eclipse ECR SDK Feature</name>
+  <packaging>eclipse-feature</packaging>
 
   <parent>
     <groupId>org.eclipse.ecr</groupId>
