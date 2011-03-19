@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.ecr.sdk"
-      label="Eclipse ECR SDK"
+      id="org.eclipse.ecr.application.sdk"
+      label="Eclipse ECR Applicatin SDK"
       version="0.5.4.qualifier">
 
    <requires>
+      <import feature="org.eclipse.ecr.equinox.sdk" version="0.0.0.qualifier"/>
       <import feature="org.eclipse.ecr.base.sdk" version="0.0.0.qualifier"/>
 <!--
-      <import feature="org.nuxeo.osgi.core.equinox.sdk" version="0.0.0.qualifier"/>
       <import feature="org.nuxeo.osgi.core.h2.sdk" version="0.0.0.qualifier"/>
       <import feature="org.nuxeo.osgi.core.opencmis.sdk" version="0.0.0.qualifier"/>
  -->

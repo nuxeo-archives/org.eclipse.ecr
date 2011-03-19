@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>org.eclipse.ecr.sdk</name>
-	<comment></comment>
-	<projects>
-	</projects>
+	<name>org.eclipse.ecr.application</name>
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.pde.FeatureBuilder</name>

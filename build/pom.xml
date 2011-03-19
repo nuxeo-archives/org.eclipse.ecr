@@ -37,10 +37,12 @@
     <module>../plugins/org.eclipse.ecr.web.jaxrs</module>
     <module>../plugins/org.eclipse.ecr.web.rendering</module>
     <module>../config/org.eclipse.ecr.configuration</module>
-    <module>../features/org.eclipse.ecr</module>
-    <module>../features/org.eclipse.ecr.sdk</module>
+    <module>../features/org.eclipse.ecr.equinox</module>
+    <module>../features/org.eclipse.ecr.equinox.sdk</module>
     <module>../features/org.eclipse.ecr.base</module>
     <module>../features/org.eclipse.ecr.base.sdk</module>
+    <module>../features/org.eclipse.ecr.application</module>
+    <module>../features/org.eclipse.ecr.application.sdk</module>
     <module>../repository</module>
   </modules>
 

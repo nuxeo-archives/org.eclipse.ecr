@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.eclipse.ecr.features</groupId>
-  <artifactId>org.eclipse.ecr.sdk</artifactId>
-  <name>Eclipse ECR SDK Feature</name>
+  <artifactId>org.eclipse.ecr.application</artifactId>
+  <name>Eclipse ECR Application Feature</name>
   <packaging>eclipse-feature</packaging>
 
   <parent>

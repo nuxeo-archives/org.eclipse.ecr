@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.eclipse.ecr_0.5.4.qualifier.jar" id="org.eclipse.ecr" version="0.5.4.qualifier">
-      <category name="org.eclipse.ecr"/>
+   <feature url="features/org.eclipse.ecr.application_0.5.4.qualifier.jar" id="org.eclipse.ecr.application" version="0.5.4.qualifier">
+      <category name="org.eclipse.ecr.application"/>
    </feature>
-   <feature url="features/org.eclipse.ecr.sdk_0.5.4.qualifier.jar" id="org.eclipse.ecr.sdk" version="0.5.4.qualifier">
-      <category name="org.eclipse.ecr"/>
+   <feature url="features/org.eclipse.ecr.application.sdk_0.5.4.qualifier.jar" id="org.eclipse.ecr.application.sdk" version="0.5.4.qualifier">
+      <category name="org.eclipse.ecr.application"/>
    </feature>
    <feature url="features/org.eclipse.ecr.base_0.5.4.qualifier.jar" id="org.eclipse.ecr.base" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr.components"/>
@@ -38,6 +38,6 @@
       <category name="org.eclipse.ecr.components"/>
    </feature>
  -->
-   <category-def name="org.eclipse.ecr" label="Eclipse ECR"/>
+   <category-def name="org.eclipse.ecr.application" label="Eclipse ECR Application"/>
    <category-def name="org.eclipse.ecr.components" label="Eclipse ECR Components"/>
 </site>
