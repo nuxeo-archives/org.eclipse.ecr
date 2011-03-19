@@ -2,19 +2,17 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.eclipse.ecr.core</groupId>
+  <groupId>org.eclipse.ecr</groupId>
   <artifactId>org.eclipse.ecr.convert.api</artifactId>
-  <version>5.4.1-SNAPSHOT</version>
-  <name>Nuxeo Core Converter API</name>
-  <description>Nuxeo Core API for Blob conversion</description>
-  <url>http://www.nuxeo.org/</url>
+  <version>0.5.4-SNAPSHOT</version>
+  <name>Eclipse ECR Core Converter API</name>
   <packaging>eclipse-plugin</packaging>
 
   <parent>
-    <groupId>org.nuxeo</groupId>
-    <artifactId>nuxeo-osgi-projects</artifactId>
-    <version>5.4.1-SNAPSHOT</version>
-    <relativePath>../../pom.xml</relativePath>
+    <groupId>org.eclipse.ecr</groupId>
+    <artifactId>org.eclipse.ecr.build</artifactId>
+    <version>0.5.4-SNAPSHOT</version>
+    <relativePath>../../build</relativePath>
   </parent>
 
 </project>
