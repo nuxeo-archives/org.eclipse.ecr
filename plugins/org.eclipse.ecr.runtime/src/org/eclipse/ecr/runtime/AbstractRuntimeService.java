@@ -31,7 +31,6 @@ import org.eclipse.ecr.runtime.model.ComponentName;
 import org.eclipse.ecr.runtime.model.RuntimeContext;
 import org.eclipse.ecr.runtime.model.impl.ComponentManagerImpl;
 import org.eclipse.ecr.runtime.model.impl.DefaultRuntimeContext;
-import org.eclipse.ecr.runtime.services.adapter.AdapterManager;
 import org.nuxeo.common.logging.JavaUtilLoggingHelper;
 import org.osgi.framework.Bundle;
 
@@ -164,11 +163,6 @@ public abstract class AbstractRuntimeService implements RuntimeService {
     @Override
     public String getDescription() {
         return toString();
-    }
-
-    public AdapterManager getAdapterManager() {
-        // TODO Auto-generated method stub
-        return null;
     }
 
     @Override

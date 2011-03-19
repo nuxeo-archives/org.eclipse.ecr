@@ -11,9 +11,6 @@
  *******************************************************************************/
 package org.eclipse.ecr.runtime.model;
 
-import org.eclipse.ecr.runtime.services.adapter.AdaptableObject;
-import org.eclipse.ecr.runtime.services.adapter.AdapterFactory;
-import org.eclipse.ecr.runtime.services.adapter.AdapterManager;
 
 /**
  * An interface for an adaptable object.
