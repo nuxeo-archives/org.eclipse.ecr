@@ -7,7 +7,7 @@
   </documentation>
 
   <extension target="org.eclipse.ecr.web.jaxrs.servlet.config.ServletRegistryComponent" point="servlets">
-    <servlet name="jaxrs" path="/nuxeo/site" class="org.eclipse.ecr.web.jaxrs.servlet.JerseyServlet">
+    <servlet name="jaxrs" path="/ecr" class="org.eclipse.ecr.web.jaxrs.servlet.JerseyServlet">
       <filters pathInfo="/**/skin/*">
         <!-- no filters defined for paths matching this pattern -->
       </filters>
@@ -17,8 +17,8 @@
         <filter class="org.eclipse.ecr.web.jaxrs.session.SessionCleanupFilter" />
         <filter class="org.eclipse.ecr.web.jaxrs.context.RequestContextFilter" />
       </filters>
-    </servlet>  
+    </servlet>
   </extension>
-  
+
 </component>
 
