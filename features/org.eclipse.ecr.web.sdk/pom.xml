@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.eclipse.ecr.features</groupId>
-  <artifactId>org.eclipse.ecr.h2</artifactId>
-  <name>Eclipse ECR H2 Connector Feature</name>
+  <artifactId>org.eclipse.ecr.web.sdk</artifactId>
+  <name>Eclipse ECR Web SDK Feature</name>
   <packaging>eclipse-feature</packaging>
 
   <parent>

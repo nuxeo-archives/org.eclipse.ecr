@@ -7,8 +7,9 @@
    <requires>
       <import feature="org.eclipse.ecr.equinox" version="0.0.0.qualifier"/>
       <import feature="org.eclipse.ecr.base" version="0.0.0.qualifier"/>
+      <import feature="org.eclipse.ecr.h2" version="0.0.0.qualifier"/>
+      <import feature="org.eclipse.ecr.web" version="0.0.0.qualifier"/>
 <!--
-      <import feature="org.nuxeo.osgi.core.h2" version="0.0.0.qualifier"/>
       <import feature="org.nuxeo.osgi.core.opencmis" version="0.0.0.qualifier"/>
  -->
    </requires>
