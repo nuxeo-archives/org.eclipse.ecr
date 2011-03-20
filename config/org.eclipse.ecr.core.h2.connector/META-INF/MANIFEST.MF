@@ -6,5 +6,5 @@ Bundle-Version: 0.5.4.qualifier
 Bundler-Vendor: Nuxeo
 Require-Bundle: org.h2
 Import-Package: org.apache.geronimo.transaction.manager
-Fragment-Host: org.eclipse.ecr.core.storage.sql.ra;bundle-version="0.5.4.qualifier"
+Fragment-Host: org.eclipse.ecr.core.storage.sql.ra
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
