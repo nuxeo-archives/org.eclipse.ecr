@@ -98,7 +98,36 @@
       <layout>p2</layout>
       <url>${libs-site}</url>
     </repository>
+    <repository>
+      <id>public</id>
+      <url>http://maven.nuxeo.org/nexus/content/groups/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>public-snapshot</id>
+      <url>http://maven.nuxeo.org/nexus/content/groups/public-snapshot</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
   </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.nuxeo.common</groupId>
+      <artifactId>nuxeo-common</artifactId>
+      <version>5.4.1-I20110316_0115</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -114,6 +143,7 @@
 	<version>${tycho-version}</version>
 	<configuration>
 	  <resolver>p2</resolver>
+	  <pomDependencies>consider</pomDependencies>
 <!--
           <environments>
             <environment>

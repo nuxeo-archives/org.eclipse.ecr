@@ -5,11 +5,6 @@
       version="0.5.4.qualifier"
       provider-name="Eclipse">
 
-   <requires>
-      <import plugin="org.eclipse.ecr.core.storage.sql"/>
-      <import plugin="org.eclipse.ecr.core.storage.sql.ra"/>
-   </requires>
-
    <plugin
          id="org.eclipse.ecr.core.h2.connector"
          download-size="0"
