@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>org.nuxeo.osgi.repository</name>
+	<name>org.eclipse.ecr.build.repository</name>
 	<comment></comment>
 	<projects>
 	</projects>

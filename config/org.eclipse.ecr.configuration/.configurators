@@ -1,2 +1,0 @@
-#initialize system.properties, JNDI, JCA
-#org.nuxeo.osgi.core.config.DefaultConfigurator
