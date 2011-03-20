@@ -8,10 +8,10 @@
   <packaging>eclipse-plugin</packaging>
 
   <parent>
-    <groupId>org.eclipse.ecr</groupId>
-    <artifactId>org.eclipse.ecr.build</artifactId>
+    <groupId>org.eclipse.ecr.build</groupId>
+    <artifactId>org.eclipse.ecr.build.tycho</artifactId>
     <version>0.5.4-SNAPSHOT</version>
-    <relativePath>../build/pom.xml</relativePath>
+    <relativePath>../../build</relativePath>
   </parent>
 
 </project>
