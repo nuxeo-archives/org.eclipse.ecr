@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.ecr.h2.sdk"
+      label="Eclipse ECR H2 SDK Connector"
+      version="0.5.4.qualifier"
+      provider-name="Eclipse">
+
+   <requires>
+      <import feature="org.eclipse.ecr.h2" version="0.0.0"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.ecr.core.h2.connector.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ecr.core.h2.extensions.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+<!--
+   <plugin
+         id="org.h2"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+ -->
+
+</feature>

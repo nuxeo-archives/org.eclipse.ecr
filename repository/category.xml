@@ -12,23 +12,23 @@
    <feature url="features/org.eclipse.ecr.base.sdk_0.5.4.qualifier.jar" id="org.eclipse.ecr.base.sdk" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr.components"/>
    </feature>
-<!--
    <feature url="features/org.eclipse.ecr.equinox_0.5.4.qualifier.jar" id="org.eclipse.ecr.equinox" version="0.5.4.qualifier">
-      <category name="org.eclipse.ecr.components"/>
-   </feature>
-   <feature url="features/org.eclipse.ecr.h2_0.5.4.qualifier.jar" id="org.eclipse.ecr.h2" version="0.5.4.qualifier">
-      <category name="org.eclipse.ecr.components"/>
-   </feature>
-   <feature url="features/org.eclipse.ecr.opencmis_0.5.4.qualifier.jar" id="org.eclipse.ecr.opencmis" version="0.5.4.qualifier">
-      <category name="org.eclipse.ecr.components"/>
-   </feature>
-   <feature url="features/org.eclipse.ecr.web_0.5.4.qualifier.jar" id="org.eclipse.ecr.web" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr.components"/>
    </feature>
    <feature url="features/org.eclipse.ecr.equinox.sdk_0.5.4.qualifier.jar" id="org.eclipse.ecr.equinox.sdk" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr.components"/>
    </feature>
+   <feature url="features/org.eclipse.ecr.h2_0.5.4.qualifier.jar" id="org.eclipse.ecr.h2" version="0.5.4.qualifier">
+      <category name="org.eclipse.ecr.components"/>
+   </feature>
    <feature url="features/org.eclipse.ecr.h2.sdk_0.5.4.qualifier.jar" id="org.eclipse.ecr.h2.sdk" version="0.5.4.qualifier">
+      <category name="org.eclipse.ecr.components"/>
+   </feature>
+<!--
+   <feature url="features/org.eclipse.ecr.opencmis_0.5.4.qualifier.jar" id="org.eclipse.ecr.opencmis" version="0.5.4.qualifier">
+      <category name="org.eclipse.ecr.components"/>
+   </feature>
+   <feature url="features/org.eclipse.ecr.web_0.5.4.qualifier.jar" id="org.eclipse.ecr.web" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr.components"/>
    </feature>
    <feature url="features/org.eclipse.ecr.opencmis.sdk_0.5.4.qualifier.jar" id="org.eclipse.ecr.opencmis.sdk" version="0.5.4.qualifier">

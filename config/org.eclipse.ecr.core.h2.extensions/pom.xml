@@ -2,31 +2,15 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>org.nuxeo.osgi.h2.functions</artifactId>
-  <name>Nuxeo OSGi Core Storage H2 Functions</name>
-  <description>Add h2 functions into core storage</description>
-  <url>http://www.nuxeo.org/</url>
+  <artifactId>org.eclipse.ecr.core.h2.extensions</artifactId>
+  <name>Eclipse ECR H2 Extensions</name>
   <packaging>eclipse-plugin</packaging>
 
   <parent>
-    <groupId>org.nuxeo.osgi</groupId>
-    <artifactId>nuxeo-osgi-tycho</artifactId>
-    <version>5.4.1-SNAPSHOT</version>
-    <relativePath>../../../build/pom.xml</relativePath>
+    <groupId>org.eclipse.ecr</groupId>
+    <artifactId>org.eclipse.ecr.build</artifactId>
+    <version>0.5.4-SNAPSHOT</version>
+    <relativePath>../../build</relativePath>
   </parent>
-
-
-  <build>
-    <plugins>
-	<plugin>
-          <groupId>org.sonatype.tycho</groupId>
-          <artifactId>tycho-maven-plugin</artifactId>
-	</plugin>
-	<plugin>
-          <groupId>org.sonatype.tycho</groupId>
-          <artifactId>target-platform-configuration</artifactId>
-	</plugin>
-    </plugins>
-  </build>
 
 </project>

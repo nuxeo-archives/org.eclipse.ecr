@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.ecr.h2"
+      label="Eclipse ECR H2 Connector"
+      version="0.5.4.qualifier"
+      provider-name="Eclipse">
+
+   <requires>
+      <import plugin="org.eclipse.ecr.core.storage.sql"/>
+      <import plugin="org.eclipse.ecr.core.storage.sql.ra"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.ecr.core.h2.connector"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ecr.core.h2.extensions"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.h2"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

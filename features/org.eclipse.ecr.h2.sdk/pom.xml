@@ -2,9 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>org.eclipse.ecr.core.h2.connector</artifactId>
-  <name>Eclipse ECR H2 Connector</name>
-  <packaging>eclipse-plugin</packaging>
+  <groupId>org.eclipse.ecr.features</groupId>
+  <artifactId>org.eclipse.ecr.h2.sdk</artifactId>
+  <name>Eclipse ECR H2 Connector SDK Feature</name>
+  <packaging>eclipse-feature</packaging>
 
   <parent>
     <groupId>org.eclipse.ecr</groupId>
