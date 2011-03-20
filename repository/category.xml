@@ -35,14 +35,14 @@
    <feature url="features/org.eclipse.ecr.web.sdk_0.5.4.qualifier.jar" id="org.eclipse.ecr.web.sdk" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr.components"/>
    </feature>
-<!--
+
    <feature url="features/org.eclipse.ecr.opencmis_0.5.4.qualifier.jar" id="org.eclipse.ecr.opencmis" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr.components"/>
    </feature>
    <feature url="features/org.eclipse.ecr.opencmis.sdk_0.5.4.qualifier.jar" id="org.eclipse.ecr.opencmis.sdk" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr.components"/>
    </feature>
- -->
+
    <category-def name="org.eclipse.ecr.application" label="Eclipse ECR Application"/>
    <category-def name="org.eclipse.ecr.components" label="Eclipse ECR Components"/>
 </site>

@@ -52,6 +52,9 @@
     <module>../features/org.eclipse.ecr.web</module>
     <module>../features/org.eclipse.ecr.web.sdk</module>
 
+    <module>../features/org.eclipse.ecr.opencmis</module>
+    <module>../features/org.eclipse.ecr.opencmis.sdk</module>
+
     <module>../features/org.eclipse.ecr.application</module>
     <module>../features/org.eclipse.ecr.application.sdk</module>
 
