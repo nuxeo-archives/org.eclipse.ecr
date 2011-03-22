@@ -15,15 +15,18 @@ Management applications, Digital Asset Management applications, Case
 or Record Management applications, Web Content Management
 applications, or simply business-specific applications.
 
+You can read more about on http://www.eclipse.org/proposals/rt.ecr/
+
 ## How to build and run
 
 This project is build using maven tycho. The only requirement is to use the 
-3.0.3 version of maven. For building the p2 repository you just have to invoke
-the build using the following command line:
+3.0.3 version of maven. We used to isolate the tycho build from others using 
+a dedicated local m2 repository. For building the p2 repository you have to 
+invoke the following command line:
 
-    $ mvn -f build/pom.xml clean install
+    $ mvn -f build/pom.xml -Dmaven.repo.local=xxx clean install
 
-The repository built is located in `repository/target/repository`. At this stage,
+The repository built is located in `build/repository/target/repository`. At this stage,
 you're able to load ECR in eclipse. Start by configuring your target platform, 
 adding the directory as an update locations and selecting the Eclipse ECR category.
 
