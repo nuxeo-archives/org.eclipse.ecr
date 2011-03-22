@@ -15,11 +15,11 @@ Management applications, Digital Asset Management applications, Case
 or Record Management applications, Web Content Management
 applications, or simply business-specific applications.
 
-You can read more about on http://www.eclipse.org/proposals/rt.ecr/
+You can read more about the proposal on <http://www.eclipse.org/proposals/rt.ecr/>
 
 ## How to build and run
 
-This project is build using maven tycho. The only requirement is to use the 
+This project is build using [maven tycho](http://tycho.sonatype.org/). The only requirement is to use the 
 3.0.3 version of maven. We used to isolate the tycho build from others using 
 a dedicated local m2 repository. For building the p2 repository you have to 
 invoke the following command line:
