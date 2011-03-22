@@ -27,8 +27,8 @@ invoke the following command line:
     $ mvn -f build/pom.xml -Dmaven.repo.local=xxx clean install
 
 The repository built is located in `build/repository/target/repository`. At this stage,
-you're able to load ECR in eclipse. Start by configuring your target platform, 
-adding the directory as an update locations and selecting the Eclipse ECR category.
+you're should add a new local repository in your eclipse pointing on the repository.
+Then install all the features included in the ECR categories.
 
 At this time, you're ready to work with Eclipse ECR. You can first have a try with
 the server by configuring a new launch configuration. You should select at least the
