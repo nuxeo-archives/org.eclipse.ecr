@@ -34,7 +34,9 @@ At this time, you're ready to work with Eclipse ECR. You can first have a try wi
 the server by configuring a new launch configuration. You should select at least the
 following bundles:
 
-* `org.eclipse.ecr`...
+* `org.eclipse.ecr.equinox` equinox OSGi framework
+* `org.eclipse.ecr.native` native ECR services
+* `org.eclipse.ecr.h2` h2 database connector
 
 Enjoy. Your feedback is welcome ...
 
