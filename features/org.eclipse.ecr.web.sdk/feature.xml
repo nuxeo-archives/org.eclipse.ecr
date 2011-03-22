@@ -5,6 +5,18 @@
       version="0.5.4.qualifier"
       provider-name="%providerName">
 
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+   
    <requires>
       <import feature="org.eclipse.ecr.web" version="0.5.4.201103201028"/>
    </requires>

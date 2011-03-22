@@ -13,19 +13,30 @@
       %copyright
    </copyright>
 
+   <license url="%licenseURL">
+      %license
+   </license>
+   
    <requires>
       <import feature="org.eclipse.ecr.equinox" version="0.5.4.qualifier"/>
    </requires>
 
    <plugin
-         id="org.eclipse.osgi.services.source"
+         id="org.eclipse.osgi.source"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.osgi.source"
+         id="org.eclipse.equinox.launcher.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.osgi.services.source"
          download-size="0"
          install-size="0"
          version="0.0.0"

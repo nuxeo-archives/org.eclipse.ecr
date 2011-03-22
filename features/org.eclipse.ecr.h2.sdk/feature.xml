@@ -5,6 +5,18 @@
       version="0.5.4.qualifier"
       provider-name="%providerName">
 
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+   
+   <license url="%licenseURL">
+      %license
+   </license>
+
    <requires>
       <import feature="org.eclipse.ecr.h2" version="0.0.0"/>
    </requires>
@@ -24,14 +36,5 @@
          version="0.0.0"
          fragment="true"
          unpack="false"/>
-
-<!--
-   <plugin
-         id="org.h2"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
- -->
 
 </feature>
