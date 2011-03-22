@@ -4,7 +4,7 @@
 
   <groupId>org.eclipse.ecr.features</groupId>
   <artifactId>org.eclipse.ecr.equinox.sdk</artifactId>
-  <name>Eclipse ECR Equinox SDK feature</name>
+  <name>Eclipse ECR Equinox Feature SDK</name>
   <packaging>eclipse-feature</packaging>
 
   <parent>

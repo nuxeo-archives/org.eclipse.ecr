@@ -4,7 +4,7 @@
 
   <groupId>org.eclipse.ecr.features</groupId>
   <artifactId>org.eclipse.ecr.opencmis.sdk</artifactId>
-  <name>Eclipse ECR Open CMIS SDK</name>
+  <name>Eclipse ECR Open CMIS Feature SDK</name>
   <packaging>eclipse-feature</packaging>
 
   <parent>

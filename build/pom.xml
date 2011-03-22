@@ -9,7 +9,7 @@
   <artifactId>org.eclipse.ecr.build.tycho</artifactId>
   <version>0.5.4-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Eclipse ECR Build</name>
+  <name>Eclipse ECR Tycho Build</name>
   <description>Provide common OSGi tycho build directives.</description>
 
   <modules>
@@ -37,15 +37,16 @@
     <module>../plugins/org.eclipse.ecr.web.jaxrs</module>
     <module>../plugins/org.eclipse.ecr.web.rendering</module>
 
+    <module>../config/org.eclipse.ecr.configuration</module>
+    <module>../config/org.eclipse.ecr.core.h2.connector</module>
+    <module>../config/org.eclipse.ecr.core.h2.extensions</module>
+
     <module>../features/org.eclipse.ecr.equinox</module>
     <module>../features/org.eclipse.ecr.equinox.sdk</module>
 
-    <module>../config/org.eclipse.ecr.configuration</module>
-    <module>../features/org.eclipse.ecr.base</module>
-    <module>../features/org.eclipse.ecr.base.sdk</module>
+    <module>../features/org.eclipse.ecr.native</module>
+    <module>../features/org.eclipse.ecr.native.sdk</module>
 
-    <module>../config/org.eclipse.ecr.core.h2.connector</module>
-    <module>../config/org.eclipse.ecr.core.h2.extensions</module>
     <module>../features/org.eclipse.ecr.h2</module>
     <module>../features/org.eclipse.ecr.h2.sdk</module>
 
@@ -55,10 +56,7 @@
     <module>../features/org.eclipse.ecr.opencmis</module>
     <module>../features/org.eclipse.ecr.opencmis.sdk</module>
 
-    <module>../features/org.eclipse.ecr.application</module>
-    <module>../features/org.eclipse.ecr.application.sdk</module>
-
-    <module>../repository</module>
+    <module>repository</module>
   </modules>
 
   <scm>
@@ -121,14 +119,6 @@
     </repository>
   </repositories>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.nuxeo.common</groupId>
-      <artifactId>nuxeo-common</artifactId>
-      <version>5.4.1-I20110316_0115</version>
-    </dependency>
-  </dependencies>
-
   <build>
     <plugins>
       <plugin>
@@ -143,7 +133,6 @@
 	<version>${tycho-version}</version>
 	<configuration>
 	  <resolver>p2</resolver>
-	  <pomDependencies>consider</pomDependencies>
 <!--
           <environments>
             <environment>

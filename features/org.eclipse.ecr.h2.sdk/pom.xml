@@ -4,7 +4,7 @@
 
   <groupId>org.eclipse.ecr.features</groupId>
   <artifactId>org.eclipse.ecr.h2.sdk</artifactId>
-  <name>Eclipse ECR H2 Connector SDK Feature</name>
+  <name>Eclipse ECR H2 Connector Feature SDK</name>
   <packaging>eclipse-feature</packaging>
 
   <parent>

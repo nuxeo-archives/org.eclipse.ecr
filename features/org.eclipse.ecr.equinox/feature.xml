@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.ecr.equinox"
-      label="Eclipse ECR Equinox Framework"
+      label="%featureName"
       version="0.5.4.qualifier"
-      provider-name="Eclipse">
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
 
    <requires>
       <import plugin="javax.servlet"/>
@@ -24,6 +32,5 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
 
 </feature>

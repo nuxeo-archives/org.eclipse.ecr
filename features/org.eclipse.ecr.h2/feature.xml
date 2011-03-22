@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.ecr.h2"
-      label="Eclipse ECR H2 Connector"
+      label="%featureName"
       version="0.5.4.qualifier"
-      provider-name="Eclipse">
+      provider-name="%providerName">
 
    <plugin
          id="org.eclipse.ecr.core.h2.connector"

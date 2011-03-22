@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>org.eclipse.ecr.h2</name>
+	<name>org.eclipse.ecr.h2.feature</name>
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.pde.FeatureBuilder</name>

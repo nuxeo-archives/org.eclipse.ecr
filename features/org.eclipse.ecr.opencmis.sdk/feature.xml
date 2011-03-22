@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.ecr.opencmis.sdk"
-      label="Eclipse ECR Open CMIS SDk"
+      label="%featureName"
       version="0.5.4.qualifier"
-      provider-name="Eclipse">
+      provider-name="%providerName">
 
    <requires>
-      <import feature="org.eclipse.ecr.base.sdk" version="0.0.0.qualifier"/>
+      <import feature="org.eclipse.ecr.opencmis" version="0.5.4.qualifier"/>
    </requires>
 
    <plugin
@@ -30,83 +30,4 @@
          version="0.0.0"
          unpack="false"/>
 
-<!--
-   <plugin
-         id="org.apache.commons.codec"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="antlr"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.antlr.runtime"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-client-api"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-client-bindings"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-client-impl"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-commons-api"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-commons-impl"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-server-support"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-server-bindings"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="jaxws-dev"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
- -->
 </feature>

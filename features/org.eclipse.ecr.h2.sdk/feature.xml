@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.ecr.h2.sdk"
-      label="Eclipse ECR H2 SDK Connector"
+      label="%featureName"
       version="0.5.4.qualifier"
-      provider-name="Eclipse">
+      provider-name="%providerName">
 
    <requires>
       <import feature="org.eclipse.ecr.h2" version="0.0.0"/>

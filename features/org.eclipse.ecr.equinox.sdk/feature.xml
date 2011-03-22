@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.ecr.equinox.sdk"
-      label="Eclipse ECR Equinox Framework SDK"
+      label="%featureName"
       version="0.5.4.qualifier"
-      provider-name="Eclipse">
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
 
    <requires>
-      <import feature="org.eclipse.ecr.equinox" version="5.4.1.qualifier"/>
+      <import feature="org.eclipse.ecr.equinox" version="0.5.4.qualifier"/>
    </requires>
-     
+
    <plugin
          id="org.eclipse.osgi.services.source"
          download-size="0"
@@ -22,6 +30,5 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
 
 </feature>

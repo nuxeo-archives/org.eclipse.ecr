@@ -4,7 +4,7 @@
 
   <groupId>org.eclipse.ecr.features</groupId>
   <artifactId>org.eclipse.ecr.web.sdk</artifactId>
-  <name>Eclipse ECR Web SDK Feature</name>
+  <name>Eclipse ECR JAX-RS Web Services Feature SDK</name>
   <packaging>eclipse-feature</packaging>
 
   <parent>
