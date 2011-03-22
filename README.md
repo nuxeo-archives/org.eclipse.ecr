@@ -33,17 +33,17 @@ you're able to load ECR in eclipse.
 
 To configure your Eclipse you need to create a target platform that will be used when developing ECR plugins.
 To create the ECR target platform:
-1. Open Eclipse Prefenrecnes.
-2. Go to `Install/Update > Avaiulable Software Sites`. Click on Add ...
-3. Put a name like `Local ECR` and click on `Local..` button
-4. Choose the repository you builded in `build/repository/target/repository`
-5. Then go to `Plug-in Development` preference page.
-6. Click on `Add ...` to define your new target platform.
-7. Select `Nothing: Start with an empty ...` then put a name like `Local ECR` in the text box at the top.
-8. Click on `Add ...` button and then select `Software Site` and choose the local repository site you created before.
-9. Here you may want to select both categories: ECR and ECR SDK. The SDK categroty is useful only if you need ECR sources. If no catergies are displayes make sure you checked the `Group by Category` option.
-10 Before pressing `Finish` make sure you *UNCHECK* `Include requires software`!
-11. Press Finsih, Activate your new Target Platform and Apply you changes.
+* Open Eclipse Preferences.
+* Go to `Install/Update > Available Software Sites`. Click on Add ...
+* Put a name like `Local ECR` and click on `Local..` button
+* Choose the repository you builded in `build/repository/target/repository`
+* Then go to `Plug-in Development` preference page.
+* Click on `Add ...` to define your new target platform.
+* Select `Nothing: Start with an empty ...` then put a name like `Local ECR` in the text box at the top.
+* Click on `Add ...` button and then select `Software Site` and choose the local repository site you created before.
+* Here you may want to select both categories: ECR and ECR SDK. The SDK categroty is useful only if you need ECR sources. If no catergies are listed make sure you checked the `Group by Category` option.
+* Before pressing `Finish` make sure you *UNCHECK* `Include requires software`!
+* Press Finsih, Activate your new Target Platform and Apply you changes.
 
 Now you can start working with ECR, and create your first ECR plugin.
 
@@ -52,11 +52,11 @@ Now you can start working with ECR, and create your first ECR plugin.
 After activating the ECR target platform you can launch the ECR product directly in your Eclipse.
 For this you should create a new Run Configuration as follow:
 
-1. Open `Run > Run Configurations ...`
-2. Create a new OSGi Framework run configuration.
-3. Put a name let say `ECR`.
-4. Set `Default Auto-Start` to *false*.
-5. Select the `org.eclipse.ecr.application` bundle from the list and set its autostart flag to *true*.
+* Open `Run > Run Configurations ...`
+* Create a new OSGi Framework run configuration.
+* Put a name let say `ECR`.
+* Set `Default Auto-Start` to *false*.
+* Select the `org.eclipse.ecr.application` bundle from the list and set its autostart flag to *true*.
 
 You are done. Launch your server now.
 By default ECR will create a ~/.nxserver-osgi directory as its working directory.
