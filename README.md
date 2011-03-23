@@ -15,30 +15,31 @@ Management applications, Digital Asset Management applications, Case
 or Record Management applications, Web Content Management
 applications, or simply business-specific applications.
 
-You can read more about on http://www.eclipse.org/proposals/rt.ecr/
+You can read more about the project on <http://www.eclipse.org/proposals/rt.ecr/>
 
 ## How to build and run
 
-This project is build using maven tycho. The only requirement is to use the
+This project is built using maven tycho. The only requirement is to use the
 3.0.3 version of maven. For building the p2 repository you have to
 invoke the following command line:
 
     $ mvn -f build/pom.xml clean install
 
-If you need to use both maven 2 and maven 3 on the same machine you should consider using
+If you need to use both maven 2 and maven 3 on the same machine you should consider using:
 
     $ mvn -f build/pom.xml -Dmaven.repo.local=/path/to/m3/repository clean install
 
-to use another local repository for maven 3. Or you may want to make an alias and use different maven settings.xml files.
+to use another local repository for maven 3. Or you may want to make an alias and use different maven `settings.xml` files.
 
-The repository built is located in `build/repository/target/repository`. At this stage,
-you're able to load ECR in eclipse.
+The repository built is located in `build/repository/target/repository`. At this
+stage, you're able to load ECR in eclipse.
 
 ## Configuring Eclipse IDE
 
 To be able to use Eclipse IDE when working with ECR you must have the PDE feature installed in your Eclipse.
 
 To configure your Eclipse you need to create a target platform that will be used when developing ECR plugins.
+
 To create the ECR target platform:
 
 * Open Eclipse Preferences.
@@ -57,7 +58,9 @@ Now you can start working with ECR, and create your first ECR plugin.
 
 ## Launching ECR inside Eclipse
 
-After activating the ECR target platform you can launch the ECR product directly in your Eclipse.
+After activating the ECR target platform you can launch the ECR product directly in
+your Eclipse.
+
 For this you should create a new Run Configuration as follow:
 
 * Open `Run > Run Configurations ...`
@@ -67,7 +70,9 @@ For this you should create a new Run Configuration as follow:
 * Select the `org.eclipse.ecr.application` bundle from the list and set its autostart flag to *true*.
 
 You are done. Launch your server now.
-By default ECR will create a ~/.nxserver-osgi directory as its working directory.
+
+By default ECR will create a `~/.nxserver-osgi directory` as its working directory.
+
 Also, the Jetty HTTP server will listen at port 8080. You can change these properties
 by defining some system properties in the VM args of your launch configuration:
 
@@ -86,25 +91,26 @@ After building the repository go into `build/product` folder and execute:
 The repository generated before will be updated with a `run.sh` shell script and a configuration folder required to start the ECR product.
 So go into `build/repository/target/repository` and execute:
 
-  $ ./run.sh
+    $ ./run.sh
 
 Your ECR server is started and listen at port 8080.
 
-We will provide soon launch support for windows too. Until then you can write a command file that do the same as the run.sh script.
+We will provide soon launch support for windows too. Until then you can write a command file that do the same as the `run.sh` script.
 
 ## Accessing ECR through HTTP
 
 You have 2 options in accessing a remote ECR server:
 
-1. Use the automation REST API - available at http://localhost:8080/ecr/automation
-2. Use the CMIS API - available at http://localhost:8080/ecr/cmis
+1. Use the automation REST API - available at `http://localhost:8080/ecr/automation`
+2. Use the CMIS API - available at `http://localhost:8080/ecr/cmis`
 
 Of course these URLs are designed for client applications and not for human access.
 If you want to expose the repository content using a Web User Interface you can create your own plugins. (we may also provide this in a future).
 
 *Note** that any access to ECR through HTTP requires authentication. The default administrator account is:
-Username: Administrator
-Password: Administrator
+
+- Username: Administrator
+- Password: Administrator
 
 You can find more information about customizing and creating ECR plugins [here](http://bstefanescu.github.com/ecr)
 
