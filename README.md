@@ -36,6 +36,8 @@ you're able to load ECR in eclipse.
 
 ## Configuring Eclipse IDE
 
+To be able to use Eclipse IDE when working with ECR you must have the PDE feature installed in your Eclipse.
+
 To configure your Eclipse you need to create a target platform that will be used when developing ECR plugins.
 To create the ECR target platform:
 
