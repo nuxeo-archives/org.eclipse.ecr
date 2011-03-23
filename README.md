@@ -105,9 +105,9 @@ You have 2 options in accessing a remote ECR server:
 2. Use the CMIS API - available at `http://localhost:8080/ecr/cmis`
 
 Of course these URLs are designed for client applications and not for human access.
-If you want to expose the repository content using a Web User Interface you can create your own plugins. (we may also provide this in a future).
+If you want to expose the repository content using a Web User Interface, you can create your own plugins. (We may also provide this in a future).
 
-*Note** that any access to ECR through HTTP requires authentication. The default administrator account is:
+*Note* that any access to ECR through HTTP requires authentication. The default administrator account is:
 
 - Username: Administrator
 - Password: Administrator
