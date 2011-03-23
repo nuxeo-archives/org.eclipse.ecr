@@ -20,11 +20,16 @@ You can read more about on http://www.eclipse.org/proposals/rt.ecr/
 ## How to build and run
 
 This project is build using maven tycho. The only requirement is to use the
-3.0.3 version of maven. We used to isolate the tycho build from others using
-a dedicated local m2 repository. For building the p2 repository you have to
+3.0.3 version of maven. For building the p2 repository you have to
 invoke the following command line:
 
-    $ mvn -f build/pom.xml -Dmaven.repo.local=xxx clean install
+    $ mvn -f build/pom.xml clean install
+
+If you need to use both maven 2 and maven 3 on the same machine you should consider using
+
+    $ mvn -f build/pom.xml -Dmaven.repo.local=/path/to/m3/repository clean install
+
+to use another local repository for maven 3. Or you may want to make an alias and use different maven settings.xml files.
 
 The repository built is located in `build/repository/target/repository`. At this stage,
 you're able to load ECR in eclipse.
