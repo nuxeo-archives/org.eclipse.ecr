@@ -74,6 +74,22 @@ by defining some system properties in the VM args of your launch configuration:
 
 You can also use any property defined by Jetty bundle to configure the HTTP server.
 
+## Launching ECR from command line
+
+To launch ECR from command line you need to perform an additional build task.
+After building the repository go into `build/product` folder and execute:
+
+    $ ./build.sh
+
+The repository generated before will be updated with a `run.sh` shell script and a configuration folder required to start the ECR product.
+So go into `build/repository/target/repository` and execute:
+
+  $ ./run.sh
+
+Your ECR server is started and listen at port 8080.
+
+We will provide soon launch support for windows too. Until then you can write a command file that do the same as the run.sh script.
+
 Enjoy!
 
 
