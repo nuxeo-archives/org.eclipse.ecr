@@ -101,11 +101,8 @@ public class OSGiRuntimeActivator implements BundleActivator {
             return null;
         }
         PackageAdmin pa = (PackageAdmin)context.getService(pkgAdmin);
-        Bundle[] bundles = pa.getBundles(name, null);        
+        Bundle[] bundles = pa.getBundles(name, null);
         context.ungetService(pkgAdmin);
-        if (bundles == null) {
-        	System.out.println("sssssssssss");
-        }
         return bundles == null ? null : bundles[0];
     }
 
