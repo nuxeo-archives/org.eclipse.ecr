@@ -33,6 +33,7 @@ you're able to load ECR in eclipse.
 
 To configure your Eclipse you need to create a target platform that will be used when developing ECR plugins.
 To create the ECR target platform:
+
 * Open Eclipse Preferences.
 * Go to `Install/Update > Available Software Sites`. Click on Add ...
 * Put a name like `Local ECR` and click on `Local..` button
