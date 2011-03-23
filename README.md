@@ -90,6 +90,22 @@ Your ECR server is started and listen at port 8080.
 
 We will provide soon launch support for windows too. Until then you can write a command file that do the same as the run.sh script.
 
+## Accessing ECR through HTTP
+
+You have 2 options in accessing a remote ECR server:
+
+1. Use the automation REST API - available at http://localhost:8080/ecr/automation
+2. Use the CMIS API - available at http://localhost:8080/ecr/cmis
+
+Of course these URLs are designed for client applications and not for human access.
+If you want to expose the repository content using a Web User Interface you can create your own plugins. (we may also provide this in a future).
+
+*Note** that any access to ECR through HTTP requires authentication. The default administrator account is:
+Username: Administrator
+Password: Administrator
+
+You can find more information about customizing and creating ECR plugins [here](http://bstefanescu.github.com/ecr)
+
 Enjoy!
 
 
