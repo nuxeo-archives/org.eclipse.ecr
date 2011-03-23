@@ -43,7 +43,7 @@ To create the ECR target platform:
 * Go to `Install/Update > Available Software Sites`. Click on Add ...
 * Put a name like `Local ECR` and click on `Local..` button
 * Choose the repository you builded in `build/repository/target/repository`
-* Then go to `Plug-in Development` preference page.
+* Then go to `Plug-in Development > Target Platform` preference page.
 * Click on `Add ...` to define your new target platform.
 * Select `Nothing: Start with an empty ...` then put a name like `Local ECR` in the text box at the top.
 * Click on `Add ...` button and then select `Software Site` and choose the local repository site you created before.
