@@ -69,7 +69,7 @@ By default ECR will create a ~/.nxserver-osgi directory as its working directory
 Also, the Jetty HTTP server will listen at port 8080. You can change these properties
 by defining some system properties in the VM args of your launch configuration:
 
-* `nuxeo.home` - to control; the working directory location
+* `nuxeo.home` - to control the working directory location
 * `org.eclipse.equinox.http.jetty.http.port` - to control the jetty port.
 
 You can also use any property defined by Jetty bundle to configure the HTTP server.
