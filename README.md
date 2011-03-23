@@ -15,25 +15,83 @@ Management applications, Digital Asset Management applications, Case
 or Record Management applications, Web Content Management
 applications, or simply business-specific applications.
 
+You can read more about on http://www.eclipse.org/proposals/rt.ecr/
+
 ## How to build and run
 
-This project is build using maven tycho. The only requirement is to use the 
-3.0.3 version of maven. For building the p2 repository you just have to invoke
-the build using the following command line:
+This project is build using maven tycho. The only requirement is to use the
+3.0.3 version of maven. For building the p2 repository you have to
+invoke the following command line:
 
     $ mvn -f build/pom.xml clean install
 
-The repository built is located in `repository/target/repository`. At this stage,
-you're able to load ECR in eclipse. Start by configuring your target platform, 
-adding the directory as an update locations and selecting the Eclipse ECR category.
+If you need to use both maven 2 and maven 3 on the same machine you should consider using
 
-At this time, you're ready to work with Eclipse ECR. You can first have a try with
-the server by configuring a new launch configuration. You should select at least the
-following bundles:
+    $ mvn -f build/pom.xml -Dmaven.repo.local=/path/to/m3/repository clean install
 
-* `org.eclipse.ecr`...
+to use another local repository for maven 3. Or you may want to make an alias and use different maven settings.xml files.
 
-Enjoy. Your feedback is welcome ...
+The repository built is located in `build/repository/target/repository`. At this stage,
+you're able to load ECR in eclipse.
+
+## Configuring Eclipse IDE
+
+To configure your Eclipse you need to create a target platform that will be used when developing ECR plugins.
+To create the ECR target platform:
+
+* Open Eclipse Preferences.
+* Go to `Install/Update > Available Software Sites`. Click on Add ...
+* Put a name like `Local ECR` and click on `Local..` button
+* Choose the repository you builded in `build/repository/target/repository`
+* Then go to `Plug-in Development > Target Platform` preference page.
+* Click on `Add ...` to define your new target platform.
+* Select `Nothing: Start with an empty ...` then put a name like `Local ECR` in the text box at the top.
+* Click on `Add ...` button and then select `Software Site` and choose the local repository site you created before.
+* Here you may want to select both categories: ECR and ECR SDK. The SDK categroty is useful only if you need ECR sources. If no catergies are listed make sure you checked the `Group by Category` option.
+* Before pressing `Finish` make sure you *UNCHECK* `Include requires software`!
+* Press Finsih, Activate your new Target Platform and Apply you changes.
+
+Now you can start working with ECR, and create your first ECR plugin.
+
+## Launching ECR inside Eclipse
+
+After activating the ECR target platform you can launch the ECR product directly in your Eclipse.
+For this you should create a new Run Configuration as follow:
+
+* Open `Run > Run Configurations ...`
+* Create a new OSGi Framework run configuration.
+* Put a name let say `ECR`.
+* Set `Default Auto-Start` to *false*.
+* Select the `org.eclipse.ecr.application` bundle from the list and set its autostart flag to *true*.
+
+You are done. Launch your server now.
+By default ECR will create a ~/.nxserver-osgi directory as its working directory.
+Also, the Jetty HTTP server will listen at port 8080. You can change these properties
+by defining some system properties in the VM args of your launch configuration:
+
+* `nuxeo.home` - to control the working directory location
+* `org.eclipse.equinox.http.jetty.http.port` - to control the jetty port.
+
+You can also use any property defined by Jetty bundle to configure the HTTP server.
+
+## Launching ECR from command line
+
+To launch ECR from command line you need to perform an additional build task.
+After building the repository go into `build/product` folder and execute:
+
+    $ ./build.sh
+
+The repository generated before will be updated with a `run.sh` shell script and a configuration folder required to start the ECR product.
+So go into `build/repository/target/repository` and execute:
+
+  $ ./run.sh
+
+Your ECR server is started and listen at port 8080.
+
+We will provide soon launch support for windows too. Until then you can write a command file that do the same as the run.sh script.
+
+Enjoy!
+
 
 ## About Nuxeo
 
