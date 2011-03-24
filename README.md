@@ -112,7 +112,7 @@ If you want to expose the repository content using a Web User Interface, you can
 - Username: Administrator
 - Password: Administrator
 
-You can find more information about customizing and creating ECR plugins [here](http://bstefanescu.github.com/ecr)
+You can find more information about developing with ECR in the [Wiki](wiki) section
 
 Enjoy!
 
