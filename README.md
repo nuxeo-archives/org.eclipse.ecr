@@ -100,13 +100,16 @@ We will provide soon launch support for windows too. Until then you can write a 
 ## Installing ECR without checking out the sources
 
 First download the [installer](http://osgi.nuxeo.org/downloads/ecr-installer.jar).
+
 Then run from the console 
 
-`java -jar ecr-installer.jar ECR_INSTALL_DIR`
+    java -jar ecr-installer.jar ECR_INSTALL_DIR
 
-where ECR_INSTALL_DIR is the directory where you want to install ECR (it will be created if not exists).
-You may have to wait while the the installer will download ~27MB of data. When done got to the install directory and launch the `run.sh` script.
-Windows script support is not yet available. If you ar eon windows you can create a similar windows run.cmd script ... to start the application.
+where `ECR_INSTALL_DIR` is the directory where you want to install ECR (it will be created if not exists).
+
+You may have to wait while the the installer will download ~27MB of data. When done, go to the install directory and launch the `run.sh` script.
+
+Windows script support is not yet available. If you are on windows you can create a similar windows run.cmd script ... to start the application.
 
 ## Accessing ECR through HTTP
 
