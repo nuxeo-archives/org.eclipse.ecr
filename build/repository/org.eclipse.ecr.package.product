@@ -47,9 +47,6 @@
       <plugin id="org.eclipse.jetty.osgi.boot" autoStart="true" startLevel="3" />
       <plugin id="org.eclipse.jetty.osgi.httpservice" autoStart="true" startLevel="4" />
 
-      <plugin id="org.eclipse.ecr.application" autoStart="true" startLevel="4" />
-      <plugin id="org.eclipse.ecr.runtime" autoStart="true" startLevel="4" />
-
    </configurations>
 
 </product>

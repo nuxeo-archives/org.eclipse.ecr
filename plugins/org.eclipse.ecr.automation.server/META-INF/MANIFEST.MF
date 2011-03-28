@@ -4,7 +4,9 @@ Bundle-Version: 0.5.4.qualifier
 Bundle-Name: ECR Automation Server
 Bundle-SymbolicName: org.eclipse.ecr.automation.server;singleton:=true
 Bundle-Vendor: Nuxeo
-Export-Package: org.eclipse.ecr.automation.server
+Export-Package: org.eclipse.ecr.automation.server,
+ org.eclipse.ecr.automation.server.jaxrs,
+ org.eclipse.ecr.automation.server.jaxrs.io
 Bundle-ActivationPolicy: lazy
 Nuxeo-WebModule: org.eclipse.ecr.automation.server.jaxrs.AutomationModule
 Nuxeo-Component: OSGI-INF/AutomationServer.xml, OSGI-INF/auth-contrib.xml
