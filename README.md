@@ -97,6 +97,20 @@ Your ECR server is started and listen at port 8080.
 
 We will provide soon launch support for windows too. Until then you can write a command file that do the same as the `run.sh` script.
 
+## Installing ECR without checking out the sources
+
+First download the [installer](http://osgi.nuxeo.org/downloads/ecr-installer.jar).
+
+Then run from the console 
+
+    java -jar ecr-installer.jar ECR_INSTALL_DIR
+
+where `ECR_INSTALL_DIR` is the directory where you want to install ECR (it will be created if not exists).
+
+You may have to wait while the the installer will download ~27MB of data. When done, go to the install directory and launch the `run.sh` script.
+
+Windows script support is not yet available. If you are on windows you can create a similar windows run.cmd script ... to start the application.
+
 ## Accessing ECR through HTTP
 
 You have 2 options in accessing a remote ECR server:
