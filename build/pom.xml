@@ -66,7 +66,9 @@
   </scm>
 
   <properties>
-    <tycho-version>0.10.0</tycho-version>
+    <tycho-version>0.11.0</tycho-version>
+    <artifact-build-version>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.v${maven.build.timestamp}</artifact-build-version>
+
     <orbit-version>current</orbit-version>
     <eclipse-version>current</eclipse-version>
     <nuxeo-version>current</nuxeo-version>
@@ -74,13 +76,14 @@
     <equinox-site>${nuxeo-osgi-url}/mirrors/eclipse/updates/${eclipse-version}</equinox-site>
     <orbit-site>${nuxeo-osgi-url}/mirrors/eclipse/orbit/${orbit-version}</orbit-site>
     <libs-site>${nuxeo-osgi-url}/libs/${nuxeo-version}/repository</libs-site>
+    <jetty-bundles-site>http://download.eclipse.org/jetty/updates/jetty-bundles-7.x/7.3.1.v20110307</jetty-bundles-site>
   </properties>
 
   <profiles>
     <profile>
       <id>tycho-offline</id>
       <properties>
-	<nuxeo-osgi-url>http://localhost/p2</nuxeo-osgi-url>
+        <nuxeo-osgi-url>http://localhost/p2</nuxeo-osgi-url>
       </properties>
     </profile>
   </profiles>
@@ -91,6 +94,11 @@
       <layout>p2</layout>
       <url>${equinox-site}</url>
     </repository>
+   <repository>
+     <id>jetty-bundles-site</id>
+     <layout>p2</layout>
+     <url>${jetty-bundles-site}</url>
+   </repository>
     <repository>
       <id>libs-site</id>
       <layout>p2</layout>
@@ -119,21 +127,37 @@
     </repository>
   </repositories>
 
+  <pluginRepositories>
+     <pluginRepository>
+       <id>sonatype-staging</id>
+       <url>https://repository.sonatype.org/content/repositories/sonatype_org-002/</url>
+     </pluginRepository>
+<!--     <pluginRepository>
+      <id>tycho</id>
+      <url>https://repository.sonatype.org/content/repositories/snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </pluginRepository> -->
+  </pluginRepositories>
+
   <build>
     <plugins>
       <plugin>
-	<groupId>org.sonatype.tycho</groupId>
-	<artifactId>tycho-maven-plugin</artifactId>
-	<version>${tycho-version}</version>
-	<extensions>true</extensions>
-      </plugin>
-      <plugin>
-	<groupId>org.sonatype.tycho</groupId>
-	<artifactId>target-platform-configuration</artifactId>
-	<version>${tycho-version}</version>
-	<configuration>
-	  <resolver>p2</resolver>
-<!--
+      <groupId>org.sonatype.tycho</groupId>
+      <artifactId>tycho-maven-plugin</artifactId>
+      <version>${tycho-version}</version>
+      <extensions>true</extensions>
+        </plugin>
+        <plugin>
+      <groupId>org.sonatype.tycho</groupId>
+      <artifactId>target-platform-configuration</artifactId>
+      <version>${tycho-version}</version>
+      <configuration>
+        <resolver>p2</resolver>
           <environments>
             <environment>
               <os>linux</os>
@@ -155,7 +179,7 @@
               <ws>win32</ws>
               <arch>x86</arch>
             </environment>
-            <environment>
+ <!--           <environment>
               <os>macosx</os>
               <ws>carbon</ws>
               <arch>x86</arch>
@@ -169,45 +193,67 @@
               <os>macosx</os>
               <ws>cocoa</ws>
               <arch>x86_64</arch>
-            </environment>
-	  </environments>
- -->
-	</configuration>
+            </environment> -->
+          </environments>
+        </configuration>
       </plugin>
       <plugin>
-	<groupId>org.sonatype.tycho</groupId>
-	<artifactId>maven-osgi-packaging-plugin</artifactId>
-	<version>${tycho-version}</version>
-	<configuration>
-	  <archiveSite>true</archiveSite>
-	</configuration>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>maven-osgi-packaging-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <archiveSite>true</archiveSite>
+        </configuration>
       </plugin>
       <plugin>
-	<groupId>org.sonatype.tycho</groupId>
-	<artifactId>maven-osgi-source-plugin</artifactId>
-	<version>${tycho-version}</version>
-	<executions>
-	  <execution>
-	    <id>plugin-source</id>
-	    <goals>
-	      <goal>plugin-source</goal>
-	    </goals>
-	  </execution>
-	</executions>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>maven-osgi-source-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <executions>
+          <execution>
+            <id>plugin-source</id>
+            <goals>
+              <goal>plugin-source</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
-	<inherited>true</inherited>
-	<groupId>org.sonatype.tycho</groupId>
-	<artifactId>tycho-p2-publisher-plugin</artifactId>
-	<version>${tycho-version}</version>
-	<configuration>
-	  <publishArtifacts>true</publishArtifacts>
-	</configuration>
+        <inherited>true</inherited>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>tycho-p2-publisher-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <publishArtifacts>true</publishArtifacts>
+        </configuration>
       </plugin>
       <plugin>
-	<groupId>org.sonatype.tycho</groupId>
-	<artifactId>tycho-p2-director-plugin</artifactId>
-	<version>${tycho-version}</version>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>tycho-p2-director-plugin</artifactId>
+        <version>${tycho-version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.5</version>
+        <executions>
+          <execution>
+            <id>set-osgi-version</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>parse-version</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>${tycho-groupid}</groupId>
+        <artifactId>maven-osgi-packaging-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <format>'v'yyyyMMdd-HHmm</format>
+        </configuration>
       </plugin>
     </plugins>
   </build>
