@@ -29,8 +29,8 @@ import javax.naming.NamingException;
 import org.eclipse.ecr.runtime.api.Framework;
 import org.eclipse.ecr.runtime.jtajca.NuxeoContainer;
 import org.eclipse.ecr.runtime.osgi.OSGiRuntimeService;
-import org.eclipse.equinox.http.jetty.JettyConfigurator;
-import org.eclipse.equinox.http.jetty.JettyConstants;
+//import org.eclipse.equinox.http.jetty.JettyConfigurator;
+//import org.eclipse.equinox.http.jetty.JettyConstants;
 import org.nuxeo.common.Environment;
 import org.nuxeo.common.jndi.NamingContextFactory;
 import org.nuxeo.common.utils.FileUtils;
@@ -39,11 +39,11 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.LoggerFactory;
 
-import ch.qos.logback.classic.LoggerContext;
-import ch.qos.logback.classic.joran.JoranConfigurator;
-import ch.qos.logback.core.joran.spi.JoranException;
+//import ch.qos.logback.classic.LoggerContext;
+//import ch.qos.logback.classic.joran.JoranConfigurator;
+//import ch.qos.logback.core.joran.spi.JoranException;
 
 /**
  * This bundle should be put in a startlevel superior than the one used to start nuxeo bundles.
@@ -63,14 +63,14 @@ public class Activator implements BundleActivator {
         this.context = context;
         initSystemProperties();
         initEnvironment();
-        configureLogging();
+//        configureLogging();
         configurators = loadConfigurators();
         beforeStart();
         removeH2Lock();
         startJNDI();
         startRuntime();
         startContainer();
-        startJetty();
+//        startJetty();
         ((OSGiRuntimeService)Framework.getRuntime()).fireApplicationStarted();
         afterStart();
     }
@@ -80,7 +80,7 @@ public class Activator implements BundleActivator {
         this.context = null;
         afterStop();
         configurators = null;
-        JettyConfigurator.stopServer("nuxeo");
+//        JettyConfigurator.stopServer("nuxeo");
     }
 
     @SuppressWarnings("unchecked")
@@ -137,7 +137,9 @@ public class Activator implements BundleActivator {
         NuxeoContainer.install();
     }
 
-    protected void configureLogging() throws BundleException {
+//using the system property -Dlogback.configurationFile
+//at jetty we used to also run this same code. our experience was that is was not worth it.
+/*    protected void configureLogging() throws BundleException {
         if (System.getProperty("logback.configurationFile") != null) {
             return;
         }
@@ -155,19 +157,19 @@ public class Activator implements BundleActivator {
         } catch (JoranException e) {
             throw new BundleException("Cannot configure logging from " + config, e);
         }
-    }
+    }*/
 
-    // TODO this kind of task should be done by a specific Configurator
-    // deployed by a fragment
-    protected void startJetty()
-            throws BundleException {
-    	try {
-        Dictionary<String, Object> settings = createDefaultSettings(context);        		
-        JettyConfigurator.startServer("nuxeo", settings);
-    	} catch (Exception e) {
-    		throw new BundleException("Failed to start jetty server", e);
-    	}
-    }
+//    // TODO this kind of task should be done by a specific Configurator
+//    // deployed by a fragment
+//    protected void startJetty()
+//            throws BundleException {
+//    	try {
+//        Dictionary<String, Object> settings = createDefaultSettings(context);        		
+//        JettyConfigurator.startServer("nuxeo", settings);
+//    	} catch (Exception e) {
+//    		throw new BundleException("Failed to start jetty server", e);
+//    	}
+//    }
 
     @SuppressWarnings("unchecked")
     protected void initSystemProperties() throws IOException {
@@ -310,7 +312,7 @@ public class Activator implements BundleActivator {
     }
     
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+/*	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private Dictionary<String, Object> createDefaultSettings(BundleContext context) {
 		final String PROPERTY_PREFIX = "org.eclipse.equinox.http.jetty."; //$NON-NLS-1$
 		Dictionary defaultSettings = new Hashtable<String, Object>();
@@ -416,6 +418,6 @@ public class Activator implements BundleActivator {
 			defaultSettings.put(JettyConstants.OTHER_INFO, otherInfo);
 
 		return defaultSettings;
-	}
+	}*/
 
 }
