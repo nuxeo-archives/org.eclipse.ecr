@@ -21,11 +21,16 @@
       <import feature="org.eclipse.ecr.native" version="0.5.4.qualifier"/>
    </requires>
 
+ <!-- somehow if we don't specify 1.3.0, we get into
+ some kind of conflict that p2 does not resolve.
+ it picks up the commons-codec-1.4 from nuxeo's "libs"
+ then conflicts with the org.apache.commons.codec-1.3.0 provided by orbit
+ and imposed by the org.eclipse.equinox.server.core feature.-->
    <plugin
          id="org.apache.commons.codec"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.3.0"
          unpack="false"/>
 
    <plugin

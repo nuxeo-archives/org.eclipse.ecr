@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.ecr.rtpweb"
+      label="%featureName"
+      version="0.5.4.qualifier"
+      provider-name="%providerName">
+
+   <copyright url="http://www.example.com/copyright">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes
+         id="org.eclipse.jetty.core"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.jetty.all"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.jetty.all.dependencies"
+         version="0.0.0"/>
+
+   <includes
+         id="javax.servlet.jsp.glassfish"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.jetty.slf4jlogback"
+         version="0.0.0"/>
+
+</feature>

@@ -13,5 +13,51 @@
     <version>0.5.4-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>${tycho-groupid}</groupId>
+        <artifactId>tycho-p2-publisher-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <publishArtifacts>true</publishArtifacts>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>tycho-p2-director-plugin</artifactId>
+        <groupId>org.sonatype.tycho</groupId>
+        <version>${tycho-version}</version>
+        <executions>
+          <execution>
+            <id>materialize-products</id>
+            <!-- Choose a different phase so that we
+            can run the sign and pack goals that take place after the packaging -->
+            <phase>integration-test</phase>
+            <goals>
+              <goal>materialize-products</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>archive-products</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>archive-products</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <products>
+            <product>
+              <id>org.eclipse.ecr.package</id>
+              <!-- we publish only one product so we don't need an attachId -->
+              <!--attachId>org.eclipse.ecr.package</attachId-->
+              <rootFolder>ecr-incubation-${artifact-build-version}</rootFolder>
+            </product>
+          </products>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

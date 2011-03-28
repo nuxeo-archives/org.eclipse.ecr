@@ -63,7 +63,8 @@
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
+ <!-- use jetty-7 for the web support -->
+   <!--plugin
          id="org.eclipse.equinox.http.jetty"
          download-size="0"
          install-size="0"
@@ -89,6 +90,6 @@
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+         unpack="false"/-->
 
 </feature>

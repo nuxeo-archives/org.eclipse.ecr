@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<component name="org.eclipse.ecr.platform.login.LoginConfig" version="1.0" bundle="org.eclipse.ecr.auth">
+  <documentation>
+  Login modules used on default ECR configuration
+  @author Bogdan Stefanescu (bs@nuxeo.com)
+  </documentation>
+
+  <extension target="org.eclipse.ecr.runtime.LoginComponent" point="domains">
+
+    <domain name="nuxeo-system-login">
+        <login-module code="org.eclipse.ecr.runtime.api.login.SystemLoginModule" flag="required"/>
+      <login-module code="org.eclipse.ecr.core.api.local.ClientLoginModule" flag="required">
+        <option name="password-stacking">true</option>
+        <option name="multi-threaded">true</option>
+      </login-module>
+    </domain>
+
+    <domain name="nuxeo-client-login">
+      <login-module code="org.eclipse.ecr.auth.SimpleLoginModule"
+          flag="required">
+      </login-module>
+      <login-module code="org.eclipse.ecr.core.api.local.ClientLoginModule" flag="required">
+        <option name="password-stacking">true</option>
+        <option name="restore-login-identity">true</option>
+        <option name="multi-threaded">true</option>
+      </login-module>
+      </domain>
+
+  </extension>
+
+</component>
+

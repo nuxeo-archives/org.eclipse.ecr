@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true">
+    <appender name="CONSOLE"
+            class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--pattern>%-4relative [%thread] %-5level %class - %msg%n</pattern-->
+            <pattern>%d %-5p [%logger{25}] [%X{user} %t] %m%n</pattern>
+        </encoder>
+    </appender>
+
+        <!--Daily rolling file appender -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${nuxeo.home}/log/nxserver.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>log/%d{yyyy_MM_dd}.%i.log</FileNamePattern>
+            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+              <MaxFileSize>10MB</MaxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+
+        <encoder>
+            <!--pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern-->
+            <pattern>%d %-5p [%logger{25}] [%X{user} %t] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <root>
+<!-- Set root logger level to ERROR and its only appender to FILE (ie to the files only). -->
+        <level value="INFO" />
+        <appender-ref ref="CONSOLE" />
+        <!--appender-ref ref="FILE" /-->
+    </root>
+    
+   <logger name="org.nuxeo" level="INFO"/>
+    
+</configuration>

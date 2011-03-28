@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<component name="org.eclipse.ecr.platform.webConfig" version="1.0" bundle="org.eclipse.ecr.web.jaxrs">
+  <documentation>
+  Web configuration.
+  @author Bogdan Stefanescu (bs@nuxeo.com)
+  </documentation>
+
+  <extension target="org.eclipse.ecr.web.jaxrs.servlet.config.ServletRegistryComponent" point="servlets">
+    <servlet name="jaxrs" path="/ecr" class="org.eclipse.ecr.web.jaxrs.servlet.JerseyServlet">
+      <filters pathInfo="/**/skin/*">
+        <!-- no filters defined for paths matching this pattern -->
+      </filters>
+      <filters>
+        <filter class="org.eclipse.ecr.web.jaxrs.login.AuthenticationFilter" />
+        <filter class="org.eclipse.ecr.web.jaxrs.tx.TransactionFilter" />
+        <filter class="org.eclipse.ecr.web.jaxrs.session.SessionCleanupFilter" />
+        <filter class="org.eclipse.ecr.web.jaxrs.context.RequestContextFilter" />
+      </filters>
+    </servlet>
+  </extension>
+
+</component>
+

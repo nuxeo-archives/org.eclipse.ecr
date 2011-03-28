@@ -41,8 +41,8 @@
     <module>../config/org.eclipse.ecr.core.h2.connector</module>
     <module>../config/org.eclipse.ecr.core.h2.extensions</module>
 
-    <module>../features/org.eclipse.ecr.equinox</module>
-    <module>../features/org.eclipse.ecr.equinox.sdk</module>
+    <!--module>../features/org.eclipse.ecr.equinox</module>
+    <module>../features/org.eclipse.ecr.equinox.sdk</module-->
 
     <module>../features/org.eclipse.ecr.native</module>
     <module>../features/org.eclipse.ecr.native.sdk</module>
@@ -56,6 +56,7 @@
     <module>../features/org.eclipse.ecr.opencmis</module>
     <module>../features/org.eclipse.ecr.opencmis.sdk</module>
 
+    <module>../features/org.eclipse.ecr.rtpweb</module>
     <module>repository</module>
   </modules>
 
@@ -76,7 +77,8 @@
     <equinox-site>${nuxeo-osgi-url}/mirrors/eclipse/updates/${eclipse-version}</equinox-site>
     <orbit-site>${nuxeo-osgi-url}/mirrors/eclipse/orbit/${orbit-version}</orbit-site>
     <libs-site>${nuxeo-osgi-url}/libs/${nuxeo-version}/repository</libs-site>
-    <jetty-bundles-site>http://download.eclipse.org/jetty/updates/jetty-bundles-7.x/7.3.1.v20110307</jetty-bundles-site>
+    <!--jetty-site>http://download.eclipse.org/jetty/updates/jetty-bundles-7.x/7.3.1.v20110307</jetty-site-->
+    <jetty-site>http://download.eclipse.org/jetty/updates/jetty-rt-3.7milestones/S-3.7.M6-201103121818</jetty-site>
   </properties>
 
   <profiles>
@@ -95,9 +97,9 @@
       <url>${equinox-site}</url>
     </repository>
    <repository>
-     <id>jetty-bundles-site</id>
+     <id>jetty-site</id>
      <layout>p2</layout>
-     <url>${jetty-bundles-site}</url>
+     <url>${jetty-site}</url>
    </repository>
     <repository>
       <id>libs-site</id>

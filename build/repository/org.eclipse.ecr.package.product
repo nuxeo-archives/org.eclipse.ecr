@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="org.eclipse.ecr.package (Incubation)" uid="org.eclipse.ecr.package" id="org.eclipse.ecr.package" version="0.5.4.qualifier" useFeatures="true" includeLaunchers="false">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-console</programArgs>
+      <vmArgs>-Declipse.ignoreApp=true
+-Dosgi.noShutdown=true
+-Dnuxeo.home=ecr
+-Djetty.home=.
+-Dlogback.configurationFile=etc/logback.xml</vmArgs>
+      <vmArgsMac>-Djetty.home=../../.. -Dlogback.configurationFile=../../../etc/logback.xml -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+   <!-- don't call it ecr otherwise it will conflict with the root folder 'ecr' that contains the config files. -->
+   <launcher name="ecrlaunch">
+      <macosx/>
+      <solaris/>
+      <win>
+      </win>
+   </launcher>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.equinox.server.core"/>
+      <feature id="org.eclipse.equinox.server.p2"/>
+      <feature id="org.eclipse.ecr.h2"/>
+      <feature id="org.eclipse.ecr.rtpweb"/>
+      <feature id="org.eclipse.ecr.native"/>
+      <feature id="org.eclipse.ecr.opencmis"/>
+      <feature id="org.eclipse.ecr.web"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.frameworkadmin.equinox" autoStart="true" startLevel="3" />
+      <plugin id="org.eclipse.equinox.p2.console" autoStart="true" startLevel="3" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator" autoStart="true" startLevel="3" />
+      <plugin id="org.eclipse.jetty.osgi.boot" autoStart="true" startLevel="3" />
+      <plugin id="org.eclipse.jetty.osgi.httpservice" autoStart="true" startLevel="4" />
+
+      <plugin id="org.eclipse.ecr.runtime" autoStart="true" startLevel="4" />
+
+   </configurations>
+
+</product>

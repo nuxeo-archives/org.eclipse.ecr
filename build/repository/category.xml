@@ -8,12 +8,12 @@
       <category name="org.eclipse.ecr.sdk"/>
    </feature>
 
-   <feature url="features/org.eclipse.ecr.equinox_0.5.4.qualifier.jar" id="org.eclipse.ecr.equinox" version="0.5.4.qualifier">
+   <!--feature url="features/org.eclipse.ecr.equinox_0.5.4.qualifier.jar" id="org.eclipse.ecr.equinox" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr"/>
    </feature>
    <feature url="features/org.eclipse.ecr.equinox.sdk_0.5.4.qualifier.jar" id="org.eclipse.ecr.equinox.sdk" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr.sdk"/>
-   </feature>
+   </feature-->
 
    <feature url="features/org.eclipse.ecr.h2_0.5.4.qualifier.jar" id="org.eclipse.ecr.h2" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr"/>
