@@ -46,6 +46,7 @@
 
     <module>../features/org.eclipse.ecr.native</module>
     <module>../features/org.eclipse.ecr.native.sdk</module>
+    <module>../features/org.eclipse.ecr.native.dependencies</module>
 
     <module>../features/org.eclipse.ecr.h2</module>
     <module>../features/org.eclipse.ecr.h2.sdk</module>

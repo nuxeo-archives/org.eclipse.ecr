@@ -7,6 +7,9 @@
    <feature url="features/org.eclipse.ecr.native.sdk_0.5.4.qualifier.jar" id="org.eclipse.ecr.native.sdk" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr.sdk"/>
    </feature>
+   <feature url="features/org.eclipse.ecr.native.dependencies_0.5.4.qualifier.jar" id="org.eclipse.ecr.native.dependencies" version="0.5.4.qualifier">
+      <category name="org.eclipse.ecr"/>
+   </feature>
 
    <!--feature url="features/org.eclipse.ecr.equinox_0.5.4.qualifier.jar" id="org.eclipse.ecr.equinox" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr"/>
