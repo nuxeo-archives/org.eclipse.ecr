@@ -69,7 +69,7 @@
 
   <properties>
     <!-- support the release script with the version number instead of the snapshot -->
-    <!--forceContextQualifier>001</forceContextQualifier-->
+    <forceContextQualifier>002</forceContextQualifier>
 
     <tycho-version>0.11.0</tycho-version>
     <artifact-build-version>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.v${maven.build.timestamp}</artifact-build-version>
