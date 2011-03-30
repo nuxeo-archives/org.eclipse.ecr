@@ -63,16 +63,16 @@
          version="0.0.0"
          unpack="false"/>
 
- <!-- use jetty-7 for the web support -->
-   <!--plugin
-         id="org.eclipse.equinox.http.jetty"
+    <plugin
+         id="org.eclipse.equinox.http.servlet"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
-         id="org.eclipse.equinox.http.servlet"
+ <!-- use jetty-7 for the web support -->
+   <!--plugin
+         id="org.eclipse.equinox.http.jetty"
          download-size="0"
          install-size="0"
          version="0.0.0"
