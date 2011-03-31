@@ -88,12 +88,8 @@ After building the repository go into `build/product` folder and execute:
 
     $ ./build.sh
 
-The repository generated before will be updated with a `run.sh` shell script and a configuration folder required to start the ECR product.
-So go into `build/repository/target/repository` and execute:
-
-    $ ./run.sh
-
-Your ECR server is started and listen at port 8080.
+The repository generated before will be used to generate a product with a `run.sh` shell script and a configuration folder required to start the ECR application. The product will be generated in `build/product/target/ecr-default.zip`. To test it, unzip the product and use the `run.sh` script to launch it.  
+The ECR server will starts  and listen at port 8080.
 
 We will provide soon launch support for windows too. Until then you can write a command file that do the same as the `run.sh` script.
 
