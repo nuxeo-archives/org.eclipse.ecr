@@ -10,7 +10,7 @@
     <artifact name="org.eclipse.ecr.runtime" />
     <artifact name="org.eclipse.ecr.runtime.jtajca" />
 
-    <artifact name="org.eclipse.ecr.application" />
+    <artifact name="org.eclipse.ecr.application" autostart="true"/>
     <artifact name="org.eclipse.ecr.configuration" />
 
     <artifact name="org.eclipse.ecr.core.api" />

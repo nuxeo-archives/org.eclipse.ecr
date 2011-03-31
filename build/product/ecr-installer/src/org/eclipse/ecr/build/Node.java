@@ -28,6 +28,10 @@ public class Node extends Artifact {
 
     protected Set<Artifact> requires;
 
+    protected boolean autostart;
+
+    protected int startLevel = -1; // the default start level
+
     public Node(String id) {
         this (id, null);
     }
@@ -65,6 +69,22 @@ public class Node extends Artifact {
 
     public boolean isExporting(Artifact artifact) {
         return exports.contains(artifact);
+    }
+
+    public boolean isAutostart() {
+        return autostart;
+    }
+
+    public void setAutostart(boolean autostart) {
+        this.autostart = autostart;
+    }
+
+    public int getStartLevel() {
+        return startLevel;
+    }
+
+    public void setStartLevel(int startLevel) {
+        this.startLevel = startLevel;
     }
 
     public String getFileName() {
