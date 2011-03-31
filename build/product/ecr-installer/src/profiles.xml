@@ -1,0 +1,64 @@
+<profiles>
+
+  <profile name="core">
+    <artifact name="org.eclipse.osgi" />
+    <artifact name="org.eclipse.osgi.services" />
+    <artifact name="org.eclipse.equinox.launcher" />
+    <artifact name="org.eclipse.equinox.http.servlet" />
+    <artifact name="ch.qos.logback.slf4j" />
+
+    <artifact name="org.eclipse.ecr.runtime" />
+    <artifact name="org.eclipse.ecr.runtime.jtajca" />
+
+    <artifact name="org.eclipse.ecr.application" />
+    <artifact name="org.eclipse.ecr.configuration" />
+
+    <artifact name="org.eclipse.ecr.core.api" />
+    <artifact name="org.eclipse.ecr.core.schema" />
+    <artifact name="org.eclipse.ecr.core.query" />
+    <artifact name="org.eclipse.ecr.core" />
+    <artifact name="org.eclipse.ecr.core.event" />
+    <artifact name="org.eclipse.ecr.core.io" />
+    <artifact name="org.eclipse.ecr.core.storage.sql" />
+    <artifact name="org.eclipse.ecr.core.storage.sql.extensions" />
+    <artifact name="org.eclipse.ecr.core.storage.sql.ra" />
+    <artifact name="org.eclipse.ecr.convert.api" />
+    <artifact name="org.eclipse.ecr.convert" />
+
+    <artifact name="org.eclipse.ecr.auth" />
+    <artifact name="org.eclipse.ecr.dublincore" />
+    <artifact name="org.eclipse.ecr.automation.core" />
+    <artifact name="org.eclipse.ecr.audit.api" />
+  </profile>
+
+  <profile name="web">
+    <require>core</require>
+    <artifact name="org.eclipse.equinox.http.jetty" />
+    <artifact name="org.mortbay.jetty.server" />
+    <artifact name="org.mortbay.jetty.util" />
+
+    <artifact name="org.eclipse.ecr.web.jaxrs" />
+    <artifact name="org.eclipse.ecr.web.rendering" />
+
+    <artifact name="org.eclipse.ecr.automation.server" />
+  </profile>
+
+  <profile name="cmis">
+    <require>web</require>
+    <artifact name="org.eclipse.ecr.opencmis.bindings" />
+    <artifact name="org.eclipse.ecr.opencmis.impl" />
+  </profile>
+
+  <profile name="h2">
+    <require>core</require>
+    <artifact name="org.h2" />
+    <artifact name="org.eclipse.ecr.core.h2.connector" />
+    <artifact name="org.eclipse.ecr.core.h2.extensions" />
+  </profile>
+
+  <profile name="default">
+    <require>cmis</require>
+    <require>h2</require>
+  </profile>
+
+</profiles>
