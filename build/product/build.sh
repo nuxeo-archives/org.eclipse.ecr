@@ -14,5 +14,5 @@ INSTALLER=ecr-installer/target/ecr-installer-*.jar
 
 rm -rf target
 mkdir target
-${JAVA} -jar ${INSTALLER} -r ../repository/target/repository -p ecr-installer/src/profiles.xml target/ecr-default.zip
+${JAVA} -jar ${INSTALLER} -r ../repository/target/repository target/ecr-default.zip
 

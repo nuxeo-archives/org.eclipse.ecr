@@ -31,16 +31,13 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         String repo = "http://osgi.nuxeo.org/p2/ecr/current/repository";
-        String profiles = "http://osgi.nuxeo.org/p2/ecr/profiles.xml";
         String profile = null;
         File installDir = null;
         String opt = null;
         for (int i=0; i<args.length; i++) {
             String arg = args[i];
             if (opt != null) {
-                if ("-p".equals(opt)) {
-                    profiles = arg;
-                } else if ("-r".equals(opt)) {
+                if ("-r".equals(opt)) {
                     repo = arg;
                 } else {
                     usage("Unknown option "+opt);
@@ -49,14 +46,10 @@ public class Main {
             } else if (arg.startsWith("-")) {
                 opt = arg;
             } else {
-                if (profile != null && installDir != null) {
+                if (installDir != null) {
                     usage("too much arguments");
                 }
-                if (installDir == null) {
-                    installDir = new File(arg);
-                } else {
-                    profile = arg;
-                }
+                installDir = new File(arg);
             }
         }
         if (installDir == null) {
@@ -72,7 +65,7 @@ public class Main {
             installDir = new File(installDir.getParentFile(), name.substring(0, name.length()-4));
         }
 
-        Installer installer = new Installer(installDir, repo, profiles);
+        Installer installer = new Installer(installDir, repo);
         installer.install(profile, zipIt);
     }
 
