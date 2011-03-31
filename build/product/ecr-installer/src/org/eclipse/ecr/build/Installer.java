@@ -39,7 +39,7 @@ public class Installer {
 
     protected ProfileManager profileMgr;
 
-    public Installer(File installDir, String repoUrl, String profilesUrl) throws Exception {
+    public Installer(File installDir, String repoUrl) throws Exception {
         this.installDir = installDir;
         try {
             this.repoUrl = new URL(repoUrl);
@@ -47,10 +47,13 @@ public class Installer {
             this.repoUrl = new File(repoUrl).toURI().toURL();
         }
         String url = this.repoUrl.toExternalForm();
+        String profilesUrl = url;
         if (url.endsWith("/")) {
-            url = url+"content.jar";
+            url = url + "content.jar";
+            profilesUrl = profilesUrl + "profiles.xml";
         } else {
-            url = url+"/content.jar";
+            url = url + "/content.jar";
+            profilesUrl = profilesUrl + "/profiles.xml";
         }
         graph = new GraphLoader().loadZip(new URL(url));
         profileMgr = new ProfileManager(profilesUrl);
