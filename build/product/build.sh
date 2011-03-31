@@ -1,14 +1,18 @@
 #!/bin/sh
 
+JAVA=java
+MVN=mvn
+
 WD=`pwd`
-cd ../repository/target/repository/
-TARGET=`pwd`
-cd "${WD}"
+cd ecr-installer
+if [ ! -f target/ecr-installer-*.jar ]; then
+  ${MVN} install
+fi
+cd ${WD}
 
-javac GenProduct.java
-java -cp . GenProduct "${TARGET}" 
+INSTALLER=ecr-installer/target/ecr-installer-*.jar
 
-rm GenProduct.class
-
-cp run.sh.template "${TARGET}/run.sh"
+rm -rf target
+mkdir target
+${JAVA} -jar ${INSTALLER} -r ../repository/target/repository -p ecr-installer/src/profiles.xml target/ecr-default.zip
 
