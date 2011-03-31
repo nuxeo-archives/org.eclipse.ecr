@@ -14,6 +14,8 @@ package org.eclipse.ecr.build;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.eclipse.ecr.build.Profile.Unit;
+
 /**
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  *
@@ -38,6 +40,16 @@ public class Resolver {
         if (node == null) {
             throw new ResolveException("Artifact was not found in graph: "+name);
         }
+        return resolve(node);
+    }
+
+    public boolean resolve(Unit unit) throws ResolveException {
+        Node node = graph.getNodeByName(unit.getName());
+        if (node == null) {
+            throw new ResolveException("Artifact was not found in graph: "+unit.getName());
+        }
+        node.setAutostart(unit.isAutostart());
+        node.setStartLevel(unit.getStartLevel());
         return resolve(node);
     }
 

@@ -23,6 +23,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.ecr.build.Profile.Unit;
+
 /**
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  *
@@ -63,9 +65,9 @@ public class Installer {
 
     public Set<Node> getResolvedNodes(String profile) throws Exception {
         Resolver resolver = graph.getResolver();
-        Set<String> artifacts = profileMgr.getArtifacts(profile);
-        for (String artifact : artifacts) {
-            resolver.resolve(artifact);
+        Set<Unit> artifacts = profileMgr.getInstallableUnits(profile);
+        for (Unit unit : artifacts) {
+            resolver.resolve(unit);
         }
         return resolver.getResolvedNodes();
     }
@@ -147,10 +149,18 @@ public class Installer {
             String name = node.getFileName();
             if (name.startsWith("org.eclipse.osgi_")) {
                 sysBundle = "file\\:plugins/"+name;
-            } else if (name.startsWith("org.eclipse.ecr.application")) {
-                bundles.append(",reference\\:file\\:").append(name).append("@start");
             } else {
                 bundles.append(",reference\\:file\\:").append(name);
+                int startLevel = node.getStartLevel();
+                if (startLevel > -1) {
+                    if (node.isAutostart()) {
+                        bundles.append("@").append(startLevel).append("\\:start");
+                    } else {
+                        bundles.append("@").append(startLevel);
+                    }
+                } else if (node.isAutostart()) {
+                    bundles.append("@start");
+                }
             }
         }
         if (sysBundle == null) {

@@ -24,6 +24,7 @@ import java.util.Set;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.eclipse.ecr.build.Profile.Unit;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -92,7 +93,14 @@ public class ProfileManager {
                     profile.addRequire(reqEl.getTextContent().trim());
                 } else if ("artifact".equals(node.getNodeName())) {
                     Element artifactEl = (Element)node;
-                    profile.addArtifact(artifactEl.getAttribute("name"));
+                    String name = artifactEl.getAttribute("name");
+                    boolean autostart = Boolean.parseBoolean(artifactEl.getAttribute("autostart"));
+                    String startLevel = artifactEl.getAttribute("startLevel");
+                    Unit unit = new Unit(name, autostart);
+                    if (startLevel != null && startLevel.length() > 0) {
+                        unit.setStartLevel(Integer.parseInt(startLevel));
+                    }
+                    profile.addInstallableUnit(unit);
                 }
             }
             node = node.getNextSibling();
@@ -107,16 +115,16 @@ public class ProfileManager {
         return profiles.get(name);
     }
 
-    public Set<String> getArtifacts(String expr) {
+    public Set<Unit> getInstallableUnits(String expr) {
         if (expr.indexOf(',') > -1) {
-            Set<String> artifacts = new HashSet<String>();
+            Set<Unit> artifacts = new HashSet<Unit>();
             String[] ar = expr.split(",");
             for (String key : ar) {
                 Profile profile = getProfile(key);
                 if (profile == null) {
                     throw new ResolveException("Profile could not be found: "+key);
                 }
-                artifacts.addAll(getArtifacts(profile));
+                artifacts.addAll(getInstallableUnits(profile));
             }
             return artifacts;
         } else {
@@ -124,19 +132,19 @@ public class ProfileManager {
             if (profile == null) {
                 throw new ResolveException("Profile could not be found: "+expr);
             }
-            return getArtifacts(profile);
+            return getInstallableUnits(profile);
         }
     }
 
-    public Set<String> getArtifacts(Profile profile) {
-        Set<String> artifacts = new HashSet<String>();
-        artifacts.addAll(profile.getArtifacts());
+    public Set<Unit> getInstallableUnits(Profile profile) {
+        Set<Unit> artifacts = new HashSet<Unit>();
+        artifacts.addAll(profile.getInstallableUnits());
         for (String req : profile.getRequires()) {
             Profile p = getProfile(req);
             if (p == null) {
                 throw new ResolveException("Profile could not be resolved: "+profile+", missing requirement "+req);
             }
-            artifacts.addAll(getArtifacts(p));
+            artifacts.addAll(getInstallableUnits(p));
         }
         return artifacts;
     }
