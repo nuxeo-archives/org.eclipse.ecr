@@ -4,7 +4,7 @@
 
   <groupId>org.eclipse.ecr.features</groupId>
   <artifactId>org.eclipse.ecr.base.sdk</artifactId>
-  <name>Eclipse ECR Native Java Services Feature SDK</name>
+  <name>Eclipse ECR Core SDK Feature</name>
   <packaging>eclipse-feature</packaging>
 
   <parent>

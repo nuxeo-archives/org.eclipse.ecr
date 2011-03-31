@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.ecr.native"
+      id="org.eclipse.ecr.core"
       label="%featureName"
       version="0.5.4.qualifier"
       provider-name="%providerName">

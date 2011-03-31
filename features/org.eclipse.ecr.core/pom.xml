@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.eclipse.ecr.features</groupId>
-  <artifactId>org.eclipse.ecr.native</artifactId>
-  <name>Eclipse ECR Native Java Services Feature</name>
+  <artifactId>org.eclipse.ecr.core</artifactId>
+  <name>Eclipse ECR Core Feature</name>
   <packaging>eclipse-feature</packaging>
 
   <parent>
