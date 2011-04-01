@@ -20,7 +20,7 @@ import java.io.File;
  * <p>
  * Example:
  * <p>
- * <code>Main -r http://osgi.nuxeo.org/p2/ecr/current/repository -p ecr-installer/src/profiles/profiles.xml default target/ecr.zip</pre>
+ * <code>Main -r http://osgi.nuxeo.org/p2/ecr/current/repository -p default target/ecr.zip</pre>
  * <p>
  * If the target path ends with .zip then the product will be zipped.
  *
@@ -73,7 +73,7 @@ public class Main {
 
     public static void usage(String msg) {
         System.out.println("Syntax Error: "+msg);
-        System.out.println("Usage: Main [-p profilesUrl] [-r repositoryUrl] [installDirectory] [profile]");
+        System.out.println("Usage: Main [-p profile] [-r repositoryUrl] [installDirectory]");
         System.exit(1);
     }
 
