@@ -12,7 +12,7 @@
    <copyright>
       %copyright
    </copyright>
-   
+
    <license url="%licenseURL">
       %license
    </license>
@@ -20,6 +20,13 @@
    <requires>
       <import feature="org.eclipse.ecr.core" version="0.5.4.qualifier"/>
    </requires>
+
+   <plugin
+         id="org.eclipse.ecr.configuration.web"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.eclipse.ecr.web.jaxrs"

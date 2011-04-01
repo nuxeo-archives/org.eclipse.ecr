@@ -33,6 +33,8 @@
 
   <profile name="web">
     <require>core</require>
+    <artifact name="org.eclipse.ecr.configuration.web" />
+
     <artifact name="org.eclipse.equinox.http.jetty" />
     <artifact name="org.mortbay.jetty.server" />
     <artifact name="org.mortbay.jetty.util" />
@@ -45,6 +47,7 @@
 
   <profile name="cmis">
     <require>web</require>
+    <artifact name="org.eclipse.ecr.configuration.cmis" />
     <artifact name="org.eclipse.ecr.opencmis.bindings" />
     <artifact name="org.eclipse.ecr.opencmis.impl" />
   </profile>

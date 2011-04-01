@@ -38,6 +38,8 @@
     <module>../plugins/org.eclipse.ecr.web.rendering</module>
 
     <module>../config/org.eclipse.ecr.configuration</module>
+    <module>../config/org.eclipse.ecr.configuration.web</module>
+    <module>../config/org.eclipse.ecr.configuration.cmis</module>
     <module>../config/org.eclipse.ecr.core.h2.connector</module>
     <module>../config/org.eclipse.ecr.core.h2.extensions</module>
 

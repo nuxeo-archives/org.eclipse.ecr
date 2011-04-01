@@ -39,6 +39,8 @@ public class Main {
             if (opt != null) {
                 if ("-r".equals(opt)) {
                     repo = arg;
+                } else if ("-p".equals(opt)) {
+                    profile = arg;
                 } else {
                     usage("Unknown option "+opt);
                 }
