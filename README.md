@@ -88,10 +88,14 @@ After building the repository go into `build/product` folder and execute:
 
     $ ./build.sh
 
-The repository generated before will be used to generate a product with a `run.sh` shell script and a configuration folder required to start the ECR application. The product will be generated in `build/product/target/ecr-default.zip`. To test it, unzip the product and use the `run.sh` script to launch it.  
+The repository generated before will be used to generate a product with a `run.sh` (and run.bat) shell script and a configuration folder required to start the ECR application. The product will be generated in `build/product/target/ecr-default.zip`. To test it, unzip the product and use the `run.sh` (or run.bat on Windows) script to launch it.  
 The ECR server will starts  and listen at port 8080.
 
-We will provide soon launch support for windows too. Until then you can write a command file that do the same as the `run.sh` script.
+**Note** that there is no *build.sh* script provided for Windows. On Windows you can build the product by first building the ecr-install JAR (using `mvn install`) then building the product by executing the following command from the product directory:
+
+`java -jar ecr-installer/target/ecr-installer-{version}.jar -r ..\repository\target\repository -p cmis,h2 target\ecr-default.zip`
+
+where *ecr-installer/target/ecr-installer-{version}.jar* is the ecr-installer JAR built by maven.
 
 ## Installing ECR without checking out the sources
 
@@ -103,9 +107,9 @@ Then run from the console
 
 where `ECR_INSTALL_DIR` is the directory where you want to install ECR (it will be created if not exists). If the target directory is not specified, ECR will be installed int he current directory.
 
-You may have to wait while the the installer will download ~25MB of data. When done, go to the install directory and launch the `run.sh` script.
+You may have to wait while the the installer will download ~25MB of data. When done, go to the install directory and launch the `run.sh` script (or run.bat on Windows).
 
-Windows script support is not yet available. If you are on windows you can create a similar windows run.cmd script ... to start the application.
+Note that the run.bat Windows script was only tested on Wine.
 
 ## Accessing ECR through HTTP
 
