@@ -102,8 +102,20 @@ public class Installer {
         System.out.println("Generating launch scripts");
         InputStream in = Installer.class.getClassLoader().getResourceAsStream("scripts/run.sh");
         File file = new File(installDir, "run.sh");
-        Utils.writeTo(in, file);
-        file.setExecutable(true);
+        try {
+        	Utils.writeTo(in, file);
+        	file.setExecutable(true);
+        } finally {
+        	in.close();
+        }
+        in = Installer.class.getClassLoader().getResourceAsStream("scripts/run.bat");
+        file = new File(installDir, "run.bat");
+        try {
+        	Utils.writeTo(in, file);
+        	file.setExecutable(true);
+        } finally {
+        	in.close();
+        }        
         File target = installDir;
         if (zipIt) {
             System.out.println("Zipping");
