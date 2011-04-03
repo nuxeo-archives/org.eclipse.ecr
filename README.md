@@ -91,7 +91,7 @@ After building the repository go into `build/product` folder and execute:
 The repository generated before will be used to generate a product with a `run.sh` (and run.bat) shell script and a configuration folder required to start the ECR application. The product will be generated in `build/product/target/ecr-default.zip`. To test it, unzip the product and use the `run.sh` (or run.bat on Windows) script to launch it.  
 The ECR server will starts  and listen at port 8080.
 
-**Note** that there is no *build.sh* script provided for Windows. On Windows you can build the product by first building the ecr-install JAR (using `mvn install`) then building the product by executing the following command from the product directory:
+**Note** that there is no *build.bat* script provided for Windows. On Windows you can build the product by first building the ecr-install JAR (using `mvn install`) then building the product by executing the following command from the product directory:
 
 `java -jar ecr-installer/target/ecr-installer-{version}.jar -r ..\repository\target\repository -p cmis,h2 target\ecr-default.zip`
 
