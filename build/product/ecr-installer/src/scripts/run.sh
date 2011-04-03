@@ -16,7 +16,7 @@ JAVA_OPTS="-Dnuxeo.home=${WD}/ecr -Declipse.ignoreApp=true -Dosgi.noShutdown=tru
 
 # The launcher arguments
 DIRS="-configuration file:configuration/ -install file:./"
-ARGS="-os macosx -ws cocoa -arch x86_64 -nl en_US -consoleLog"
+ARGS="-arch x86_64 -nl en_US -consoleLog"
 
 $JAVA $JAVA_OPTS -classpath $JAVA_CP org.eclipse.equinox.launcher.Main $DIRS $ARGS $*
 
