@@ -43,6 +43,8 @@
     <module>../config/org.eclipse.ecr.core.h2.connector</module>
     <module>../config/org.eclipse.ecr.core.h2.extensions</module>
 
+    <module>../tests/org.eclipse.ecr.test.framework</module>
+
     <module>../features/org.eclipse.ecr.equinox</module>
     <module>../features/org.eclipse.ecr.equinox.sdk</module>
 
@@ -57,6 +59,8 @@
 
     <module>../features/org.eclipse.ecr.opencmis</module>
     <module>../features/org.eclipse.ecr.opencmis.sdk</module>
+
+    <module>../features/org.eclipse.ecr.test</module>
 
     <module>repository</module>
   </modules>
