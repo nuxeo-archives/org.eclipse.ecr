@@ -38,7 +38,12 @@
    <feature url="features/org.eclipse.ecr.opencmis.sdk_0.5.4.qualifier.jar" id="org.eclipse.ecr.opencmis.sdk" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr.sdk"/>
    </feature>
+      
+   <feature url="features/org.eclipse.ecr.test_0.5.4.qualifier.jar" id="org.eclipse.ecr.test" version="0.5.4.qualifier">
+      <category name="org.eclipse.ecr.test"/>
+   </feature>
 
    <category-def name="org.eclipse.ecr" label="Eclipse Enterprise Content Repository (ECR)"/>
    <category-def name="org.eclipse.ecr.sdk" label="Eclipse Enterprise Content Repository (ECR) SDK"/>
+   <category-def name="org.eclipse.ecr.test" label="Eclipse Enterprise Content Repository (ECR) Tests"/>
 </site>

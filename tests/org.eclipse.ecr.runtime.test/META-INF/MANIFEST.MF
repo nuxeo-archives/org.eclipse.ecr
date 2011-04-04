@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse ECR Runtime Tests
+Bundle-Vendor: Nuxeo SAS
+Bundle-SymbolicName: org.eclipse.ecr.runtime.test;singleton:=true
+Bundle-Version: 0.5.4.qualifier
+Bundle-Description: ECR Runtime Tests
+Fragment-Host: org.eclipse.ecr.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: junit.framework,
+ org.eclipse.ecr.runtime,
+ org.eclipse.ecr.runtime.api,
+ org.eclipse.ecr.runtime.model,
+ org.eclipse.ecr.runtime.osgi,
+ org.jmock,
+ org.junit,
+ org.junit.runner,
+ org.nuxeo.common
+Export-Package: org.eclipse.ecr.runtime,
+ org.eclipse.ecr.runtime.api,
+ org.eclipse.ecr.runtime.expression,
+ org.eclipse.ecr.runtime.model
+Require-Bundle: org.eclipse.ecr.test.framework
