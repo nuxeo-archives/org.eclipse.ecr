@@ -13,6 +13,7 @@
   <description>Provide common OSGi tycho build directives.</description>
 
   <modules>
+    <module>./pom-test.xml</module>
     <module>../plugins/org.eclipse.ecr.application</module>
     <module>../plugins/org.eclipse.ecr.audit.api</module>
     <module>../plugins/org.eclipse.ecr.auth</module>
@@ -45,22 +46,20 @@
 
     <module>../tests/org.eclipse.ecr.test.framework</module>
 
+    <module>../tests/org.eclipse.ecr.runtime.test</module>
+
+
     <module>../features/org.eclipse.ecr.equinox</module>
     <module>../features/org.eclipse.ecr.equinox.sdk</module>
-
     <module>../features/org.eclipse.ecr.core</module>
     <module>../features/org.eclipse.ecr.core.sdk</module>
     <module>../features/org.eclipse.ecr.native.dependencies</module>
-
     <module>../features/org.eclipse.ecr.h2</module>
     <module>../features/org.eclipse.ecr.h2.sdk</module>
-
     <module>../features/org.eclipse.ecr.web</module>
     <module>../features/org.eclipse.ecr.web.sdk</module>
-
     <module>../features/org.eclipse.ecr.opencmis</module>
     <module>../features/org.eclipse.ecr.opencmis.sdk</module>
-
     <module>../features/org.eclipse.ecr.test</module>
 
     <module>../features/org.eclipse.ecr.rtpweb</module>
@@ -269,5 +268,15 @@
       </plugin>
     </plugins>
   </build>
+
+  <dependencyManagement>
+    <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.7</version>
+    </dependency>
+    </dependencies>
+  </dependencyManagement>
 
 </project>
