@@ -4,7 +4,7 @@
 
   <groupId>org.eclipse.ecr.plugins</groupId>
   <artifactId>org.eclipse.ecr.sample.mysite</artifactId>
-  <version>0.5.4-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>Eclipse ECR Sample: MySite</name>
   <packaging>eclipse-plugin</packaging>
 
