@@ -37,6 +37,7 @@
     <module>../plugins/org.eclipse.ecr.runtime.jtajca</module>
     <module>../plugins/org.eclipse.ecr.web.jaxrs</module>
     <module>../plugins/org.eclipse.ecr.web.rendering</module>
+    <module>../plugins/org.eclipse.ecr.test.framework</module>
 
     <module>../config/org.eclipse.ecr.configuration</module>
     <module>../config/org.eclipse.ecr.configuration.web</module>
@@ -44,10 +45,7 @@
     <module>../config/org.eclipse.ecr.core.h2.connector</module>
     <module>../config/org.eclipse.ecr.core.h2.extensions</module>
 
-    <module>../tests/org.eclipse.ecr.test.framework</module>
-
     <module>../tests/org.eclipse.ecr.runtime.test</module>
-
 
     <module>../features/org.eclipse.ecr.equinox</module>
     <module>../features/org.eclipse.ecr.equinox.sdk</module>
