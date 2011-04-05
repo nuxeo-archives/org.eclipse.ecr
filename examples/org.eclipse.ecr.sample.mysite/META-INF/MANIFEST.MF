@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mysite
+Bundle-SymbolicName: org.eclipse.ecr.sample.mysite
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Nuxeo-WebModule: org.eclipse.ecr.sample.mysite.MyApp
+Import-Package: javax.ws.rs;version="1.1.1",
+ javax.ws.rs.core;version="1.1.1"
