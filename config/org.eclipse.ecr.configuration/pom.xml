@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.eclipse.ecr.config</groupId>
-  <artifactId>org.eclipse.ecr.configuration</artifactId>
-  <name>Eclipse ECR Configuration</name>
+  <artifactId>org.eclipse.ecr.configuration.psql</artifactId>
+  <name>Eclipse ECR Postgresql Configuration</name>
   <packaging>eclipse-plugin</packaging>
 
   <parent>

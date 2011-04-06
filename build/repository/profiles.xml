@@ -55,7 +55,6 @@
   <profile name="h2">
     <require>core</require>
     <artifact name="org.h2" />
-    <artifact name="org.eclipse.ecr.core.h2.connector" />
     <artifact name="org.eclipse.ecr.core.h2.extensions" />
   </profile>
 
