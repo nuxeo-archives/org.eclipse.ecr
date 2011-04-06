@@ -109,13 +109,15 @@ public class Resolver {
                 || name.startsWith("javax.jws")
                 || name.startsWith("com.sun.xml.ws")
                 || name.startsWith("javax.xml.bind")
+                || name.startsWith("javax.xml.transform")
                 || name.startsWith("javax.naming")
                 || name.startsWith("javax.management")
                 || name.startsWith("javax.sql")
                 || name.startsWith("javax.imageio")
                 || name.startsWith("javax.net")
                 || name.startsWith("javax.script")
-                || name.startsWith("javax.security")) {
+                || name.startsWith("javax.security")
+                || name.startsWith("org.ietf.jgss")) {
             return true;
         }
         return false;

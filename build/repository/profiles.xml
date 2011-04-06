@@ -11,7 +11,6 @@
     <artifact name="org.eclipse.ecr.runtime.jtajca" />
 
     <artifact name="org.eclipse.ecr.application" autostart="true"/>
-    <artifact name="org.eclipse.ecr.configuration" />
 
     <artifact name="org.eclipse.ecr.core.api" />
     <artifact name="org.eclipse.ecr.core.schema" />
@@ -56,6 +55,11 @@
     <require>core</require>
     <artifact name="org.h2" />
     <artifact name="org.eclipse.ecr.core.h2.extensions" />
+  </profile>
+
+  <profile name="psql">
+    <artifact name="org.eclipse.ecr.configuration.psql" />
+    <artifact name="org.postgresql" />
   </profile>
 
   <profile name="default">
