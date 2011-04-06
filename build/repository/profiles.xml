@@ -1,5 +1,22 @@
 <profiles>
 
+  <system>
+    <package name="javax.swing" />
+    <package name="javax.xml.ws" />
+    <package name="javax.jws" />
+    <package name="com.sun.xml.ws" />
+    <package name="javax.xml.bind" />
+    <package name="javax.xml.transform" />
+    <package name="javax.naming" />
+    <package name="javax.management" />
+    <package name="javax.sql" />
+    <package name="javax.imageio" />
+    <package name="javax.net" />
+    <package name="javax.script" />
+    <package name="javax.security" />
+    <package name="org.ietf.jgss" />
+  </system>
+
   <profile name="core">
     <artifact name="org.eclipse.osgi" />
     <artifact name="org.eclipse.osgi.services" />
