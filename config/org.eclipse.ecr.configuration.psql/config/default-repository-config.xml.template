@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<component name="default-repository-config">
-  <extension target="org.nuxeo.ecm.core.repository.RepositoryService"
+<component name="default-repository-config" bundle="org.eclipse.ecr.core.storage.sql.ra">
+  <extension target="org.eclipse.ecr.core.repository.RepositoryService"
     point="repository">
     <repository name="default"
-      factory="org.nuxeo.ecm.core.storage.sql.ra.PoolingRepositoryFactory">
+      factory="org.eclipse.ecr.core.storage.sql.ra.PoolingRepositoryFactory">
       <repository name="default">
         <clustering enabled="${repository.clustering.enabled}" delay="${repository.clustering.delay}" />
         <binaryStore path="${repository.binary.store}" />

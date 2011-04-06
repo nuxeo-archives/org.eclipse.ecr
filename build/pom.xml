@@ -39,7 +39,7 @@
     <module>../plugins/org.eclipse.ecr.web.rendering</module>
     <module>../plugins/org.eclipse.ecr.test.framework</module>
 
-    <module>../config/org.eclipse.ecr.configuration</module>
+    <module>../config/org.eclipse.ecr.configuration.psql</module>
     <module>../config/org.eclipse.ecr.configuration.web</module>
     <module>../config/org.eclipse.ecr.configuration.cmis</module>
     <module>../config/org.eclipse.ecr.core.h2.extensions</module>
@@ -53,6 +53,7 @@
     <module>../features/org.eclipse.ecr.native.dependencies</module>
     <module>../features/org.eclipse.ecr.h2</module>
     <module>../features/org.eclipse.ecr.h2.sdk</module>
+    <module>../features/org.eclipse.ecr.psql</module>
     <module>../features/org.eclipse.ecr.web</module>
     <module>../features/org.eclipse.ecr.web.sdk</module>
     <module>../features/org.eclipse.ecr.opencmis</module>
