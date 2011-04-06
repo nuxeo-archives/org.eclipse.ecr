@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: ECR Default Configuration
-Bundle-SymbolicName: org.eclipse.ecr.configuration
+Bundle-Name: ECR Postgresql Configuration
+Bundle-SymbolicName: org.eclipse.ecr.configuration.psql
 Bundle-Version: 0.5.4.qualifier
 Fragment-Host: org.eclipse.ecr.application
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

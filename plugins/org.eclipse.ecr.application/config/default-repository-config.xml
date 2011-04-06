@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
-<component name="default-repository-config">
-  <extension target="org.nuxeo.ecm.core.repository.RepositoryService"
+<component name="default-repository-config" bundle="org.eclipse.ecr.core.storage.sql.ra">
+  <extension target="org.eclipse.ecr.core.repository.RepositoryService"
     point="repository">
     <repository name="default"
-      factory="org.nuxeo.ecm.core.storage.sql.ra.PoolingRepositoryFactory">
+      factory="org.eclipse.ecr.core.storage.sql.ra.PoolingRepositoryFactory">
       <repository name="default">
-        <clustering enabled="${repository.clustering.enabled}" delay="${repository.clustering.delay}" />
-        <binaryStore path="${repository.binary.store}" />
+        <clustering enabled="false" delay="1000" />
+        <binaryStore path="" />
         <schema>
           <field type="largetext">note</field>
-          <field type="largetext">relatedtext</field>
           <field type="largetext">webp:content</field>
           <field type="largetext">webc:welcomeText</field>
           <field type="largetext">comment:comment</field>
@@ -17,7 +16,8 @@
           <field type="largetext">mail:mail</field>
         </schema>
         <indexing>
-          <fulltext analyzer="english">
+          <!-- for H2 (Lucene Analyzer): -->
+          <fulltext analyzer="org.apache.lucene.analysis.fr.FrenchAnalyzer">
             <index name="default">
               <!-- all props implied -->
             </index>
@@ -29,12 +29,10 @@
             </index>
           </fulltext>
         </indexing>
-        <xa-datasource>org.postgresql.xa.PGXADataSource</xa-datasource>
-        <property name="ServerName">${nuxeo.db.host}</property>
-        <property name="PortNumber">${nuxeo.db.port}</property>
-        <property name="DatabaseName">${nuxeo.db.name}</property>
-        <property name="User">${nuxeo.db.user}</property>
-        <property name="Password">${nuxeo.db.password}</property>
+        <xa-datasource>org.h2.jdbcx.JdbcDataSource</xa-datasource>
+        <property name="URL">jdbc:h2:nuxeo</property>
+        <property name="User">sa</property>
+        <property name="Password"></property>
       </repository>
     </repository>
   </extension>
