@@ -58,6 +58,7 @@
   </profile>
 
   <profile name="psql">
+    <require>core</require>
     <artifact name="org.eclipse.ecr.configuration.psql" />
     <artifact name="org.postgresql" />
   </profile>
