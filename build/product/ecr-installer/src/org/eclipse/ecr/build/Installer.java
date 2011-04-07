@@ -23,8 +23,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-import org.eclipse.ecr.build.Profile.Unit;
-
 /**
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  *
@@ -67,12 +65,7 @@ public class Installer {
     }
 
     public Set<Node> getResolvedNodes(String profile) throws Exception {
-        Resolver resolver = graph.getResolver();
-        Set<Unit> artifacts = profileMgr.getInstallableUnits(profile);
-        for (Unit unit : artifacts) {
-            resolver.resolve(unit);
-        }
-        return resolver.getResolvedNodes();
+        return graph.getResolver().resolveProfile(profileMgr, profile);
     }
 
     public void install(String profile) throws Exception {
@@ -103,19 +96,19 @@ public class Installer {
         InputStream in = Installer.class.getClassLoader().getResourceAsStream("scripts/run.sh");
         File file = new File(installDir, "run.sh");
         try {
-        	Utils.writeTo(in, file);
-        	file.setExecutable(true);
+            Utils.writeTo(in, file);
+            file.setExecutable(true);
         } finally {
-        	in.close();
+            in.close();
         }
         in = Installer.class.getClassLoader().getResourceAsStream("scripts/run.bat");
         file = new File(installDir, "run.bat");
         try {
-        	Utils.writeTo(in, file);
-        	file.setExecutable(true);
+            Utils.writeTo(in, file);
+            file.setExecutable(true);
         } finally {
-        	in.close();
-        }        
+            in.close();
+        }
         File target = installDir;
         if (zipIt) {
             System.out.println("Zipping");

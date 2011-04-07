@@ -26,6 +26,9 @@ public class Resolver {
 
     protected Set<Node> artifacts;
 
+    protected String[] systemPackages;
+
+
     public Resolver(Graph graph) {
         this.graph = graph;
         this.artifacts = new HashSet<Node>();
@@ -33,6 +36,23 @@ public class Resolver {
 
     public Graph getGraph() {
         return graph;
+    }
+
+    public void setSystemPackages(String[] systemPackages) {
+        this.systemPackages = systemPackages;
+    }
+
+    public String[] getSystemPackages() {
+        return systemPackages;
+    }
+
+    public Set<Node> resolveProfile(ProfileManager profileMgr, String profile) {
+        systemPackages = profileMgr.getSystemPackages();
+        Set<Unit> artifacts = profileMgr.getInstallableUnits(profile);
+        for (Unit unit : artifacts) {
+            resolve(unit);
+        }
+        return getResolvedNodes();
     }
 
     public boolean resolve(String name) throws ResolveException {
@@ -103,22 +123,14 @@ public class Resolver {
     }
 
     public boolean ignoreImport(Artifact artifact) {
+        if (systemPackages == null) {
+            return false;
+        }
         String name = artifact.getName();
-        if (name.startsWith("javax.swing")
-                || name.startsWith("javax.xml.ws")
-                || name.startsWith("javax.jws")
-                || name.startsWith("com.sun.xml.ws")
-                || name.startsWith("javax.xml.bind")
-                || name.startsWith("javax.xml.transform")
-                || name.startsWith("javax.naming")
-                || name.startsWith("javax.management")
-                || name.startsWith("javax.sql")
-                || name.startsWith("javax.imageio")
-                || name.startsWith("javax.net")
-                || name.startsWith("javax.script")
-                || name.startsWith("javax.security")
-                || name.startsWith("org.ietf.jgss")) {
-            return true;
+        for (String pkg : systemPackages) {
+            if (name.startsWith(pkg)) {
+                return true;
+            }
         }
         return false;
     }

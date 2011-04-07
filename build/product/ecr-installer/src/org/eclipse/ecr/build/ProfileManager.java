@@ -39,7 +39,10 @@ public class ProfileManager {
 
     protected Map<String, Profile> profiles;
 
+    protected Set<String> systemPackages;
+
     public ProfileManager(String configFile) throws Exception {
+        systemPackages = new HashSet<String>();
         profiles = new HashMap<String, Profile>();
         try {
             config = new URL(configFile);
@@ -72,11 +75,27 @@ public class ProfileManager {
         Node node = root.getFirstChild();
         while (node != null) {
             if (Node.ELEMENT_NODE == node.getNodeType()) {
-                if ("profile".equals(node.getNodeName())) {
+                String name = node.getNodeName();
+                if ("profile".equals(name)) {
                     Element element = (Element)node;
                     Profile profile = new Profile(element.getAttribute("name"));
                     loadProfileContent(profile, element);
                     profiles.put(profile.getName(), profile);
+                } else if ("system".equals(name)) {
+                    loadSystemPackages((Element)node);
+                }
+            }
+            node = node.getNextSibling();
+        }
+    }
+
+    protected void loadSystemPackages(Element element) {
+        Node node = element.getFirstChild();
+        while (node != null) {
+            if (Node.ELEMENT_NODE == node.getNodeType()) {
+                if ("package".equals(node.getNodeName())) {
+                    Element pkgEl = (Element)node;
+                    systemPackages.add(pkgEl.getAttribute("name"));
                 }
             }
             node = node.getNextSibling();
@@ -147,6 +166,10 @@ public class ProfileManager {
             artifacts.addAll(getInstallableUnits(p));
         }
         return artifacts;
+    }
+
+    public String[] getSystemPackages() {
+        return systemPackages.toArray(new String[systemPackages.size()]);
     }
 
 }
