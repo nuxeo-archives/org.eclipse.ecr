@@ -15,6 +15,10 @@
       <category name="org.eclipse.ecr.sdk"/>
    </feature>
 
+   <feature url="features/org.eclipse.ecr.dependencies_0.5.4.qualifier.jar" id="org.eclipse.ecr.dependencies" version="0.5.4.qualifier">
+      <category name="org.eclipse.ecr"/>
+   </feature>
+
    <feature url="features/org.eclipse.ecr.h2_0.5.4.qualifier.jar" id="org.eclipse.ecr.h2" version="0.5.4.qualifier">
       <category name="org.eclipse.ecr"/>
    </feature>
@@ -44,9 +48,9 @@
       <category name="org.eclipse.ecr.psql"/>
    </feature>
 
-   <category-def name="org.eclipse.ecr" label="Eclipse Enterprise Content Repository (ECR)"/>
-   <category-def name="org.eclipse.ecr.sdk" label="Eclipse Enterprise Content Repository (ECR) SDK"/>
-   <category-def name="org.eclipse.ecr.test" label="Eclipse Enterprise Content Repository (ECR) Tests"/>
+   <category-def name="org.eclipse.ecr" label="Eclipse Content Repository (ECR)"/>
+   <category-def name="org.eclipse.ecr.sdk" label="Eclipse Content Repository (ECR) SDK"/>
+   <category-def name="org.eclipse.ecr.test" label="Eclipse Content Repository (ECR) Tests"/>
 
    <category-def name="org.eclipse.ecr.psql" label="ECR Postgresql Support"/>
 

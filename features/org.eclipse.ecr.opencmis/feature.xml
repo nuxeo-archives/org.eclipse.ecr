@@ -29,20 +29,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.apache.commons.codec"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ecr.audit.api"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.ecr.opencmis.bindings"
          download-size="0"
          install-size="0"
@@ -56,69 +42,9 @@
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
-         id="antlr"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.antlr.runtime"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-client-api"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-client-bindings"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-client-impl"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-commons-api"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-commons-impl"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-server-support"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.chemistry.opencmis.chemistry-opencmis-server-bindings"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
+   <!-- only used for developing in PDE - not required at runtime -->
+   <!-- TODO: should split cmis bridge in two: atom and wss and include only atom
+   and remove this dependency -->
    <plugin
          id="jaxws-dev"
          download-size="0"

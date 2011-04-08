@@ -51,6 +51,7 @@
 
     <module>../features/org.eclipse.ecr.equinox</module>
     <module>../features/org.eclipse.ecr.equinox.sdk</module>
+    <module>../features/org.eclipse.ecr.dependencies</module>
     <module>../features/org.eclipse.ecr.core</module>
     <module>../features/org.eclipse.ecr.core.sdk</module>
     <module>../features/org.eclipse.ecr.h2</module>

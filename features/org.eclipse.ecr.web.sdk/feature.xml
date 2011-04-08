@@ -16,7 +16,7 @@
    <license url="%licenseURL">
       %license
    </license>
-   
+
    <requires>
       <import feature="org.eclipse.ecr.web" version="0.5.4.201103201028"/>
    </requires>
@@ -30,6 +30,13 @@
 
    <plugin
          id="org.eclipse.ecr.web.rendering.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ecr.automation.server.source"
          download-size="0"
          install-size="0"
          version="0.0.0"

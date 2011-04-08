@@ -16,17 +16,10 @@
    <license url="%licenseURL">
       %license
    </license>
-   
+
    <requires>
       <import feature="org.eclipse.ecr.opencmis" version="0.5.4.qualifier"/>
    </requires>
-
-   <plugin
-         id="org.eclipse.ecr.audit.api.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="org.eclipse.ecr.opencmis.bindings.source"

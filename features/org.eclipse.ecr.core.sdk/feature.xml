@@ -16,7 +16,7 @@
    <license url="%licenseURL">
       %license
    </license>
-   
+
    <requires>
       <import feature="org.eclipse.ecr.core" version="0.0.0.qualifier"/>
    </requires>
@@ -134,7 +134,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.ecr.automation.server.source"
+         id="org.eclipse.ecr.audit.api.source"
          download-size="0"
          install-size="0"
          version="0.0.0"
