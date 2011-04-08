@@ -31,7 +31,7 @@
       <feature id="org.eclipse.equinox.server.p2"/>
       <feature id="org.eclipse.ecr.h2"/>
       <feature id="org.eclipse.ecr.rtpweb"/>
-      <feature id="org.eclipse.ecr.native"/>
+      <feature id="org.eclipse.ecr.core"/>
       <feature id="org.eclipse.ecr.opencmis"/>
       <feature id="org.eclipse.ecr.web"/>
    </features>
@@ -46,7 +46,6 @@
       <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator" autoStart="true" startLevel="3" />
       <plugin id="org.eclipse.jetty.osgi.boot" autoStart="true" startLevel="3" />
       <plugin id="org.eclipse.jetty.osgi.httpservice" autoStart="true" startLevel="4" />
-
    </configurations>
 
 </product>

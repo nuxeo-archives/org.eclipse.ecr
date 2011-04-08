@@ -24,7 +24,7 @@
          version="0.0.0"
          unpack="false"/>
 
-   <!--plugin
+   <plugin
          id="org.eclipse.ecr.core.storage.sql.ra"
          download-size="0"
          install-size="0"
@@ -143,12 +143,12 @@
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
+<!-- does not exist anymore.   <plugin
          id="org.eclipse.ecr.configuration"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+           unpack="false"/> -->
 
    <data
          id="pom.xml"
