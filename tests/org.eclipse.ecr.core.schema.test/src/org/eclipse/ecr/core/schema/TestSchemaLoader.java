@@ -64,7 +64,7 @@ public class TestSchemaLoader extends NXRuntimeTestCase {
     // FIXME: this tests makes too string assumptions on how the fields will be
     // ordered when we iterate over them (fails under Java 6)
     public void XXXtestXSDReader() throws Exception {
-        URL url = getResource(TEST_BUNDLE, "schema/schema.xsd");
+        URL url = getResource(TEST_BUNDLE, "schemas/schema.xsd");
 
         reader.loadSchema("MySchema", "", url);
         // Collection<Schema> schemas = typeMgr.getSchemas();
@@ -131,7 +131,7 @@ public class TestSchemaLoader extends NXRuntimeTestCase {
 
     @SuppressWarnings("unchecked")
     public void testSequence() throws Exception {
-        URL url = getResource(TEST_BUNDLE, "resources/schema/testList.xsd");
+        URL url = getResource(TEST_BUNDLE, "resources/schemas/testList.xsd");
         assertNotNull(url);
         Schema schema = reader.loadSchema("testList", "", url);
         Field field = schema.getField("participants");
@@ -150,7 +150,7 @@ public class TestSchemaLoader extends NXRuntimeTestCase {
 
     @SuppressWarnings("unchecked")
     public void testList() throws Exception {
-        URL url = getResource(TEST_BUNDLE, "resources/schema/testList.xsd");
+        URL url = getResource(TEST_BUNDLE, "resources/schemas/testList.xsd");
         assertNotNull(url);
 
         Schema schema = reader.loadSchema("testList", "", url);
@@ -169,7 +169,7 @@ public class TestSchemaLoader extends NXRuntimeTestCase {
     }
 
     public void testComplexSchema() throws Exception {
-        URL url = getResource(TEST_BUNDLE, "resources/schema/policy.xsd");
+        URL url = getResource(TEST_BUNDLE, "resources/schemas/policy.xsd");
         assertNotNull(url);
         Schema schema = reader.loadSchema("policy", "", url);
 
@@ -193,7 +193,7 @@ public class TestSchemaLoader extends NXRuntimeTestCase {
 
     public void testRestriction() throws Exception {
         URL url = getResource(TEST_BUNDLE,
-                "resources/schema/testrestriction.xsd");
+                "resources/schemas/testrestriction.xsd");
         assertNotNull(url);
         Schema schema = reader.loadSchema("testrestriction", "", url);
         Field field = schema.getField("shortstring");

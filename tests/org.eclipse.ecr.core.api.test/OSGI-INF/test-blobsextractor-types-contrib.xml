@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.storage.sql.tests.repo.core-types">
+
+  <extension target="org.eclipse.ecr.core.schema.TypeService" point="schema">
+    <schema name="core-types" src="resources/schemas/core-types.xsd"/>
+    <schema name="file" src="resources/schemas/file.xsd"/>
+    <schema name="complexschema" src="resources/schemas/complexschema.xsd"  prefix="cmpf" />
+  </extension>
+
+  <extension target="org.eclipse.ecr.core.schema.TypeService" point="doctype">
+    <doctype name="ComplexDoc" extends="Document">
+      <schema name="file" />
+      <schema name="complexschema" />
+    </doctype>
+  </extension>
+
+</component>

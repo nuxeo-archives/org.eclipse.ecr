@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.api.pathsegment.PathSegmentService.test">
+
+  <extension target="org.eclipse.ecr.core.api.pathsegment.PathSegmentService"
+    point="pathSegmentService">
+    <service class="org.eclipse.ecr.core.api.pathsegment.PathSegmentServiceCompat" />
+  </extension>
+
+</component>

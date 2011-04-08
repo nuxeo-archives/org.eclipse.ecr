@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse ECR Core API Tests
+Bundle-Vendor: Nuxeo SAS
+Bundle-SymbolicName: org.eclipse.ecr.core.api.test;singleton:=true
+Bundle-Version: 0.5.4.qualifier
+Bundle-Description: ECR Core API Tests
+Fragment-Host: org.eclipse.ecr.core.api
+Export-Package: org.eclipse.ecr.core.api,
+ org.eclipse.ecr.core.api.adapter,
+ org.eclipse.ecr.core.api.event,
+ org.eclipse.ecr.core.api.externalblob,
+ org.eclipse.ecr.core.api.impl.blob,
+ org.eclipse.ecr.core.api.model.impl.osm,
+ org.eclipse.ecr.core.api.operation,
+ org.eclipse.ecr.core.api.pathsegment,
+ org.eclipse.ecr.core.api.security,
+ org.eclipse.ecr.core.url,
+ org.eclipse.ecr.core.utils
+Require-Bundle: org.eclipse.ecr.test.framework
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

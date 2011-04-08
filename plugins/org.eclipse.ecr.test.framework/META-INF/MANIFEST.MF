@@ -38,4 +38,5 @@ Require-Bundle: org.nuxeo.osgi;visibility:=reexport,
  com.google.collect;visibility:=reexport,
  javax.servlet;visibility:=reexport,
  org.eclipse.ecr.runtime;visibility:=reexport,
- org.apache.commons.io;visibility:=reexport
+ org.apache.commons.io;visibility:=reexport,
+ com.sun.xml.xsom;visibility:=reexport

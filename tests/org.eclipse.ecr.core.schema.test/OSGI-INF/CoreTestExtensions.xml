@@ -1,9 +1,9 @@
 <component name="org.eclipse.ecr.core.test">
 
   <extension target="org.eclipse.ecr.core.schema.TypeService" point="schema">
-    <schema name="schema-lib" src="resources/schema/schema-lib.xsd"/> <!-- includes first -->
-    <schema name="schema1" src="resources/schema/schema.xsd"/>
-    <schema name="schema2" src="resources/schema/schema2.xsd"/>
+    <schema name="schema-lib" src="resources/schemas/schema-lib.xsd"/> <!-- includes first -->
+    <schema name="schema1" src="resources/schemas/schema.xsd"/>
+    <schema name="schema2" src="resources/schemas/schema2.xsd"/>
   </extension>
 
 

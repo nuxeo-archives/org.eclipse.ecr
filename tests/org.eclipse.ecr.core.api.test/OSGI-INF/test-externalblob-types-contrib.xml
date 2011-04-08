@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.api.externalblob.test.types">
+
+  <extension target="org.eclipse.ecr.core.schema.TypeService" point="schema">
+    <schema name="core-types" src="resources/schemas/core-types.xsd" />
+    <schema name="externalfile" src="resources/schemas/externalfile.xsd" prefix="extfile" />
+  </extension>
+
+  <extension target="org.eclipse.ecr.core.schema.TypeService" point="doctype">
+    <doctype name="ExternalBlobDoc" extends="Document">
+      <schema name="externalfile" />
+    </doctype>
+  </extension>
+
+</component>

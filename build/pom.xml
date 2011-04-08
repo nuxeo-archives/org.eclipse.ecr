@@ -46,6 +46,7 @@
 
     <module>../tests/org.eclipse.ecr.runtime.test</module>
     <module>../tests/org.eclipse.ecr.core.schema.test</module>
+    <module>../tests/org.eclipse.ecr.core.api.test</module>
 
     <module>../features/org.eclipse.ecr.equinox</module>
     <module>../features/org.eclipse.ecr.equinox.sdk</module>
