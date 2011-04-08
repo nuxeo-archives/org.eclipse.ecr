@@ -49,6 +49,7 @@
     <module>../tests/org.eclipse.ecr.core.api.test</module>
     <module>../tests/org.eclipse.ecr.core.event.test</module>
     <module>../tests/org.eclipse.ecr.core.test</module>
+    <module>../tests/org.eclipse.ecr.core.query.test</module>
 
     <module>../features/org.eclipse.ecr.equinox</module>
     <module>../features/org.eclipse.ecr.equinox.sdk</module>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse ECR Core Query Tests
+Bundle-Vendor: Nuxeo SAS
+Bundle-SymbolicName: org.eclipse.ecr.core.query.test;singleton:=true
+Bundle-Version: 0.5.4.qualifier
+Bundle-Description: ECR Core Query Tests
+Fragment-Host: org.eclipse.ecr.core.query
+Require-Bundle: org.eclipse.ecr.test.framework
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
