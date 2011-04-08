@@ -23,7 +23,7 @@ package org.eclipse.ecr.runtime;
 
 import junit.framework.AssertionFailedError;
 
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 /**
  * @author  <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>

@@ -21,10 +21,10 @@ package org.eclipse.ecr.runtime.test.runner;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.eclipse.ecr.test.framework.runner.Features;
-import org.eclipse.ecr.test.framework.runner.FeaturesRunner;
-import org.eclipse.ecr.test.framework.runner.Jetty;
-import org.eclipse.ecr.test.framework.runner.JettyFeature;
+import org.eclipse.ecr.testlib.runner.Features;
+import org.eclipse.ecr.testlib.runner.FeaturesRunner;
+import org.eclipse.ecr.testlib.runner.Jetty;
+import org.eclipse.ecr.testlib.runner.JettyFeature;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -8,5 +8,5 @@ Bundle-Description: ECR Schema Tests
 Fragment-Host: org.eclipse.ecr.core.schema
 Export-Package: org.eclipse.ecr.core.schema,
  org.eclipse.ecr.core.schema.types
-Require-Bundle: org.eclipse.ecr.test.framework
+Require-Bundle: org.eclipse.ecr.testlib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

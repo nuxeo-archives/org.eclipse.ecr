@@ -21,7 +21,7 @@ package org.eclipse.ecr.runtime.login;
 import java.security.Principal;
 
 import org.eclipse.ecr.runtime.api.login.LoginComponent;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 /**
  * @author Anahide Tchertchian

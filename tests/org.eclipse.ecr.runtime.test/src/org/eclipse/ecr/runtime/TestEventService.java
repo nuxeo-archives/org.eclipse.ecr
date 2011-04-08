@@ -24,7 +24,7 @@ package org.eclipse.ecr.runtime;
 import org.eclipse.ecr.runtime.api.Framework;
 import org.eclipse.ecr.runtime.services.event.Event;
 import org.eclipse.ecr.runtime.services.event.EventService;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 /**
  * @author  <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>

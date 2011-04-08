@@ -24,7 +24,7 @@ import org.eclipse.ecr.core.api.blobholder.BlobHolderAdapterService;
 import org.eclipse.ecr.core.api.impl.DocumentModelImpl;
 import org.eclipse.ecr.core.api.model.impl.primitives.ExternalBlobProperty;
 import org.eclipse.ecr.runtime.api.Framework;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 /**
  * @author Anahide Tchertchian

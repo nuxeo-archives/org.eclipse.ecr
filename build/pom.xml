@@ -37,7 +37,7 @@
     <module>../plugins/org.eclipse.ecr.runtime.jtajca</module>
     <module>../plugins/org.eclipse.ecr.web.jaxrs</module>
     <module>../plugins/org.eclipse.ecr.web.rendering</module>
-    <module>../plugins/org.eclipse.ecr.test.framework</module>
+    <module>../plugins/org.eclipse.ecr.testlib</module>
 
     <module>../config/org.eclipse.ecr.configuration.psql</module>
     <module>../config/org.eclipse.ecr.configuration.web</module>

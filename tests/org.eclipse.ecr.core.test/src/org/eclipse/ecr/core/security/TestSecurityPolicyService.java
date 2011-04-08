@@ -30,7 +30,7 @@ import org.eclipse.ecr.core.api.impl.UserPrincipal;
 import org.eclipse.ecr.core.model.Document;
 import org.eclipse.ecr.core.model.MockDocument;
 import org.eclipse.ecr.runtime.api.Framework;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 public class TestSecurityPolicyService extends NXRuntimeTestCase {
 

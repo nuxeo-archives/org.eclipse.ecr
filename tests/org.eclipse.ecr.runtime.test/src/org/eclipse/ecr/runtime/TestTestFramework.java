@@ -24,7 +24,7 @@ package org.eclipse.ecr.runtime;
 import java.net.URL;
 
 import org.eclipse.ecr.runtime.api.Framework;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 
 public class TestTestFramework extends NXRuntimeTestCase {

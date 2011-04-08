@@ -20,12 +20,12 @@ package org.eclipse.ecr.runtime.test.runner.web;
 
 import junit.framework.Assert;
 
-import org.eclipse.ecr.test.framework.runner.Features;
-import org.eclipse.ecr.test.framework.runner.FeaturesRunner;
-import org.eclipse.ecr.test.framework.runner.web.Browser;
-import org.eclipse.ecr.test.framework.runner.web.BrowserFamily;
-import org.eclipse.ecr.test.framework.runner.web.HomePage;
-import org.eclipse.ecr.test.framework.runner.web.WebDriverFeature;
+import org.eclipse.ecr.testlib.runner.Features;
+import org.eclipse.ecr.testlib.runner.FeaturesRunner;
+import org.eclipse.ecr.testlib.runner.web.Browser;
+import org.eclipse.ecr.testlib.runner.web.BrowserFamily;
+import org.eclipse.ecr.testlib.runner.web.HomePage;
+import org.eclipse.ecr.testlib.runner.web.WebDriverFeature;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;

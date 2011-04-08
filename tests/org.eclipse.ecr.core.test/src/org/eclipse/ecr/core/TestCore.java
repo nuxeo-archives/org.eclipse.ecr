@@ -22,7 +22,7 @@ import org.eclipse.ecr.core.schema.SchemaManager;
 import org.eclipse.ecr.core.schema.TypeConstants;
 import org.eclipse.ecr.core.schema.types.Schema;
 import org.eclipse.ecr.core.schema.types.Type;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 public class TestCore extends NXRuntimeTestCase {
 

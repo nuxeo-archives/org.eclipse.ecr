@@ -25,7 +25,7 @@ import org.eclipse.ecr.runtime.api.Framework;
 import org.eclipse.ecr.runtime.model.ComponentInstance;
 import org.eclipse.ecr.runtime.model.ComponentManager;
 import org.eclipse.ecr.runtime.model.ComponentName;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 /**
  * @author  <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>

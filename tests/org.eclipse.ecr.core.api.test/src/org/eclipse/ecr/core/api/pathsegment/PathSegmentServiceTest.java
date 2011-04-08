@@ -35,7 +35,7 @@ import java.lang.reflect.Proxy;
 
 import org.eclipse.ecr.core.api.DocumentModel;
 import org.eclipse.ecr.runtime.api.Framework;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 public class PathSegmentServiceTest extends NXRuntimeTestCase {
 

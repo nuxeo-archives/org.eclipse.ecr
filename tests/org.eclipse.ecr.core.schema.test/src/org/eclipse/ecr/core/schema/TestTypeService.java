@@ -15,7 +15,7 @@
 package org.eclipse.ecr.core.schema;
 
 import org.eclipse.ecr.runtime.api.Framework;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 /**
  * @author <a href="mailto:sf@nuxeo.com">Stefane Fermigier</a>

@@ -26,7 +26,7 @@ import java.net.URL;
 
 import org.eclipse.ecr.runtime.api.Framework;
 import org.eclipse.ecr.runtime.services.resource.ResourceService;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 import org.nuxeo.common.utils.FileUtils;
 
 /**

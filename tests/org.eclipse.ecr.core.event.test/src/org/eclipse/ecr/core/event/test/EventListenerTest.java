@@ -25,7 +25,7 @@ import org.eclipse.ecr.core.event.impl.EventImpl;
 import org.eclipse.ecr.core.event.impl.EventServiceImpl;
 import org.eclipse.ecr.runtime.api.Framework;
 import org.eclipse.ecr.runtime.model.RuntimeContext;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 import org.junit.Ignore;
 
 /**

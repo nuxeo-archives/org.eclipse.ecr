@@ -21,7 +21,7 @@ import java.util.Map;
 
 import org.eclipse.ecr.core.CoreUTConstants;
 import org.eclipse.ecr.core.NXCore;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 /**
  * Test the lifecycle service.

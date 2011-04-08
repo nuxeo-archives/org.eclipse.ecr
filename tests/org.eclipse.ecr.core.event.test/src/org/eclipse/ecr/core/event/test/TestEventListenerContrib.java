@@ -22,7 +22,7 @@ import org.eclipse.ecr.core.event.impl.EventListenerDescriptor;
 import org.eclipse.ecr.core.event.impl.EventServiceImpl;
 import org.eclipse.ecr.core.event.script.ScriptingPostCommitEventListener;
 import org.eclipse.ecr.runtime.api.Framework;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 public class TestEventListenerContrib extends NXRuntimeTestCase {
 

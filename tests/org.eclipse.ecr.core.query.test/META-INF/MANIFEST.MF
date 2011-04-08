@@ -6,5 +6,5 @@ Bundle-SymbolicName: org.eclipse.ecr.core.query.test;singleton:=true
 Bundle-Version: 0.5.4.qualifier
 Bundle-Description: ECR Core Query Tests
 Fragment-Host: org.eclipse.ecr.core.query
-Require-Bundle: org.eclipse.ecr.test.framework
+Require-Bundle: org.eclipse.ecr.testlib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

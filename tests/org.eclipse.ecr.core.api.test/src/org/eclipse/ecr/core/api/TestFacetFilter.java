@@ -22,7 +22,7 @@ import java.util.Set;
 
 import org.eclipse.ecr.core.api.impl.DocumentModelImpl;
 import org.eclipse.ecr.core.api.impl.FacetFilter;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 public class TestFacetFilter extends NXRuntimeTestCase {
 

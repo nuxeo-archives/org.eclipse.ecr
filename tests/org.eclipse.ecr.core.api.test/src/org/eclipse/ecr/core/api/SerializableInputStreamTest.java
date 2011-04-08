@@ -23,7 +23,7 @@ import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.Arrays;
 
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 import org.nuxeo.common.utils.FileUtils;
 
 /**

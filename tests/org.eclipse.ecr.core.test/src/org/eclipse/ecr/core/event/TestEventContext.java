@@ -16,7 +16,7 @@ package org.eclipse.ecr.core.event;
 import org.eclipse.ecr.core.api.CoreSession;
 import org.eclipse.ecr.core.api.local.LocalSession;
 import org.eclipse.ecr.core.event.impl.EventContextImpl;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 /**
  * This test probably should be in

@@ -18,7 +18,7 @@ import org.eclipse.ecr.core.schema.SchemaManager;
 import org.eclipse.ecr.core.schema.SchemaManagerImpl;
 import org.eclipse.ecr.core.schema.TypeService;
 import org.eclipse.ecr.runtime.api.Framework;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 public class TestMediaType extends NXRuntimeTestCase{
 

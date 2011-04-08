@@ -17,5 +17,5 @@ Export-Package: org.eclipse.ecr.core.api,
  org.eclipse.ecr.core.api.security,
  org.eclipse.ecr.core.url,
  org.eclipse.ecr.core.utils
-Require-Bundle: org.eclipse.ecr.test.framework
+Require-Bundle: org.eclipse.ecr.testlib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -18,7 +18,7 @@
  */
 package org.eclipse.ecr.runtime.test.runner.web;
 
-import org.eclipse.ecr.test.framework.runner.web.WebPage;
+import org.eclipse.ecr.testlib.runner.web.WebPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;

@@ -23,7 +23,7 @@ import java.util.Map;
 import org.eclipse.ecr.core.api.impl.DocumentModelImpl;
 import org.eclipse.ecr.core.api.impl.blob.ByteArrayBlob;
 import org.eclipse.ecr.core.api.model.DocumentPart;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 /**
  *

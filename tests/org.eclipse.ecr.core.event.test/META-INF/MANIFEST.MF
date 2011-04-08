@@ -6,6 +6,6 @@ Bundle-SymbolicName: org.eclipse.ecr.core.event.test;singleton:=true
 Bundle-Version: 0.5.4.qualifier
 Bundle-Description: ECR Core Event Tests
 Fragment-Host: org.eclipse.ecr.core.event
-Require-Bundle: org.eclipse.ecr.test.framework,
+Require-Bundle: org.eclipse.ecr.testlib,
  groovy-all
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

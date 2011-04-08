@@ -18,7 +18,7 @@ import java.util.Collections;
 
 import org.nuxeo.common.utils.Path;
 import org.eclipse.ecr.core.api.impl.DocumentModelImpl;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 public class TestDocumentModel extends NXRuntimeTestCase {
 

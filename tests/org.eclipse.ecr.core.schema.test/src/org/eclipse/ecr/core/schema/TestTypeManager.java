@@ -19,7 +19,7 @@ import java.util.Set;
 import org.eclipse.ecr.core.schema.types.Schema;
 import org.eclipse.ecr.core.schema.types.Type;
 import org.eclipse.ecr.runtime.api.Framework;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 public class TestTypeManager extends NXRuntimeTestCase {
 

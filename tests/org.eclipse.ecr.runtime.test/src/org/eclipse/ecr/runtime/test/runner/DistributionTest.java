@@ -19,10 +19,10 @@
 package org.eclipse.ecr.runtime.test.runner;
 
 import org.eclipse.ecr.runtime.api.Framework;
-import org.eclipse.ecr.test.framework.runner.Features;
-import org.eclipse.ecr.test.framework.runner.FeaturesRunner;
-import org.eclipse.ecr.test.framework.runner.distrib.DistributionFeature;
-import org.eclipse.ecr.test.framework.runner.distrib.NuxeoDistribution;
+import org.eclipse.ecr.testlib.runner.Features;
+import org.eclipse.ecr.testlib.runner.FeaturesRunner;
+import org.eclipse.ecr.testlib.runner.distrib.DistributionFeature;
+import org.eclipse.ecr.testlib.runner.distrib.NuxeoDistribution;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;

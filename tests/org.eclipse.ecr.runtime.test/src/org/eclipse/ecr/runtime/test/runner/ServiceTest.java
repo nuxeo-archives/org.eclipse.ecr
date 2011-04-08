@@ -21,9 +21,9 @@ package org.eclipse.ecr.runtime.test.runner;
 import junit.framework.Assert;
 
 import org.eclipse.ecr.runtime.services.event.EventService;
-import org.eclipse.ecr.test.framework.runner.Features;
-import org.eclipse.ecr.test.framework.runner.FeaturesRunner;
-import org.eclipse.ecr.test.framework.runner.RuntimeFeature;
+import org.eclipse.ecr.testlib.runner.Features;
+import org.eclipse.ecr.testlib.runner.FeaturesRunner;
+import org.eclipse.ecr.testlib.runner.RuntimeFeature;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

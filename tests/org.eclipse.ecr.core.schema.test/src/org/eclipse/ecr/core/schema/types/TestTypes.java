@@ -25,7 +25,7 @@ import org.eclipse.ecr.core.schema.types.primitives.DoubleType;
 import org.eclipse.ecr.core.schema.types.primitives.IntegerType;
 import org.eclipse.ecr.core.schema.types.primitives.LongType;
 import org.eclipse.ecr.core.schema.types.primitives.StringType;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 public class TestTypes extends NXRuntimeTestCase {
 

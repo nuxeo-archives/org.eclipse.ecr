@@ -25,7 +25,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-import org.eclipse.ecr.test.framework.protocols.inline.InlineURLFactory;
+import org.eclipse.ecr.testlib.protocols.inline.InlineURLFactory;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;

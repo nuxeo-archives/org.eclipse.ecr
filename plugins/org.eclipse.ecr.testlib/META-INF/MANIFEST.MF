@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+Bundle-Name: ECR Test Framework
+Bundle-Vendor: Nuxeo SAS
+Bundle-Version: 0.5.4.qualifier
+Bundle-ManifestVersion: 2
+Bundle-Description: The ECR test framework
+Bundle-SymbolicName: org.eclipse.ecr.testlib;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: junit.framework,
+ org.apache.commons.logging,
+ org.eclipse.ecr.runtime,
+ org.eclipse.ecr.runtime.api,
+ org.eclipse.ecr.runtime.model,
+ org.eclipse.ecr.runtime.model.impl,
+ org.eclipse.ecr.runtime.osgi,
+ org.eclipse.ecr.runtime.services.streaming,
+ org.nuxeo.common,
+ org.nuxeo.common.utils,
+ org.osgi.framework
+Export-Package: org.eclipse.ecr.testlib,
+ org.eclipse.ecr.testlib.protocols.inline,
+ org.eclipse.ecr.testlib.runner,
+ org.eclipse.ecr.testlib.runner.distrib,
+ org.eclipse.ecr.testlib.runner.web,
+ org.openqa.selenium.support.ui
+Require-Bundle: org.nuxeo.osgi;visibility:=reexport,
+ org.junit;visibility:=reexport,
+ org.jmock;visibility:=reexport,
+ org.openqa.selenium;visibility:=reexport,
+ org.concordion;visibility:=reexport,
+ org.slf4j.api;visibility:=reexport,
+ org.apache.xerces;visibility:=reexport,
+ com.google.inject;bundle-version="2.0.0.no_aop";visibility:=reexport,
+ org.mortbay.jetty.server;visibility:=reexport,
+ org.mortbay.jetty.util;visibility:=reexport,
+ ch.qos.logback.classic,
+ ch.qos.logback.core,
+ com.google.collect;visibility:=reexport,
+ javax.servlet;visibility:=reexport,
+ org.eclipse.ecr.runtime;visibility:=reexport,
+ org.apache.commons.io;visibility:=reexport,
+ com.sun.xml.xsom;visibility:=reexport

@@ -30,7 +30,7 @@ import org.eclipse.ecr.core.api.Blob;
 import org.eclipse.ecr.runtime.services.streaming.ByteArraySource;
 import org.eclipse.ecr.runtime.services.streaming.FileSource;
 import org.eclipse.ecr.runtime.services.streaming.InputStreamSource;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 /**
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>

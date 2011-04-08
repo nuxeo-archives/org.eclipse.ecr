@@ -24,7 +24,7 @@ import java.io.InputStream;
 import java.net.URL;
 
 import org.eclipse.ecr.runtime.model.StreamRef;
-import org.eclipse.ecr.test.framework.protocols.inline.InlineURLFactory;
+import org.eclipse.ecr.testlib.protocols.inline.InlineURLFactory;
 
 public class InlineRef implements StreamRef {
 

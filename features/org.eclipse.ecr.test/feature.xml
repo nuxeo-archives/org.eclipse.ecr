@@ -206,7 +206,7 @@
     <!-- ECR test bundles -->
 
     <plugin
-         id="org.eclipse.ecr.test.framework"
+         id="org.eclipse.ecr.testlib"
          download-size="0"
          install-size="0"
          version="0.0.0"

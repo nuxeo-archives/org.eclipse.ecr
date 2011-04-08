@@ -25,7 +25,7 @@ import org.eclipse.ecr.core.api.impl.UserPrincipal;
 import org.eclipse.ecr.core.api.security.PermissionProvider;
 import org.eclipse.ecr.core.api.security.SecurityConstants;
 import org.eclipse.ecr.core.api.security.UserVisiblePermission;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 /**
  * @author <a href="mailto:gracinet@nuxeo.com">Georges Racinet</a>

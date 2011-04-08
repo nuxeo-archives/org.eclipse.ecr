@@ -23,7 +23,7 @@ package org.eclipse.ecr.runtime;
 
 import org.eclipse.ecr.runtime.services.deployment.DeploymentService;
 import org.eclipse.ecr.runtime.services.event.EventService;
-import org.eclipse.ecr.test.framework.NXRuntimeTestCase;
+import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 
 public class TestService extends NXRuntimeTestCase {
 
