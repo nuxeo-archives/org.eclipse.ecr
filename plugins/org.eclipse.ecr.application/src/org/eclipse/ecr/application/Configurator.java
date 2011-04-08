@@ -24,6 +24,15 @@ import org.osgi.framework.BundleContext;
 public interface Configurator {
 
     /**
+     * Initialize the configurator.
+     * This method is called before the {@link #beforeStart(BundleContext)}
+     * method is called on any other configurator.
+     * @param context the runtime bundle context
+     * @throws Exception
+     */
+    public void initialize(BundleContext context) throws Exception;
+
+    /**
      * Runtime about to be started.
      * @param context the runtime bundle context
      * @throws Exception
