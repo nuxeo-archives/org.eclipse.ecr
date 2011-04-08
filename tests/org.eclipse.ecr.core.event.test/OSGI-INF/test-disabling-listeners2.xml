@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<component name="test-disabling-listener2">
+
+  <extension target="org.eclipse.ecr.core.event.EventServiceComponent" point="listener">
+    <listener async="false" postCommit="true" script="resources/script/postCommitListener.groovy" name="testPostCommit"
+            enabled="false">
+    </listener>
+  </extension>
+
+</component>
