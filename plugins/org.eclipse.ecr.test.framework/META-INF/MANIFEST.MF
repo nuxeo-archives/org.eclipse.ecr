@@ -36,4 +36,6 @@ Require-Bundle: org.nuxeo.osgi;visibility:=reexport,
  ch.qos.logback.classic,
  ch.qos.logback.core,
  com.google.collect;visibility:=reexport,
- javax.servlet;visibility:=reexport
+ javax.servlet;visibility:=reexport,
+ org.eclipse.ecr.runtime;visibility:=reexport,
+ org.apache.commons.io;visibility:=reexport

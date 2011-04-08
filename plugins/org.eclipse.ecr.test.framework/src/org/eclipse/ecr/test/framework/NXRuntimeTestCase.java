@@ -1,4 +1,4 @@
-/* 
+/*
  * (C) Copyright 2006-2011 Nuxeo SA (http://nuxeo.com/) and contributors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * Contributors:
  *     Nuxeo - initial API and implementation
  * $Id$
@@ -318,9 +318,15 @@ public class NXRuntimeTestCase extends MockObjectTestCase implements
         }
     }
 
+    /** @deprecated use {@link #getResource(String, String)} instead */
+    @Deprecated
     public static URL getResource(String resource) {
         return Thread.currentThread().getContextClassLoader().getResource(
                 resource);
+    }
+
+    public URL getResource(String bundleName, String resource) throws Exception {
+        return lookupBundle(bundleName).getEntry(resource);
     }
 
     /**
