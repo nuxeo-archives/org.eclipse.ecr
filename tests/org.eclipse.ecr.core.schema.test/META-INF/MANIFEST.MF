@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse ECR Schema Tests
+Bundle-Vendor: Nuxeo SAS
+Bundle-SymbolicName: org.eclipse.ecr.core.schema.test;singleton:=true
+Bundle-Version: 0.5.4.qualifier
+Bundle-Description: ECR Schema Tests
+Fragment-Host: org.eclipse.ecr.core.schema
+Export-Package: org.eclipse.ecr.core.schema,
+ org.eclipse.ecr.core.schema.types
+Require-Bundle: org.eclipse.ecr.test.framework
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
