@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.security.testPolicies2">
+
+  <extension target="org.eclipse.ecr.core.security.SecurityService"
+    point="policies">
+    <policy name="checkin"
+      class="org.eclipse.ecr.core.security.CheckInSecurityPolicy" order="15" />
+  </extension>
+
+
+</component>
