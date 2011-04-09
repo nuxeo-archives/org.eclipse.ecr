@@ -49,6 +49,7 @@
 
   <profile name="web">
     <require>core</require>
+    <artifact name="org.eclipse.ecr.configuration.jetty" />
     <artifact name="org.eclipse.ecr.configuration.web" />
 
     <artifact name="org.eclipse.equinox.http.jetty" />
