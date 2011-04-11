@@ -27,7 +27,6 @@ import javax.naming.NamingException;
 import org.eclipse.ecr.runtime.api.Framework;
 import org.eclipse.ecr.runtime.jtajca.NuxeoContainer;
 import org.eclipse.ecr.runtime.osgi.OSGiRuntimeService;
-import org.eclipse.equinox.http.jetty.JettyConfigurator;
 import org.nuxeo.common.Environment;
 import org.nuxeo.common.jndi.NamingContextFactory;
 import org.nuxeo.common.utils.FileUtils;
@@ -71,7 +70,6 @@ public class Activator implements BundleActivator {
         this.context = null;
         afterStop();
         configurators = null;
-        JettyConfigurator.stopServer("nuxeo");
     }
 
     @SuppressWarnings("unchecked")

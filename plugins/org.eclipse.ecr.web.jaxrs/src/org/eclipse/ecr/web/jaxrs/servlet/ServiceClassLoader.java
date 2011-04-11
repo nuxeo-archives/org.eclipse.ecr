@@ -22,8 +22,6 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.Constants;
 
-import sun.misc.CompoundEnumeration;
-
 import com.sun.jersey.api.uri.UriBuilderImpl;
 import com.sun.jersey.server.impl.provider.RuntimeDelegateImpl;
 
@@ -83,7 +81,7 @@ public class ServiceClassLoader extends ClassLoader {
 
     @Override
     protected synchronized Class<?> loadClass(String name, boolean resolve)
-            throws ClassNotFoundException {
+    throws ClassNotFoundException {
         return bundle.loadClass(name);
     }
 }

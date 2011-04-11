@@ -7,27 +7,16 @@ Bundle-Vendor: Nuxeo
 Bundle-Category: runtime
 Export-Package: org.eclipse.ecr.application
 Bundle-ClassPath: .
-Import-Package: ch.qos.logback.classic,
- ch.qos.logback.classic.joran,
- ch.qos.logback.core,
- ch.qos.logback.core.joran,
- ch.qos.logback.core.joran.spi,
- ch.qos.logback.core.spi,
- javax.naming,
+Import-Package: javax.naming,
  javax.naming.spi,
  org.apache.commons.logging,
  org.eclipse.ecr.runtime,
  org.eclipse.ecr.runtime.api,
  org.eclipse.ecr.runtime.jtajca,
  org.eclipse.ecr.runtime.osgi,
- org.eclipse.equinox.http.jetty,
- org.eclipse.equinox.http.servlet,
  org.nuxeo.common,
  org.nuxeo.common.jndi,
  org.nuxeo.common.utils,
- org.osgi.framework,
- org.osgi.service.http,
- org.osgi.service.packageadmin,
- org.slf4j
+ org.osgi.framework
 Bundle-Activator: org.eclipse.ecr.application.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
