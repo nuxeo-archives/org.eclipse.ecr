@@ -35,8 +35,7 @@ public class TestLifeCycleService extends NXRuntimeTestCase {
     @Override
     public void setUp() throws Exception {
         super.setUp();
-        deployContrib(CoreUTConstants.CORE_BUNDLE,
-                "OSGI-INF/LifeCycleService.xml");
+        deployBundle(CoreUTConstants.CORE_BUNDLE); // will be implicit later
         deployContrib(CoreUTConstants.CORE_TESTS_BUNDLE,
                 "OSGI-INF/LifeCycleManagerTestExtensions.xml");
 
@@ -175,7 +174,7 @@ public class TestLifeCycleService extends NXRuntimeTestCase {
 
     public void testLifeCycleTypesMappingRegistration() {
         Map<String, String> mapping = lifeCycleService.getTypesMapping();
-        assertEquals(2, mapping.size());
+        // assertEquals(2, mapping.size()); // has core contribs too
 
         assertTrue(mapping.keySet().contains("File"));
         assertTrue(mapping.keySet().contains("Folder"));
@@ -186,7 +185,7 @@ public class TestLifeCycleService extends NXRuntimeTestCase {
 
     public void testLifeCycleTypesMappingAPI() {
         Collection<String> types = lifeCycleService.getTypesFor("default");
-        assertEquals(2, types.size());
+        // assertEquals(2, types.size()); // has core contribs too
         assertTrue(types.contains("File"));
         assertTrue(types.contains("Folder"));
     }

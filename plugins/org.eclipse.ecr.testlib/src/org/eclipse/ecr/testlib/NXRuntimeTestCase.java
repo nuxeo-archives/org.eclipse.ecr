@@ -54,6 +54,7 @@ import org.eclipse.ecr.runtime.api.Framework;
 import org.eclipse.ecr.runtime.api.ServiceManager;
 import org.eclipse.ecr.runtime.model.RuntimeContext;
 import org.eclipse.ecr.runtime.osgi.OSGiRuntimeContext;
+import org.eclipse.ecr.runtime.osgi.OSGiRuntimeService;
 import org.eclipse.ecr.testlib.runner.RuntimeHarness;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkEvent;
@@ -338,6 +339,7 @@ public class NXRuntimeTestCase extends MockObjectTestCase implements
         deployContrib(contrib);
     }
 
+    @Deprecated
     protected void deployContrib(URL url) {
         assertEquals(runtime, Framework.getRuntime());
         log.info("Deploying contribution from " + url.toString());
@@ -373,7 +375,16 @@ public class NXRuntimeTestCase extends MockObjectTestCase implements
             fail(String.format("Could not find entry %s in bundle '%s",
                     contrib, bundleFile.getURL()));
         }
-        deployContrib(url);
+        log.info("Deploying contribution from " + url.toString());
+        Bundle bundle = new BundleImpl(getOSGiAdapter(), bundleFile,
+                getClass().getClassLoader());
+        try {
+            RuntimeContext context = ((OSGiRuntimeService) runtime).createContext(bundle);
+            context.deploy(url);
+        } catch (Exception e) {
+            log.error(e);
+            fail("Failed to deploy contrib " + url.toString());
+        }
     }
 
     /**
@@ -472,7 +483,10 @@ public class NXRuntimeTestCase extends MockObjectTestCase implements
             fail(String.format("Could not find entry %s in bundle '%s'",
                     contrib, b.getURL()));
         }
-        runtime.getContext().undeploy(url);
+        Bundle bundleImpl = new BundleImpl(getOSGiAdapter(), b,
+                getClass().getClassLoader());
+        RuntimeContext context = ((OSGiRuntimeService) runtime).getContext(bundleImpl);
+        context.undeploy(url);
     }
 
     // TODO: Never used. Remove?
