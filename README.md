@@ -128,8 +128,22 @@ If you want to expose the repository content using a Web User Interface, you can
 
 You can find more information about developing with ECR in the [Wiki](/nuxeo/org.eclipse.ecr/wiki) section
 
-Enjoy!
+## Using the Nuxeo Shell
 
+You can use the Nuxeo Shell (a command line application) to connect to an ECR server to create documents, browse the repository etc.
+The shell is available as a standalone application (running in terminal on Unix like systems or on Windows). You can download the last version of the shell here:
+<https://maven.nuxeo.org/nexus/service/local/artifact/maven/redirect?r=public-releases&g=org.nuxeo.shell&a=nuxeo-shell&v=5.4.1-I20110125_0115&e=jar>
+
+To connect to the server type `connect http://localhost:8080/ecr/automation -u Administrator`. For a complete documentation of the shell see 
+
+ <https://doc.nuxeo.com/display/NXDOC/Nuxeo+Shell+(admin's+best+friend)>
+
+You can also install the shell as an Eclipse Plugin (tested only on Helios and Indigo). Here is the update site:  <http://www.nuxeo.com/>.
+To connect to a development instance type `connect -u Administrator`. You can also connect to other remote ECR servers by specifying the right automation URL when connecting. 
+
+To launch the ECR Shell view got to Window > Show View > Other ... and select ECR > ECR Shell.
+
+Enjoy!
 
 ## About Nuxeo
 
