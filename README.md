@@ -136,9 +136,9 @@ The shell is available as a standalone application (running in terminal on Unix 
 
 To connect to the server type `connect http://localhost:8080/ecr/automation -u Administrator`. For a complete documentation of the shell see 
 
- <https://doc.nuxeo.com/display/NXDOC/Nuxeo+Shell+(admin's+best+friend)>
+ <https://doc.nuxeo.com/display/NXDOC/Nuxeo+Shell+%28admin%27s+best+friend%29>
 
-You can also install the shell as an Eclipse Plugin (tested only on Helios and Indigo). Here is the update site:  <http://www.nuxeo.com/>.
+You can also install the shell as an Eclipse Plugin (tested only on Helios and Indigo). Here is the update site:  <http://osgi.nuxeo.org/p2/ecr/ide/>.
 To connect to a development instance type `connect -u Administrator`. You can also connect to other remote ECR servers by specifying the right automation URL when connecting. 
 
 To launch the ECR Shell view got to Window > Show View > Other ... and select ECR > ECR Shell.
