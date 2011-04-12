@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse ECR Core IO Tests
+Bundle-Vendor: Nuxeo SAS
+Bundle-SymbolicName: org.eclipse.ecr.core.io.test;singleton:=true
+Bundle-Version: 0.5.4.qualifier
+Bundle-Description: ECR Core IO Tests
+Fragment-Host: org.eclipse.ecr.core.io
+Require-Bundle: org.eclipse.ecr.testlib,
+ org.eclipse.ecr.core.storage.sql.testlib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
