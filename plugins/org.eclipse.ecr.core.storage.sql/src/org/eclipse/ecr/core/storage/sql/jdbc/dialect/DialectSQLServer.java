@@ -350,12 +350,12 @@ public class DialectSQLServer extends Dialect {
 
     @Override
     public String getSQLStatementsFilename() {
-        return "nuxeovcs/sqlserver.sql.txt";
+        return "resources/nuxeovcs/sqlserver.sql.txt";
     }
 
     @Override
     public String getTestSQLStatementsFilename() {
-        return "nuxeovcs/sqlserver.test.sql.txt";
+        return "resources/nuxeovcs/sqlserver.test.sql.txt";
     }
 
     @Override

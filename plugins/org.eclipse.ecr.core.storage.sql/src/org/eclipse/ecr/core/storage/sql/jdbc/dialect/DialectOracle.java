@@ -479,12 +479,12 @@ public class DialectOracle extends Dialect {
 
     @Override
     public String getSQLStatementsFilename() {
-        return "nuxeovcs/oracle.sql.txt";
+        return "resources/nuxeovcs/oracle.sql.txt";
     }
 
     @Override
     public String getTestSQLStatementsFilename() {
-        return "nuxeovcs/oracle.test.sql.txt";
+        return "resources/nuxeovcs/oracle.test.sql.txt";
     }
 
     @Override

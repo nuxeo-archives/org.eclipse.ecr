@@ -242,12 +242,12 @@ public class DialectDerby extends Dialect {
 
     @Override
     public String getSQLStatementsFilename() {
-        return "nuxeovcs/derby.sql.txt";
+        return "resources/nuxeovcs/derby.sql.txt";
     }
 
     @Override
     public String getTestSQLStatementsFilename() {
-        return "nuxeovcs/derby.test.sql.txt";
+        return "resources/nuxeovcs/derby.test.sql.txt";
     }
 
     @Override

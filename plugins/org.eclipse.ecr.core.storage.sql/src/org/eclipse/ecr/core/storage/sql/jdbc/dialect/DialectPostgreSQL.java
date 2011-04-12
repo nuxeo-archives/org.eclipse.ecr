@@ -547,12 +547,12 @@ public class DialectPostgreSQL extends Dialect {
 
     @Override
     public String getSQLStatementsFilename() {
-        return "nuxeovcs/postgresql.sql.txt";
+        return "resources/nuxeovcs/postgresql.sql.txt";
     }
 
     @Override
     public String getTestSQLStatementsFilename() {
-        return "nuxeovcs/postgresql.test.sql.txt";
+        return "resources/nuxeovcs/postgresql.test.sql.txt";
     }
 
     @Override

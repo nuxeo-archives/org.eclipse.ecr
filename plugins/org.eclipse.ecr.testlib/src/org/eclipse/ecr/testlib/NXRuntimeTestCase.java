@@ -140,7 +140,7 @@ public class NXRuntimeTestCase extends MockObjectTestCase implements
 
     @Override
     public void setUp() throws Exception {
-        System.setProperty("org.nuxeo.runtime.testing", "true");
+        System.setProperty("org.eclipse.ecr.runtime.testing", "true");
         super.setUp();
         wipeRuntime();
         initUrls();

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.storage.sql.tests.repo.core-types-2">
+
+  <extension target="org.eclipse.ecr.core.schema.TypeService" point="schema">
+    <schema name="testschema2" src="resources/schemas/testschema2.xsd" prefix="tst2" />
+  </extension>
+
+  <extension target="org.eclipse.ecr.core.schema.TypeService" point="doctype">
+    <doctype name="File2" extends="File">
+      <schema name="testschema2" />
+      <prefetch>tst2:title</prefetch>
+    </doctype>
+  </extension>
+
+</component>

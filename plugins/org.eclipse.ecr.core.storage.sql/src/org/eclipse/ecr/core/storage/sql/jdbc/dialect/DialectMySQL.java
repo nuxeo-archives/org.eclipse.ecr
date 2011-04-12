@@ -357,12 +357,12 @@ public class DialectMySQL extends Dialect {
 
     @Override
     public String getSQLStatementsFilename() {
-        return "nuxeovcs/mysql.sql.txt";
+        return "resources/nuxeovcs/mysql.sql.txt";
     }
 
     @Override
     public String getTestSQLStatementsFilename() {
-        return "nuxeovcs/mysql.test.sql.txt";
+        return "resources/nuxeovcs/mysql.test.sql.txt";
     }
 
     @Override

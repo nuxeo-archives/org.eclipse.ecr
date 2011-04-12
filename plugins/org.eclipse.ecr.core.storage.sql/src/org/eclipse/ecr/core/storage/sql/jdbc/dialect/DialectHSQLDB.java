@@ -250,12 +250,12 @@ public class DialectHSQLDB extends Dialect {
 
     @Override
     public String getSQLStatementsFilename() {
-        return "nuxeovcs/hsqldb.sql.txt"; // TODO VCS
+        return "resources/nuxeovcs/hsqldb.sql.txt"; // TODO VCS
     }
 
     @Override
     public String getTestSQLStatementsFilename() {
-        return "nuxeovcs/hsqldb.test.sql.txt"; // TODO VCS
+        return "resources/nuxeovcs/hsqldb.test.sql.txt"; // TODO VCS
     }
 
     @Override

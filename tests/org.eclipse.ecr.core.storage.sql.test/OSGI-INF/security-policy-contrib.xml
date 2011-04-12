@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.storage.sql.tests.securitypolicy">
+
+  <extension target="org.eclipse.ecr.core.security.SecurityService"
+    point="policies">
+    <policy name="test"
+      class="org.eclipse.ecr.core.storage.sql.security.NoFileSecurityPolicy" />
+  </extension>
+
+</component>

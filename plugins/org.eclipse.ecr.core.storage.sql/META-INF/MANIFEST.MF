@@ -76,4 +76,5 @@ Import-Package: javax.resource,
  org.osgi.framework
 Bundle-SymbolicName: org.eclipse.ecr.core.storage.sql;singleton:=true
 Bundle-Activator: org.eclipse.ecr.core.storage.sql.Activator
-Require-Bundle: javax.servlet;bundle-version="2.5.0"
+Require-Bundle: javax.servlet;bundle-version="2.5.0",
+ org.eclipse.ecr.core.storage.sql.extensions;visibility:=reexport

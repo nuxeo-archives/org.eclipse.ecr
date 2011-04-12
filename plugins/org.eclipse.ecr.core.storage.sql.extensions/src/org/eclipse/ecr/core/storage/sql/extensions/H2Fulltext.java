@@ -336,7 +336,7 @@ public class H2Fulltext {
                     getAnalyzer(analyzer));
             query.add(parser.parse(text), BooleanClause.Occur.MUST);
 
-            getIndexWriter(indexPath, analyzer).flush();
+            getIndexWriter(indexPath, analyzer).commit();
             Searcher searcher = new IndexSearcher(indexPath);
             Iterator<Hit> it = searcher.search(query).iterator();
             for (; it.hasNext();) {
@@ -430,7 +430,7 @@ public class H2Fulltext {
         IndexWriter index = indexWriters.remove(path);
         if (index != null) {
             try {
-                index.flush();
+                index.commit();
                 index.close();
             } catch (IOException e) {
                 throw convertException(e);
@@ -630,7 +630,7 @@ public class H2Fulltext {
             }
             try {
                 // need to flush otherwise some unit tests don't pass
-                indexWriter.flush();
+                indexWriter.commit();
             } catch (IOException e) {
                 throw convertException(e);
             }
@@ -678,7 +678,7 @@ public class H2Fulltext {
         public void close() throws SQLException {
             if (indexWriter != null) {
                 try {
-                    indexWriter.flush();
+                    indexWriter.commit();
                     indexWriter.close();
                     indexWriter = null;
                     indexWriters.remove(indexPath);

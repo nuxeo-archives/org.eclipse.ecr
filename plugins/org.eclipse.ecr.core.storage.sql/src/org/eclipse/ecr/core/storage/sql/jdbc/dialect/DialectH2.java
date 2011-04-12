@@ -291,12 +291,12 @@ public class DialectH2 extends Dialect {
 
     @Override
     public String getSQLStatementsFilename() {
-        return "nuxeovcs/h2.sql.txt";
+        return "resources/nuxeovcs/h2.sql.txt";
     }
 
     @Override
     public String getTestSQLStatementsFilename() {
-        return "nuxeovcs/h2.test.sql.txt";
+        return "resources/nuxeovcs/h2.test.sql.txt";
     }
 
     @Override

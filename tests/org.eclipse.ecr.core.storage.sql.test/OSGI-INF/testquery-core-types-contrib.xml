@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.query.test.core-types">
+
+  <extension target="org.eclipse.ecr.core.schema.TypeService" point="schema">
+    <schema name="testquery-lib" src="resources/schemas/testquery-lib.xsd" />
+    <schema name="testquery-schema" src="resources/schemas/testquery-schema.xsd"  prefix="my" />
+  </extension>
+
+  <extension target="org.eclipse.ecr.core.schema.TypeService" point="doctype">
+    <doctype name="MyDocType" extends="Document">
+      <schema name="common" />
+      <schema name="dublincore"/>
+      <schema name="testquery-schema" />
+      <prefetch>common.icon</prefetch>
+    </doctype>
+  </extension>
+
+</component>

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-Name: ECR Test Framework
+Bundle-Vendor: Nuxeo SAS
+Bundle-Version: 0.5.4.qualifier
+Bundle-ManifestVersion: 2
+Bundle-Description: The ECR Core SQL Storage Test Framework
+Bundle-SymbolicName: org.eclipse.ecr.core.storage.sql.testlib;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: javax.resource,
+ junit.framework,
+ org.apache.commons.logging,
+ org.eclipse.ecr.core.api,
+ org.eclipse.ecr.core.event,
+ org.eclipse.ecr.core.query,
+ org.eclipse.ecr.core.storage,
+ org.eclipse.ecr.core.storage.sql,
+ org.eclipse.ecr.core.storage.sql.jdbc,
+ org.eclipse.ecr.runtime.api,
+ org.eclipse.ecr.runtime.jtajca,
+ org.eclipse.ecr.runtime.transaction,
+ org.eclipse.ecr.testlib,
+ org.nuxeo.common.jndi,
+ org.nuxeo.common.utils
+Export-Package: org.eclipse.ecr.core.storage.sql.testlib
+Require-Bundle: org.eclipse.ecr.testlib;visibility:=reexport,
+ org.h2;resolution:=optional;visibility:=reexport

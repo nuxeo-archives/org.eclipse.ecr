@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.core.storage.sql.tests.listeners">
+
+  <extension target="org.eclipse.ecr.core.event.EventServiceComponent" point="listener">
+
+    <listener name="testVersionListener" async="false" postCommit="false"
+      class="org.eclipse.ecr.core.storage.sql.listeners.DummyTestListener">
+      <event>beforeDocumentModification</event>
+      <event>incrementBeforeUpdate</event>
+    </listener>
+  </extension>
+
+</component>
