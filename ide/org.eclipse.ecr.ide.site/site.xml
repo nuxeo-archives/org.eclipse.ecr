@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.eclipse.ecr.ide.shell.feature_1.0.0.201104111910.jar" id="org.eclipse.ecr.ide.shell.feature" version="1.0.0.201104111910"/>
+   <feature url="features/org.eclipse.ecr.ide.shell.feature_1.0.0.201104121104.jar" id="org.eclipse.ecr.ide.shell.feature" version="1.0.0.201104121104">
+      <category name="shell"/>
+   </feature>
+   <category-def name="shell" label="ECR Shell">
+      <description>
+         Provides a shell view to connect to remote ECR servers.
+      </description>
+   </category-def>
 </site>
