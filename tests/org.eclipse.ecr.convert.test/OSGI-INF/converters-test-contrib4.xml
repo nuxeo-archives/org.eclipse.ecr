@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<component name="org.eclipse.ecr.convert.tests.4">
+
+
+  <extension target="org.eclipse.ecr.convert.service.ConversionServiceImpl"
+    point="converter">
+  <converter name="NotAvailableConverter" class="org.eclipse.ecr.convert.tests.NotAvailableConverter">
+    <sourceMimeType>text/tito</sourceMimeType>
+    <destinationMimeType>test/toti</destinationMimeType>
+  </converter>
+  </extension>
+
+</component>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.convert.tests.config.enabled">
+
+  <extension target="org.eclipse.ecr.convert.service.ConversionServiceImpl"
+      point="configuration">
+
+    <configuration>
+      <gcInterval>10</gcInterval>
+      <diskCacheSize>1024</diskCacheSize>
+      <enableCache>true</enableCache>
+    </configuration>
+
+  </extension>
+
+</component>

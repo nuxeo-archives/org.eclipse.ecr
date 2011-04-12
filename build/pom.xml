@@ -45,12 +45,15 @@
     <module>../config/org.eclipse.ecr.configuration.cmis</module>
     <module>../config/org.eclipse.ecr.core.h2.extensions</module>
 
-    <module>../tests/org.eclipse.ecr.runtime.test</module>
-    <module>../tests/org.eclipse.ecr.core.schema.test</module>
+    <module>../tests/org.eclipse.ecr.convert.test</module>
     <module>../tests/org.eclipse.ecr.core.api.test</module>
     <module>../tests/org.eclipse.ecr.core.event.test</module>
-    <module>../tests/org.eclipse.ecr.core.test</module>
+    <module>../tests/org.eclipse.ecr.core.io.test</module>
     <module>../tests/org.eclipse.ecr.core.query.test</module>
+    <module>../tests/org.eclipse.ecr.core.schema.test</module>
+    <module>../tests/org.eclipse.ecr.core.storage.sql.test</module>
+    <module>../tests/org.eclipse.ecr.core.test</module>
+    <module>../tests/org.eclipse.ecr.runtime.test</module>
 
     <module>../features/org.eclipse.ecr.equinox</module>
     <module>../features/org.eclipse.ecr.equinox.sdk</module>
