@@ -12,6 +12,8 @@
 
 package org.eclipse.ecr.core.storage.sql.testlib;
 
+import static org.eclipse.ecr.core.api.security.SecurityConstants.ADMINISTRATOR;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,8 +25,6 @@ import org.eclipse.ecr.core.api.NuxeoPrincipal;
 import org.eclipse.ecr.core.event.EventService;
 import org.eclipse.ecr.runtime.api.Framework;
 import org.eclipse.ecr.testlib.NXRuntimeTestCase;
-
-import static org.eclipse.ecr.core.api.security.SecurityConstants.ADMINISTRATOR;
 
 /**
  * @author Florent Guillaume
@@ -81,7 +81,7 @@ public abstract class SQLRepositoryTestCase extends NXRuntimeTestCase {
     }
 
     public CoreSession openSessionAs(NuxeoPrincipal principal)
-            throws ClientException {
+    throws ClientException {
         Map<String, Serializable> context = new HashMap<String, Serializable>();
         context.put("principal", principal);
         return CoreInstance.getInstance().open(REPOSITORY_NAME, context);
