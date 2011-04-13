@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true">
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d %-5p [%C{0}] [%t] %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <root>
+    <level value="WARN" />
+    <appender-ref ref="CONSOLE" />
+  </root>
+
+  <logger name="org.eclipse.ecr" level="WARN" />
+  <logger name="org.eclipse.ecr.core.storage.sql.jdbc" level="WARN" />
+
+</configuration>

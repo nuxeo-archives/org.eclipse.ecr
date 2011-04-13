@@ -14,6 +14,8 @@ package org.eclipse.ecr.convert.tests;
 
 import java.util.List;
 
+import org.eclipse.ecr.core.api.Blob;
+import org.eclipse.ecr.core.api.blobholder.BlobHolder;
 import org.eclipse.ecr.core.api.blobholder.SimpleBlobHolder;
 import org.eclipse.ecr.core.api.impl.blob.StringBlob;
 import org.eclipse.ecr.convert.api.ConversionService;
@@ -30,6 +32,8 @@ import org.eclipse.ecr.testlib.NXRuntimeTestCase;
 public class TestService extends NXRuntimeTestCase {
 
     public static final String TEST_BUNDLE = "org.eclipse.ecr.convert.test";
+
+    public static final String ANY2TEXT = "any2text";
 
     @Override
     public void setUp() throws Exception {
@@ -204,6 +208,16 @@ public class TestService extends NXRuntimeTestCase {
         assertEquals(12, ConversionServiceImpl.getGCIntervalInMinutes());
         assertEquals(132, ConversionServiceImpl.getMaxCacheSizeInKB());
         assertFalse(ConversionServiceImpl.isCacheEnabled());
+    }
+
+    public void testAny2TextConverter() throws Exception {
+        ConversionService cs = Framework.getLocalService(ConversionService.class);
+        String expected = "abc def";
+        BlobHolder bh = new SimpleBlobHolder(new StringBlob(expected, "text/plain", "UTF-8"));
+        BlobHolder res = cs.convert(ANY2TEXT, bh, null);
+        Blob blob = res.getBlob();
+        String string = new String(blob.getByteArray(), "UTF-8");
+        assertEquals(expected, string);
     }
 
 }

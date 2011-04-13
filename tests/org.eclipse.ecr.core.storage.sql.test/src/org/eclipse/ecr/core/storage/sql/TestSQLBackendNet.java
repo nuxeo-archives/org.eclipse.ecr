@@ -44,6 +44,10 @@ import org.eclipse.ecr.core.storage.sql.testlib.DatabasePostgreSQL;
  */
 public class TestSQLBackendNet extends TestSQLBackend {
 
+    public static final String TEST_BUNDLE = "org.eclipse.ecr.core.storage.sql.test";
+
+    public static final String TESTLIB_BUNDLE = "org.eclipse.ecr.core.storage.sql.testlib";
+
     // defined in repo XML config as well
     private static final String SERVER_REPO_NAME = "test";
 
@@ -72,12 +76,13 @@ public class TestSQLBackendNet extends TestSQLBackend {
     protected void deployRepositoryContrib() throws Exception {
         if (DatabaseHelper.DATABASE instanceof DatabaseH2) {
             String contrib = "OSGI-INF/test-server-h2-contrib.xml";
-            deployContrib("org.eclipse.ecr.core.storage.sql.test", contrib);
+            deployContrib(TESTLIB_BUNDLE, contrib);
         } else if (DatabaseHelper.DATABASE instanceof DatabasePostgreSQL) {
             String contrib = "OSGI-INF/test-server-postgresql-contrib.xml";
-            deployContrib("org.eclipse.ecr.core.storage.sql.test", contrib);
+            deployContrib(TESTLIB_BUNDLE, contrib);
         } else {
-            deployContrib("org.eclipse.ecr.core.storage.sql.test", DatabaseHelper.DATABASE.getDeploymentContrib());
+            deployContrib(TESTLIB_BUNDLE,
+                    DatabaseHelper.DATABASE.getDeploymentContrib());
         }
     }
 

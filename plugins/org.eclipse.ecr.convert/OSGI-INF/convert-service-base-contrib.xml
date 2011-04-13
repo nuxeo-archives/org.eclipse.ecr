@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<component name="org.eclipse.ecr.convert.base.plugins">
+  <extension target="org.eclipse.ecr.convert.service.ConversionServiceImpl"
+    point="converter">
+    <converter name="any2text"
+      class="org.eclipse.ecr.convert.impl.FullTextConverter">
+      <sourceMimeType>*</sourceMimeType>
+      <destinationMimeType>text/plain</destinationMimeType>
+    </converter>
+  </extension>
+</component>
