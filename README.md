@@ -123,8 +123,8 @@ If you want to expose the repository content using a Web User Interface, you can
 
 *Note* that any access to ECR through HTTP requires authentication. The default administrator account is:
 
-- Username: Administrator
-- Password: Administrator
+- Username: admin
+- Password: admin
 
 You can find more information about developing with ECR in the [Wiki](/nuxeo/org.eclipse.ecr/wiki) section
 
@@ -134,12 +134,12 @@ You can use the Nuxeo Shell (a command line application) to connect to an ECR se
 The shell is available as a standalone application (running in terminal on Unix like systems or on Windows). You can download the last version of the shell here:
 <https://maven.nuxeo.org/nexus/service/local/artifact/maven/redirect?r=public-releases&g=org.nuxeo.shell&a=nuxeo-shell&v=5.4.1-I20110125_0115&e=jar>
 
-To connect to the server type `connect http://localhost:8080/ecr/automation -u Administrator`. For a complete documentation of the shell see 
+To connect to the server type `connect http://localhost:8080/ecr/automation -u admin`. For a complete documentation of the shell see 
 
  <https://doc.nuxeo.com/display/NXDOC/Nuxeo+Shell+%28admin%27s+best+friend%29>
 
 You can also install the shell as an Eclipse Plugin (tested only on Helios and Indigo). Here is the update site:  <http://osgi.nuxeo.org/p2/ecr/ide/>.
-To connect to a development instance type `connect -u Administrator`. You can also connect to other remote ECR servers by specifying the right automation URL when connecting. 
+To connect to a development instance type `connect -u admin`. You can also connect to other remote ECR servers by specifying the right automation URL when connecting. 
 
 To launch the ECR Shell view got to Window > Show View > Other ... and select ECR > ECR Shell.
 
