@@ -1,6 +1,6 @@
 <users>
 
-  <user name="Administrator" password="Administrator">
+  <user name="admin" password="admin">
     <isAdministrator>true</isAdministrator>
     <groups>administrators</groups>
   </user>
