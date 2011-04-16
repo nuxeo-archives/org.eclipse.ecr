@@ -40,8 +40,8 @@
     <module>../plugins/org.eclipse.ecr.testlib</module>
     <module>../plugins/org.eclipse.ecr.core.storage.sql.testlib</module>
 
+    <module>../config/org.eclipse.ecr.configuration.base</module>
     <module>../config/org.eclipse.ecr.configuration.jetty</module>
-    <module>../config/org.eclipse.ecr.configuration.psql</module>
     <module>../config/org.eclipse.ecr.configuration.web</module>
     <module>../config/org.eclipse.ecr.configuration.cmis</module>
     <module>../config/org.eclipse.ecr.core.h2.extensions</module>

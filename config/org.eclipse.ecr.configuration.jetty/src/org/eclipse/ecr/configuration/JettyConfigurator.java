@@ -50,7 +50,7 @@ public class JettyConfigurator extends ConfiguratorAdapter {
         // HTTP Port
         String httpPortProperty = context.getProperty(PROPERTY_PREFIX + JettyConstants.HTTP_PORT);
 
-        int httpPort = 80;
+        int httpPort = 8080;
         if (httpPortProperty != null) {
             try {
                 httpPort = Integer.parseInt(httpPortProperty);

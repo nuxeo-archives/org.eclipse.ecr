@@ -20,10 +20,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -57,10 +60,10 @@ import org.osgi.framework.FrameworkListener;
  * @author Florent Guillaume
  */
 public class OSGiRuntimeService extends AbstractRuntimeService implements
-        FrameworkListener {
+FrameworkListener {
 
     public static final ComponentName FRAMEWORK_STARTED_COMP = new ComponentName(
-            "org.eclipse.ecr.runtime.started");
+    "org.eclipse.ecr.runtime.started");
 
     /** Can be used to change the runtime home directory */
     public static final String PROP_HOME_DIR = "org.eclipse.ecr.runtime.home";
@@ -142,6 +145,7 @@ public class OSGiRuntimeService extends AbstractRuntimeService implements
         return bundleContext;
     }
 
+    @Override
     public Bundle getBundle(String symbolicName) {
         return bundles.get(symbolicName);
     }
@@ -155,7 +159,7 @@ public class OSGiRuntimeService extends AbstractRuntimeService implements
     }
 
     public synchronized RuntimeContext createContext(Bundle bundle)
-            throws Exception {
+    throws Exception {
         RuntimeContext ctx = contexts.get(bundle.getSymbolicName());
         if (ctx == null) {
             // hack to handle fragment bundles
@@ -196,7 +200,7 @@ public class OSGiRuntimeService extends AbstractRuntimeService implements
     }
 
     protected void loadComponents(Bundle bundle, RuntimeContext ctx)
-            throws Exception {
+    throws Exception {
         String list = getComponentsList(bundle);
         String name = bundle.getSymbolicName();
         log.debug("Bundle: " + name + " components: " + list);
@@ -221,7 +225,7 @@ public class OSGiRuntimeService extends AbstractRuntimeService implements
                 }
             } else {
                 String message = "Unknown component '" + path
-                        + "' referenced by bundle '" + name + "'";
+                + "' referenced by bundle '" + name + "'";
                 log.error(message + ". Check the MANIFEST.MF");
                 Framework.handleDevError(null);
                 warnings.add(message);
@@ -231,6 +235,42 @@ public class OSGiRuntimeService extends AbstractRuntimeService implements
 
     public static String getComponentsList(Bundle bundle) {
         return (String) bundle.getHeaders().get("Nuxeo-Component");
+    }
+
+    @SuppressWarnings("unchecked")
+    protected boolean loadConfigurationFromProvider() throws Exception {
+        //TODO use a OSGi service for this.
+        String ref = bundleContext.getProperty("ecr.configurator");
+        if (ref == null) {
+            return false;
+        }
+        Iterable<URL> provider = (Iterable<URL>)OSGiRuntimeActivator.getInstance().newInstance(ref);
+        Iterator<URL> it = provider.iterator();
+        ArrayList<URL> props = new ArrayList<URL>();
+        ArrayList<URL> xmls = new ArrayList<URL>();
+        while (it.hasNext()) {
+            URL url = it.next();
+            String path = url.getPath();
+            if (path.endsWith("-config.xml")) {
+                xmls.add(url);
+            } else if (path.endsWith(".properties")) {
+                props.add(url);
+            }
+        }
+        Comparator<URL> comp = new Comparator<URL>() {
+            @Override
+            public int compare(URL o1, URL o2) {
+                return o1.getPath().compareTo(o2.getPath());
+            }
+        };
+        Collections.sort(xmls, comp);
+        for (URL url : props) {
+            loadProperties(url);
+        }
+        for (URL url : xmls) {
+            context.deploy(url);
+        }
+        return true;
     }
 
     protected void loadConfig() throws Exception {
@@ -255,9 +295,13 @@ public class OSGiRuntimeService extends AbstractRuntimeService implements
             manager.setBlacklist(new HashSet<String>(lines));
         }
 
+        if (loadConfigurationFromProvider()) {
+            return;
+        }
+
         String configDir = bundleContext.getProperty(PROP_CONFIG_DIR);
         if (configDir != null && configDir.contains(":/")) { // an url of a
-                                                             // config file
+            // config file
             log.debug("Configuration: " + configDir);
             URL url = new URL(configDir);
             log.debug("Configuration:   loading properties url: " + configDir);
@@ -464,8 +508,8 @@ public class OSGiRuntimeService extends AbstractRuntimeService implements
         Collection<ComponentName> activatingRegistrations = manager.getActivatingRegistrations();
         msg.append(hr).append("\n= Component Loading Status: Pending: ").append(
                 pendingRegistrations.size()).append(" / Unstarted: ").append(
-                activatingRegistrations.size()).append(" / Total: ").append(
-                manager.getRegistrations().size()).append('\n');
+                        activatingRegistrations.size()).append(" / Total: ").append(
+                                manager.getRegistrations().size()).append('\n');
         for (Entry<ComponentName, Set<ComponentName>> e : pendingRegistrations.entrySet()) {
             msg.append("  * ").append(e.getKey()).append(" requires ").append(
                     e.getValue()).append('\n');
@@ -526,7 +570,7 @@ public class OSGiRuntimeService extends AbstractRuntimeService implements
             field.setAccessible(true);
             Object handler = field.get(root);
             Field entryField = handler.getClass().getSuperclass().getDeclaredField(
-                    "bundleEntry");
+            "bundleEntry");
             entryField.setAccessible(true);
             Object entry = entryField.get(handler);
             Field fileField = entry.getClass().getDeclaredField("file");

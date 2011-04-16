@@ -11,8 +11,6 @@
  */
 package org.eclipse.ecr.auth;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.security.Principal;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -21,7 +19,6 @@ import javax.security.auth.login.LoginException;
 
 import org.eclipse.ecr.core.api.NuxeoPrincipal;
 import org.eclipse.ecr.runtime.api.login.Authenticator;
-import org.nuxeo.common.xmap.XMap;
 
 /**
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
@@ -31,25 +28,8 @@ public class SimpleUserRegistry implements Authenticator {
 
     protected Map<String, SimpleNuxeoPrincipal> users;
 
-    public SimpleUserRegistry(File file) {
+    public SimpleUserRegistry() {
         users = new ConcurrentHashMap<String, SimpleNuxeoPrincipal>();
-    }
-
-    public void loadRegistry(File file) throws Exception {
-        if (file.isFile()) {
-            XMap xmap = new XMap();
-            xmap.register(SimpleNuxeoPrincipal.class);
-            FileInputStream in = new FileInputStream(file);
-            try {
-                Object[] ar = xmap.loadAll(in);
-                for (Object o : ar) {
-                    SimpleNuxeoPrincipal principal = (SimpleNuxeoPrincipal)o;
-                    users.put(principal.getName(), principal);
-                }
-            } finally {
-                in.close();
-            }
-        }
     }
 
     public void clear() {
@@ -88,6 +68,14 @@ public class SimpleUserRegistry implements Authenticator {
     @Override
     public boolean authenticate(String name, String password) {
         return doAuthenticate(name, password) != null;
+    }
+
+    public void add(SimpleNuxeoPrincipal principal) {
+        users.put(principal.getName(), principal);
+    }
+
+    public void remove(SimpleNuxeoPrincipal principal) {
+        users.remove(principal.getName());
     }
 
 }

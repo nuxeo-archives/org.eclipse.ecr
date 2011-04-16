@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<component name="org.eclipse.ecr.auth.default.users" version="1.0">
+
+	<extension target="org.eclipse.ecr.auth.DefaultUserManagerComponent"
+		point="users">
+		
+		<user name="admin" password="admin">
+			<isAdministrator>true</isAdministrator>
+			<groups>administrators</groups>
+		</user>
+
+		<user name="Bogdan" password="Bogdan">
+			<isAdministrator>false</isAdministrator>
+			<groups>members</groups>
+		</user>
+
+	</extension>
+
+</component>

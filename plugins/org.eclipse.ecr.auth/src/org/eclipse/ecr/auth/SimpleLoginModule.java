@@ -24,6 +24,8 @@ import javax.security.auth.callback.UnsupportedCallbackException;
 import javax.security.auth.login.LoginException;
 import javax.security.auth.spi.LoginModule;
 
+import org.eclipse.ecr.runtime.api.Framework;
+
 /**
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  *
@@ -38,7 +40,7 @@ public class SimpleLoginModule implements LoginModule {
 
 
     public Principal authenticate(String[] login) throws LoginException {
-        return Activator.getInstance().getRegistry().getPrincipal(login[0], login[1]);
+        return Framework.getLocalService(SimpleUserRegistry.class).getPrincipal(login[0], login[1]);
     }
 
     @Override
@@ -96,7 +98,7 @@ public class SimpleLoginModule implements LoginModule {
             subject.getPrincipals().add(principal);
             return true;
         } else {
-           return false;
+            return false;
         }
     }
 

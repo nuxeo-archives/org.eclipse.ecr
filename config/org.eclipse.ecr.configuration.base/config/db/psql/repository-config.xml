@@ -30,11 +30,11 @@
           </fulltext>
         </indexing>
         <xa-datasource>org.postgresql.xa.PGXADataSource</xa-datasource>
-        <property name="ServerName">${nuxeo.db.host}</property>
-        <property name="PortNumber">${nuxeo.db.port}</property>
-        <property name="DatabaseName">${nuxeo.db.name}</property>
-        <property name="User">${nuxeo.db.user}</property>
-        <property name="Password">${nuxeo.db.password}</property>
+        <property name="ServerName">${psql.host}</property>
+        <property name="PortNumber">${psql.port}</property>
+        <property name="DatabaseName">${psql.db.name}</property>
+        <property name="User">${psql.db.user}</property>
+        <property name="Password">${psql.db.password}</property>
       </repository>
     </repository>
   </extension>

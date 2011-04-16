@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<component name="org.eclipse.ecr.auth.DefaultUserManagerComponent"
+	version="1.0">
+	<documentation>
+		Login modules used on JBoss
+		@author Bogdan Stefanescu (bs@nuxeo.com)
+	</documentation>
+
+	<implementation class="org.eclipse.ecr.auth.DefaultUserManagerComponent" />
+
+	<service>
+		<provide interface="org.eclipse.ecr.auth.SimpleUserRegistry" />
+	</service>
+
+	<extension-point name="users">
+		<documentation>
+			Used to register new users and group bindings
+			<code>
+				<user name="admin" password="admin">
+					<isAdministrator>true</isAdministrator>
+					<groups>administrators</groups>
+				</user>
+				<user name="Bogdan" password="Bogdan">
+					<isAdministrator>false</isAdministrator>
+					<groups>members</groups>
+				</user>
+			</code>
+		</documentation>
+		<object class="org.eclipse.ecr.auth.SimpleNuxeoPrincipal" />
+	</extension-point>
+
+</component>
+

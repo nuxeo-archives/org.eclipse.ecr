@@ -19,7 +19,6 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.List;
 import java.util.Properties;
 
 import javax.naming.NamingException;
@@ -29,7 +28,6 @@ import org.eclipse.ecr.runtime.jtajca.NuxeoContainer;
 import org.eclipse.ecr.runtime.osgi.OSGiRuntimeService;
 import org.nuxeo.common.Environment;
 import org.nuxeo.common.jndi.NamingContextFactory;
-import org.nuxeo.common.utils.FileUtils;
 import org.nuxeo.common.utils.StringUtils;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
@@ -43,7 +41,13 @@ import org.osgi.framework.BundleException;
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  *
  */
-public class Activator implements BundleActivator {
+public class Activator implements BundleActivator, Constants {
+
+    private static Activator instance;
+
+    public static Activator getInstance() {
+        return instance;
+    }
 
     protected BundleContext context;
 
@@ -52,7 +56,7 @@ public class Activator implements BundleActivator {
     @Override
     public void start(BundleContext context) throws Exception {
         this.context = context;
-        initSystemProperties();
+        instance = this;
         initEnvironment();
         configurators = loadConfigurators();
         beforeStart();
@@ -66,10 +70,15 @@ public class Activator implements BundleActivator {
 
     @Override
     public void stop(BundleContext context) throws Exception {
+        instance = null;
         beforeStop();
         this.context = null;
         afterStop();
         configurators = null;
+    }
+
+    public BundleContext getContext() {
+        return context;
     }
 
     @SuppressWarnings("unchecked")
@@ -126,20 +135,18 @@ public class Activator implements BundleActivator {
         NuxeoContainer.install();
     }
 
-    @SuppressWarnings("unchecked")
-    protected void initSystemProperties() throws IOException {
-        Bundle bundle = context.getBundle();
-        Enumeration<URL> urls = bundle.findEntries("/", "system.properties", false);
-        if (urls != null) {
-            while (urls.hasMoreElements()) {
-                InputStream in = urls.nextElement().openStream();
-                try {
-                    readSystemProperties(in);
-                } finally {
-                    in.close();
-                }
-            }
+    private final void initDefaultProperty(Properties props, String key, String defValue) {
+        String v = props.getProperty(key);
+        if (v == null) {
+            props.setProperty(key, defValue);
         }
+    }
+
+    private final File initFileLocation(Properties props, String key, String defValue) {
+        String v = props.getProperty(key, defValue);
+        v = StringUtils.expandVars(v, props);
+        props.setProperty(key, v);
+        return new File(v);
     }
 
 
@@ -167,105 +174,22 @@ public class Activator implements BundleActivator {
         }
     }
 
-
     protected void initEnvironment() throws IOException {
-        if (Environment.getDefault() == null) {
-            String homeDir = System.getProperty("nuxeo.home");
-            if (homeDir != null) {
-                File home = new File(homeDir);
-                home.mkdirs();
-                Environment.setDefault(new Environment(home));
-            }
-        }
-        File configDir = Environment.getDefault().getConfig();
-        if (!configDir.isDirectory()) {
-            File home = Environment.getDefault().getHome();
-            new File(home, "data").mkdir();
-            new File(home, "log").mkdir();
-            new File(home, "tmp").mkdir();
-            // unzip configuration if any configuration fragment was deployed
-            tryUnzipConfig(new File(home, "config"));
-        }
+        Properties props = System.getProperties();
+        initDefaultProperty(props, ECR_DB, ECR_DB_DEFAULT);
+        initDefaultProperty(props, ECR_CONFIGURATOR,
+                context.getBundle().getSymbolicName()+":"+ConfigurationProvider.class.getName());
+        File file = initFileLocation(props, ECR_HOME_DIR, ECR_HOME_DIR_DEFAULT);
+        file.mkdirs();
+        Environment env = new Environment(file);
+        file = initFileLocation(props, ECR_DATA_DIR, ECR_DATA_DIR_DEFAULT);
+        file.mkdirs();
+        env.setData(file);
+        file = initFileLocation(props, ECR_LOG_DIR, ECR_LOG_DIR_DEFAULT);
+        env.setLog(file);
+        file.mkdirs();
+        env.setConfig(initFileLocation(props, ECR_CONFIG_DIR, ECR_CONFIG_DIR_DEFAULT));
+        Environment.setDefault(env);
     }
-
-    @SuppressWarnings("unchecked")
-    protected void tryUnzipConfig(File configDir) throws IOException {
-        Bundle bundle = context.getBundle();
-        if (!configDir.isDirectory()) {
-            configDir.mkdir();
-            Enumeration<URL> urls = bundle.findEntries("config", "*.properties", true);
-            if (urls != null) {
-                while (urls.hasMoreElements()) {
-                    copyConfigEntry(urls.nextElement(), configDir);
-                }
-            }
-            urls = bundle.findEntries("config", "*.xml", true);
-            if (urls != null) {
-                while (urls.hasMoreElements()) {
-                    copyConfigEntry(urls.nextElement(), configDir);
-                }
-            }
-        }
-    }
-
-    private File newConfigFile(File configDir, URL url) {
-        String path = url.getPath();
-        int i = path.lastIndexOf("/config/");
-        if (i == -1) {
-            throw new IllegalArgumentException("Excpecting a /config/ path.");
-        }
-        path = path.substring(i+"/config/".length());
-        if (File.separatorChar == '/') {
-            return new File(configDir, path);
-        }
-        String[] ar = StringUtils.split(path, '/', false);
-        if (ar.length == 0) {
-            throw new IllegalArgumentException("Invalid config file path: "+path);
-        }
-        StringBuilder buf = new StringBuilder(ar[0]);
-        for (i = 1; i<ar.length; i++) {
-            buf.append(File.separatorChar).append(ar[i]);
-        }
-        return new File(configDir, buf.toString());
-    }
-
-    private void copyConfigEntry(URL url, File configDir) throws IOException {
-        InputStream in = url.openStream();
-        try {
-            File file = newConfigFile(configDir, url);
-            file.getParentFile().mkdirs();
-            FileUtils.copyToFile(in, file);
-        } finally {
-            in.close();
-        }
-    }
-
-    /**
-     * Read a properties file by respecting the order in which properties
-     * are declared. Multiline properties or unicode encoding is not supported
-     * @param in
-     * @return
-     * @throws IOException
-     */
-    private void readSystemProperties(InputStream in) throws IOException {
-        Properties sysprops = System.getProperties();
-        List<String> lines = FileUtils.readLines(in);
-        for (String line : lines) {
-            line = line.trim();
-            if (line.length() > 0 && !line.startsWith("#")) {
-                int p = line.indexOf('=');
-                if (p > -1) {
-                    String key = line.substring(0, p).trim();
-                    if (!sysprops.containsKey(key)) {
-                        String v = line.substring(p+1).trim();
-                        v = StringUtils.expandVars(v, sysprops);
-                        sysprops.put(key, v);
-                    }
-                }
-            }
-        }
-    }
-
-
 
 }

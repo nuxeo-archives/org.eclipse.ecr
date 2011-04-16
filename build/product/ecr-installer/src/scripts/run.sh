@@ -9,7 +9,7 @@ JAVA="java"
 JAVA_CP=plugins/org.eclipse.equinox.launcher_*.jar
 
 # the Java options
-JAVA_OPTS="-Dnuxeo.home=${WD}/ecr -Declipse.ignoreApp=true -Dosgi.noShutdown=true"
+JAVA_OPTS="-Decr.home.dir=${WD}/ecr -Declipse.ignoreApp=true -Dosgi.noShutdown=true"
 
 # uncomment this to enable debug
 #JAVA_OPTS="${JAVA_OPTS} -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"

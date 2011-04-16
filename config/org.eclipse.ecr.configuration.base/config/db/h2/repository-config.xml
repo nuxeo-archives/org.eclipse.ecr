@@ -5,8 +5,8 @@
     <repository name="default"
       factory="org.eclipse.ecr.core.storage.sql.ra.PoolingRepositoryFactory">
       <repository name="default">
-        <clustering enabled="false" delay="1000" />
-        <binaryStore path="" />
+        <clustering enabled="${repository.clustering.enabled}" delay="${repository.clustering.delay}" />
+        <binaryStore path="${repository.binary.store}" />
         <schema>
           <field type="largetext">note</field>
           <field type="largetext">webp:content</field>
@@ -30,9 +30,9 @@
           </fulltext>
         </indexing>
         <xa-datasource>org.h2.jdbcx.JdbcDataSource</xa-datasource>
-        <property name="URL">jdbc:h2:nuxeo</property>
-        <property name="User">sa</property>
-        <property name="Password"></property>
+        <property name="URL">jdbc:h2:file:${ecr.data.dir}/h2/${h2.db.name}</property>
+        <property name="User">${h2.db.user}</property>
+        <property name="Password">${h2.db.password}</property>
       </repository>
     </repository>
   </extension>
