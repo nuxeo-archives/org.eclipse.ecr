@@ -11,6 +11,7 @@
  */
 package org.eclipse.ecr.web.jaxrs;
 
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -36,11 +37,13 @@ public class ApplicationProxy extends Application {
 
     protected volatile Application delegate;
 
+    protected BundleProvider bundleProvider;
 
     public ApplicationProxy(Bundle bundle, String className, Map<String,String> attrs) {
         this.bundle = bundle;
         this.className = className;
         this.attrs = attrs;
+        this.bundleProvider = new BundleProvider(bundle);
     }
 
     public String getClassName() {
@@ -81,7 +84,9 @@ public class ApplicationProxy extends Application {
 
     @Override
     public Set<Object> getSingletons() {
-        return get().getSingletons();
+        Set<Object> set = new HashSet<Object>(get().getSingletons());
+        set.add(bundleProvider);
+        return set;
     }
 
 }

@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.ecr.web.jaxrs.Activator;
-import org.eclipse.ecr.web.jaxrs.Utils.ClassRef;
 import org.eclipse.ecr.web.jaxrs.servlet.ServletHolder;
 import org.osgi.framework.Bundle;
 import org.osgi.service.http.HttpService;
@@ -201,8 +200,8 @@ public class ServletRegistry {
 
     private void installServlet(ServletDescriptor sd) throws Exception {
         if (service != null) {
-            ClassRef ref = sd.getClassRef();
-            BundleHttpContext ctx = new BundleHttpContext(ref.bundle(), sd.resources);
+            //ClassRef ref = sd.getClassRef();
+            BundleHttpContext ctx = new BundleHttpContext(sd.bundle, sd.resources);
             List<ResourcesDescriptor> rd = resources.get(sd.path);
             // register resources contributed so far
             if (rd != null) {

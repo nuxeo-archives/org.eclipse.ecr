@@ -91,8 +91,16 @@ public class ServletHolder extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        chain.execute(request, response);
+    throws ServletException, IOException {
+        Thread t = Thread.currentThread();
+        ClassLoader cl = t.getContextClassLoader();
+        try {
+            // use servlet class loader as the context class loader
+            t.setContextClassLoader(chain.servlet.getClass().getClassLoader());
+            chain.execute(request, response);
+        } finally {
+            t.setContextClassLoader(cl);
+        }
     }
 
 

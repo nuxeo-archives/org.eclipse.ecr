@@ -48,6 +48,7 @@ public class ServletRegistryComponent extends DefaultComponent {
             String extensionPoint, ComponentInstance contributor)
     throws Exception {
         if (XP_SERVLETS.equals(extensionPoint)) {
+            ((ServletDescriptor)contribution).setBundle(contributor.getContext().getBundle());
             registry.addServlet((ServletDescriptor)contribution);
         } else if (XP_FILTERS.equals(extensionPoint)) {
             registry.addFilterSet((FilterSetDescriptor)contribution);

@@ -14,6 +14,9 @@ package org.eclipse.ecr.sample.mysite;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
+
+import org.osgi.framework.Bundle;
 
 /**
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
@@ -22,8 +25,11 @@ import javax.ws.rs.Produces;
 @Path("mysite")
 @Produces("text/html")
 public class MyRoot {
+
+    @Context Bundle bundle;
+
     @GET
     public String doGet() {
-        return "Hello World!";
+        return "Hello World 3!: "+bundle;
     }
 }

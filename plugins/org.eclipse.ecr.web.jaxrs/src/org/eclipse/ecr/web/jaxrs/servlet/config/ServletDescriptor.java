@@ -25,6 +25,7 @@ import org.nuxeo.common.xmap.annotation.XNode;
 import org.nuxeo.common.xmap.annotation.XNodeList;
 import org.nuxeo.common.xmap.annotation.XNodeMap;
 import org.nuxeo.common.xmap.annotation.XObject;
+import org.osgi.framework.Bundle;
 
 /**
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
@@ -60,9 +61,22 @@ public class ServletDescriptor {
     @XNode("listeners")
     protected ListenerSetDescriptor listeners;
 
+    /**
+     * The bundle thatd eployed this extension
+     */
+    protected Bundle bundle;
+
     private ClassRef ref;
 
     public ServletDescriptor() {
+    }
+
+    public void setBundle(Bundle bundle) {
+        this.bundle = bundle;
+    }
+
+    public Bundle getBundle() {
+        return bundle;
     }
 
     public String getPath() {
@@ -75,7 +89,7 @@ public class ServletDescriptor {
 
     public ClassRef getClassRef() throws ClassNotFoundException, BundleNotFoundException {
         if (ref == null) {
-            ref = Utils.getClassRef(classRef);
+            ref = Utils.getClassRef(classRef, bundle);
         }
         return ref;
     }
