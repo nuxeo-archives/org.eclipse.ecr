@@ -21,7 +21,7 @@ import org.osgi.framework.BundleContext;
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  *
  */
-public interface Configurator {
+public interface LifeCycleListener {
 
     /**
      * Initialize the configurator.

@@ -17,7 +17,7 @@ import org.osgi.framework.BundleContext;
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  *
  */
-public class ConfiguratorAdapter implements Configurator {
+public class LifeCycleAdapter implements LifeCycleListener {
 
     @Override
     public void initialize(BundleContext context) throws Exception {

@@ -9,7 +9,7 @@
  * Contributors:
  *     bstefanescu
  */
-package org.eclipse.ecr.application;
+package org.eclipse.ecr.application.internal;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -19,6 +19,9 @@ import java.net.URL;
 import java.util.Enumeration;
 import java.util.Iterator;
 
+import org.eclipse.ecr.application.Activator;
+import org.eclipse.ecr.application.Constants;
+import org.eclipse.ecr.application.FileIterator;
 import org.nuxeo.common.Environment;
 import org.nuxeo.common.utils.FileUtils;
 import org.nuxeo.common.utils.StringUtils;
@@ -26,23 +29,29 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
 /**
+ * The default configuration provider.
+ * 
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  *
  */
 public class ConfigurationProvider implements Iterable<URL>, Constants {
+
+    public static final String ECR_CONFIG_SEGMENT = "config";
 
     protected String configSegmentPattern = "/"+ECR_CONFIG_SEGMENT+"/";
 
     @Override
     public Iterator<URL> iterator() {
         File root;
-        File config = Environment.getDefault().getConfig();
+        Environment env = Environment.getDefault();
+        String uri = env.getProperty(ECR_CONFIG_URI);
+        File config = uri != null ? new File(uri) : env.getConfig();
         if (config.isDirectory()) {
             root = config;
         } else {
-            File tmp = Environment.getDefault().getTemp();
+            File tmp = env.getTemp();
             root = new File(tmp, ECR_CONFIG_SEGMENT);
-            Environment.getDefault().setConfig(root);
+            env.setConfig(root);
             FileUtils.deleteTree(root);
             root.mkdirs();
             try {
@@ -51,7 +60,7 @@ public class ConfigurationProvider implements Iterable<URL>, Constants {
                 throw new RuntimeException(e);
             }
         }
-        final String db = System.getProperty(ECR_DB, ECR_DB_DEFAULT);
+        final String db = env.getProperty(ECR_DATABASE, "h2");
         FileFilter ff = new FileFilter() {
             @Override
             public boolean accept(File pathname) {

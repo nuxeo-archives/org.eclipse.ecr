@@ -7,3 +7,4 @@ Fragment-Host: org.eclipse.ecr.application
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.ecr.configuration
 Import-Package: org.eclipse.equinox.http.jetty
+ECR-ApplicationListener: org.eclipse.ecr.configuration.JettyConfigurator

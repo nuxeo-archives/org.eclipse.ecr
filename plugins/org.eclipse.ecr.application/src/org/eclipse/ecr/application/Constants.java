@@ -17,22 +17,15 @@ package org.eclipse.ecr.application;
  */
 public interface Constants {
 
-    public final String ECR_DB = "ecr.db";
+    public static final String ECR_APP_ID = "ecr.app.id";
+    public static final String ECR_APP_CONFIG = "ecr.app.config";
+    public static final String ECR_DATABASE = "ecr.database";
+    public static final String ECR_CONFIG_URI = "ecr.config.uri";
+    public static final String ECR_CONFIG_PROVIDER = "ecr.config.provider";
+    public static final String ECR_HOME_DIR = "ecr.home.dir";
+    public static final String ECR_DATA_DIR = "ecr.data.dir";
+    public static final String ECR_LOG_DIR = "ecr.log.dir";
 
-    public final String ECR_CONFIGURATOR = "ecr.configurator";
-
-    public final String ECR_CONFIG_SEGMENT = "config";
-
-    public final String ECR_HOME_DIR = "ecr.home.dir";
-    public final String ECR_CONFIG_DIR = "ecr.config.dir";
-    public final String ECR_DATA_DIR = "ecr.data.dir";
-    public final String ECR_LOG_DIR = "ecr.log.dir";
-
-    public final String ECR_DB_DEFAULT = "h2";
-
-    public final String ECR_HOME_DIR_DEFAULT = "${user.home}/.ecr";
-    public final String ECR_CONFIG_DIR_DEFAULT = "${"+ECR_HOME_DIR+"}/config";
-    public final String ECR_DATA_DIR_DEFAULT = "${"+ECR_HOME_DIR+"}/data";
-    public final String ECR_LOG_DIR_DEFAULT = "${"+ECR_HOME_DIR+"}/log";
+    public static final String ECR_APPLICATION_LISTENER = "ECR-ApplicationListener";
 
 }

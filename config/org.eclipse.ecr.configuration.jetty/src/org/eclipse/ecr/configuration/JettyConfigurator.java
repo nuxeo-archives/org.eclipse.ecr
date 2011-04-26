@@ -14,7 +14,7 @@ package org.eclipse.ecr.configuration;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-import org.eclipse.ecr.application.ConfiguratorAdapter;
+import org.eclipse.ecr.application.LifeCycleAdapter;
 import org.eclipse.equinox.http.jetty.JettyConstants;
 import org.osgi.framework.BundleContext;
 
@@ -22,7 +22,7 @@ import org.osgi.framework.BundleContext;
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  *
  */
-public class JettyConfigurator extends ConfiguratorAdapter {
+public class JettyConfigurator extends LifeCycleAdapter {
 
     @Override
     public void beforeStart(BundleContext context) throws Exception {
