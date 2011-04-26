@@ -175,6 +175,7 @@ public class Activator implements BundleActivator, Constants {
         map.put(ECR_LOG_DIR, "${"+ECR_HOME_DIR+"}/log");
         map.put(ECR_CONFIG_URI, "${"+ECR_HOME_DIR+"}/config");
         map.put(ECR_CONFIG_PROVIDER, "org.eclipse.ecr.application:"+ConfigurationProvider.class.getName());
+        map.put(ECR_WEB_ROOT, "/ecr");
         return map;
     }
 
@@ -214,6 +215,10 @@ public class Activator implements BundleActivator, Constants {
         v = System.getProperty(ECR_LOG_DIR);
         if (v != null) {
             vars.put(ECR_LOG_DIR, v);
+        }
+        v = System.getProperty(ECR_WEB_ROOT);
+        if (v != null) {
+            vars.put(ECR_WEB_ROOT, v);
         }
 
         // expand properties

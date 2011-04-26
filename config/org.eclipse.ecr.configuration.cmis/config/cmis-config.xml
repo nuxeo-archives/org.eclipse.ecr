@@ -7,7 +7,7 @@
   </documentation>
 
   <extension target="org.eclipse.ecr.web.jaxrs.servlet.config.ServletRegistryComponent" point="servlets">
-    <servlet name="opencmis" path="/ecr/cmis"
+    <servlet name="opencmis" path="${ecr.web.root}/cmis"
         class="org.apache.chemistry.opencmis.chemistry-opencmis-server-bindings:org.apache.chemistry.opencmis.server.impl.atompub.CmisAtomPubServlet">
       <listeners>
          <listener class="org.eclipse.ecr.opencmis.bindings:org.eclipse.ecr.opencmis.bindings.NuxeoCmisContextListener" />
