@@ -31,7 +31,6 @@ import org.eclipse.ecr.automation.AutomationService;
 import org.eclipse.ecr.automation.OperationDocumentation;
 import org.eclipse.ecr.runtime.api.Framework;
 import org.eclipse.ecr.web.jaxrs.views.TemplateView;
-import org.eclipse.ecr.web.jaxrs.views.View;
 import org.nuxeo.common.utils.StringUtils;
 
 
@@ -59,11 +58,11 @@ public class DocResource {
         }
     }
 
-    protected View getTemplate() {
+    protected TemplateView getTemplate() {
         return getTemplate("index.ftl");
     }
 
-    protected View getTemplate(String name) {
+    protected TemplateView getTemplate(String name) {
         Map<String, List<OperationDocumentation>> cats = new LinkedHashMap<String, List<OperationDocumentation>>();
         for (OperationDocumentation op : ops) {
             List<OperationDocumentation> list = cats.get(op.getCategory());
@@ -80,7 +79,7 @@ public class DocResource {
     @GET
     @Produces("text/html")
     public Object doGet(@QueryParam("id")
-    String id) {
+            String id) {
         if (id == null) {
             return getTemplate();
         } else {
@@ -94,7 +93,7 @@ public class DocResource {
             if (opDoc == null) {
                 throw new WebApplicationException(Response.status(404).build());
             }
-            View tpl = getTemplate();
+            TemplateView tpl = getTemplate();
             tpl.arg("operation", opDoc);
             return tpl;
         }

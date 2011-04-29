@@ -20,7 +20,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Version: 0.5.4.qualifier
 Bundle-ManifestVersion: 2
 Require-Bundle: org.eclipse.ecr.core,
- javax.servlet;bundle-version="2.5.0",
+ javax.servlet;bundle-version="2.5.0";visibility:=reexport,
  com.sun.jersey.server;bundle-version="1.1.5",
  com.sun.jersey.core;bundle-version="1.1.5"
 Import-Package: META-INF.services,

@@ -63,6 +63,7 @@ public class ServletHolder extends HttpServlet {
             chain = new RequestChain(descriptor.getServlet(), descriptor.getFilters());
             ListenerSetDescriptor listeners = descriptor.getListenerSet();
             if (listeners != null) {
+                // initialize listeners if not already initialized
                 listeners.init(config);
             }
             super.init(config);
@@ -80,12 +81,6 @@ public class ServletHolder extends HttpServlet {
         if (chain != null) {
             chain.destroy();
             chain = null;
-        }
-        ListenerSetDescriptor lsd = descriptor.getListenerSet();
-        if (lsd != null) {
-            if (lsd.destroy(getServletConfig())) {
-                lsd = null;
-            }
         }
     }
 

@@ -62,7 +62,7 @@ public class ServletDescriptor {
     protected ListenerSetDescriptor listeners;
 
     /**
-     * The bundle thatd eployed this extension
+     * The bundle that deployed this extension
      */
     protected Bundle bundle;
 

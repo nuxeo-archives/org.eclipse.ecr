@@ -39,6 +39,10 @@ public interface RenderingEngine {
      * @throws RenderingException
      */
     void render(String template, Object input, Writer writer)
-            throws RenderingException;
+    throws RenderingException;
+
+    public View getView(String path);
+
+    public View getView(String path, Object object);
 
 }

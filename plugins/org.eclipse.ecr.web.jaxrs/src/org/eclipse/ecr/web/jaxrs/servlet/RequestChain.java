@@ -27,6 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.eclipse.ecr.web.jaxrs.servlet.config.ServletDescriptor;
 import org.eclipse.ecr.web.jaxrs.servlet.mapping.Path;
+import org.osgi.framework.Bundle;
 
 /**
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
@@ -60,9 +61,9 @@ public class RequestChain {
     }
 
     public void init(ServletDescriptor sd, ServletConfig config) throws ServletException {
-            for (FilterSet filterSet : filters) {
-                filterSet.init(config);
-            }
+        for (FilterSet filterSet : filters) {
+            filterSet.init(config);
+        }
         servlet.init(new ServletConfigAdapter(sd, config));
     }
 
@@ -111,7 +112,7 @@ public class RequestChain {
         }
         @Override
         public void doFilter(ServletRequest request, ServletResponse response)
-                throws IOException, ServletException {
+        throws IOException, ServletException {
             if (filterIndex < filters.length) {
                 Filter filter = filters[filterIndex++];
                 filter.doFilter(request, response, this);
@@ -128,6 +129,7 @@ public class RequestChain {
         public ServletConfigAdapter(ServletDescriptor sd, ServletConfig config) {
             this.config = config;
             this.sd = sd;
+            config.getServletContext().setAttribute(Bundle.class.getName(), sd.getBundle());
         }
         @Override
         public String getInitParameter(String key) {

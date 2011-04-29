@@ -22,6 +22,7 @@ import org.apache.commons.logging.LogFactory;
 import org.eclipse.ecr.web.rendering.api.RenderingEngine;
 import org.eclipse.ecr.web.rendering.api.RenderingException;
 import org.eclipse.ecr.web.rendering.api.ResourceLocator;
+import org.eclipse.ecr.web.rendering.api.View;
 import org.eclipse.ecr.web.rendering.fm.adapters.DocumentObjectWrapper;
 import org.eclipse.ecr.web.rendering.fm.extensions.BlockDirective;
 import org.eclipse.ecr.web.rendering.fm.extensions.BlockWriter;
@@ -94,6 +95,7 @@ public class FreemarkerEngine implements RenderingEngine {
      * the resourcebundle is not of the type ResourceComposite, lmessage will
      * create a default ResourceComposite.
      */
+    @Override
     public void setMessageBundle(ResourceBundle messages) {
         this.messages.setBundle(messages);
         if (messages instanceof ResourceComposite) {
@@ -101,15 +103,18 @@ public class FreemarkerEngine implements RenderingEngine {
         }
     }
 
+    @Override
     public ResourceBundle getMessageBundle() {
         return messages.getBundle();
     }
 
+    @Override
     public void setResourceLocator(ResourceLocator locator) {
         loader = new ResourceTemplateLoader(locator);
         cfg.setTemplateLoader(loader);
     }
 
+    @Override
     public ResourceLocator getResourceLocator() {
         return loader.getLocator();
     }
@@ -118,6 +123,7 @@ public class FreemarkerEngine implements RenderingEngine {
         return loader;
     }
 
+    @Override
     public void setSharedVariable(String key, Object value) {
         try {
             cfg.setSharedVariable(key, value);
@@ -134,8 +140,27 @@ public class FreemarkerEngine implements RenderingEngine {
         return cfg;
     }
 
+    @Override
+    public View getView(String path) {
+        return new View(this, path);
+    }
+
+    @Override
+    public View getView(String path, Object object) {
+        return new View(this, path, object);
+    }
+
+    /**
+     * 
+     * @param template
+     * @param input
+     * @param writer
+     * @param baseUrl a base URL used for resolving referenced files in extends directive.
+     * @throws RenderingException
+     */
+    @Override
     public void render(String template, Object input, Writer writer)
-            throws RenderingException {
+    throws RenderingException {
         try {
             /*
              * A special method to get the absolute path as an URI to be used

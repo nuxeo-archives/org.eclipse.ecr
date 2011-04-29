@@ -149,6 +149,12 @@ public class ServletRegistry {
         servlets.remove(descriptor);
         contexts.remove(descriptor.path);
         if (service != null) {
+            // destroy first the listeners if any was initialized
+            ListenerSetDescriptor lsd = descriptor.getListenerSet();
+            if (lsd != null) {
+                lsd.destroy();
+            }
+            // unregister the servlet
             service.unregister(descriptor.path);
         }
     }

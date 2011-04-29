@@ -18,7 +18,7 @@ import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
-import org.eclipse.ecr.web.jaxrs.views.ViewMessageBodyWriter;
+import org.eclipse.ecr.web.jaxrs.views.TemplateViewMessageBodyWriter;
 
 /**
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
@@ -62,7 +62,7 @@ public class CompositeApplication extends Application {
     @Override
     public Set<Object> getSingletons() {
         HashSet<Object> result = new HashSet<Object>();
-        result.add(new ViewMessageBodyWriter());
+        result.add(new TemplateViewMessageBodyWriter());
         for (Application app : getApplications()) {
             result.addAll(app.getSingletons());
         }

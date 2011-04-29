@@ -25,12 +25,6 @@ public interface Constants {
     public static final String ECR_HOME_DIR = "ecr.home.dir";
     public static final String ECR_DATA_DIR = "ecr.data.dir";
     public static final String ECR_LOG_DIR = "ecr.log.dir";
-    /**
-     * The context path of the ECR servlets.
-     * The path must start with a /. The default value is /ecr.
-     * You must use this variable in your servlet contributions.
-     */
-    public static final String ECR_WEB_ROOT = "ecr.web.root";
 
     public static final String ECR_APPLICATION_LISTENER = "ECR-ApplicationListener";
 
