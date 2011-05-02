@@ -132,11 +132,11 @@ You can find more information about developing with ECR in the [Wiki](/nuxeo/org
 
 You can use the Nuxeo Shell (a command line application) to connect to an ECR server to create documents, browse the repository etc.
 The shell is available as a standalone application (running in terminal on Unix like systems or on Windows).
-[Download Nuxeo Shell from https://maven.nuxeo.org/](https://maven.nuxeo.org/nexus/service/local/artifact/maven/redirect?r=public-releases&g=org.nuxeo.shell&a=nuxeo-shell&v=5.4.1-I20110125_0115&e=jar)
+[Download Nuxeo Shell from maven.nuxeo.org](https://maven.nuxeo.org/nexus/service/local/artifact/maven/redirect?r=public-releases&g=org.nuxeo.shell&a=nuxeo-shell&v=5.4.1-I20110125_0115&e=jar)
 
 To connect to the server type `connect http://localhost:8080/ecr/automation -u admin`.
 
-[See complete documentation of the Nuxeo Shell on https://doc.nuxeo.com/.](https://doc.nuxeo.com/x/E4dH)
+[See complete documentation of the Nuxeo Shell on doc.nuxeo.com.](https://doc.nuxeo.com/x/E4dH)
 
 You can also install the shell as an Eclipse Plugin (tested on Helios and Indigo) with the following update site:  <http://osgi.nuxeo.org/p2/ecr/ide/>.
 To connect to a development instance type `connect -u admin`. You can also connect to other remote ECR servers by specifying the right automation URL when connecting. 
