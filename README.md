@@ -19,7 +19,7 @@ You can read more about the project on <http://www.eclipse.org/proposals/rt.ecr/
 
 ## How to build and run
 
-This project is built using maven tycho. The only requirement is to use the
+This project is built using Maven Tycho. The only requirement is to use the
 3.0.3 version of maven. For building the p2 repository you have to
 invoke the following command line:
 
@@ -45,14 +45,14 @@ To create the ECR target platform:
 * Open Eclipse Preferences.
 * Go to `Install/Update > Available Software Sites`. Click on Add ...
 * Put a name like `Local ECR` and click on `Local..` button
-* Choose the repository you builded in `build/repository/target/repository`
+* Choose the repository you built in `build/repository/target/repository`
 * Then go to `Plug-in Development > Target Platform` preference page.
 * Click on `Add ...` to define your new target platform.
 * Select `Nothing: Start with an empty ...` then put a name like `Local ECR` in the text box at the top.
 * Click on `Add ...` button and then select `Software Site` and choose the local repository site you created before.
-* Here you may want to select both categories: ECR and ECR SDK. The SDK categroty is useful only if you need ECR sources. If no catergies are listed make sure you checked the `Group by Category` option.
+* Here you may want to select both categories: ECR and ECR SDK. The SDK category is useful only if you need ECR sources. If no categories are listed make sure you checked the `Group by Category` option.
 * Before pressing `Finish` make sure you *UNCHECK* `Include requires software`!
-* Press Finsih, Activate your new Target Platform and Apply you changes.
+* Press Finish, Activate your new Target Platform and Apply you changes.
 
 Now you can start working with ECR, and create your first ECR plugin.
 
@@ -131,14 +131,14 @@ You can find more information about developing with ECR in the [Wiki](/nuxeo/org
 ## Using the Nuxeo Shell
 
 You can use the Nuxeo Shell (a command line application) to connect to an ECR server to create documents, browse the repository etc.
-The shell is available as a standalone application (running in terminal on Unix like systems or on Windows). You can download the last version of the shell here:
-<https://maven.nuxeo.org/nexus/service/local/artifact/maven/redirect?r=public-releases&g=org.nuxeo.shell&a=nuxeo-shell&v=5.4.1-I20110125_0115&e=jar>
+The shell is available as a standalone application (running in terminal on Unix like systems or on Windows).
+[Download Nuxeo Shell from https://maven.nuxeo.org/](https://maven.nuxeo.org/nexus/service/local/artifact/maven/redirect?r=public-releases&g=org.nuxeo.shell&a=nuxeo-shell&v=5.4.1-I20110125_0115&e=jar)
 
-To connect to the server type `connect http://localhost:8080/ecr/automation -u admin`. For a complete documentation of the shell see 
+To connect to the server type `connect http://localhost:8080/ecr/automation -u admin`.
 
- <https://doc.nuxeo.com/display/NXDOC/Nuxeo+Shell+%28admin%27s+best+friend%29>
+[See complete documentation of the Nuxeo Shell on https://doc.nuxeo.com/.](https://doc.nuxeo.com/x/E4dH)
 
-You can also install the shell as an Eclipse Plugin (tested only on Helios and Indigo). Here is the update site:  <http://osgi.nuxeo.org/p2/ecr/ide/>.
+You can also install the shell as an Eclipse Plugin (tested on Helios and Indigo) with the following update site:  <http://osgi.nuxeo.org/p2/ecr/ide/>.
 To connect to a development instance type `connect -u admin`. You can also connect to other remote ECR servers by specifying the right automation URL when connecting. 
 
 To launch the ECR Shell view got to Window > Show View > Other ... and select ECR > ECR Shell.
