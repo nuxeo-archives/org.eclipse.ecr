@@ -248,6 +248,9 @@ public class Activator implements BundleActivator, Constants {
         if (classRef != null) {
             env.setConfigurationProvider((Iterable<URL>)newInstance(classRef));
         }
+        System.setProperty(ECR_HOME_DIR, home.getAbsolutePath());
+        System.setProperty(ECR_DATA_DIR, env.getData().getAbsolutePath());
+        System.setProperty(ECR_LOG_DIR, env.getLog().getAbsolutePath());
         return env;
     }
 

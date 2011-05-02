@@ -20,8 +20,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.osgi.framework.Bundle;
-
 
 /**
  * An HTTP request context
@@ -67,10 +65,6 @@ public class RequestContext extends HashMap<String, Object> {
 
     public Principal getUserPrincipal() {
         return request.getUserPrincipal();
-    }
-
-    public Bundle getServletBundle() {
-        return (Bundle)request.getAttribute(Bundle.class.getName());
     }
 
     @SuppressWarnings("unchecked")

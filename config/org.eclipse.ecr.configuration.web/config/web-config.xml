@@ -7,7 +7,8 @@
   </documentation>
 
   <extension target="org.eclipse.ecr.web.jaxrs.servlet.config.ServletRegistryComponent" point="servlets">
-    <servlet name="jaxrs" path="${ecr.web.root}" class="org.eclipse.ecr.web.jaxrs.servlet.JerseyServlet">
+    <servlet name="jaxrs" path="${ecr.web.root}" class="org.eclipse.ecr.web.jaxrs.servlet.ApplicationServlet">
+      <resources>/web/skin</resources>
       <filters pathInfo="/**/skin/*">
         <!-- no filters defined for paths matching this pattern -->
       </filters>
