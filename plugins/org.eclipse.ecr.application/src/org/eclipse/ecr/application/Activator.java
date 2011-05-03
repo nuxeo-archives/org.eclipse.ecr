@@ -29,7 +29,7 @@ import org.eclipse.ecr.runtime.jtajca.NuxeoContainer;
 import org.eclipse.ecr.runtime.osgi.OSGiRuntimeService;
 import org.nuxeo.common.Environment;
 import org.nuxeo.common.jndi.NamingContextFactory;
-import org.nuxeo.common.xmap.Vars;
+import org.nuxeo.common.utils.Vars;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

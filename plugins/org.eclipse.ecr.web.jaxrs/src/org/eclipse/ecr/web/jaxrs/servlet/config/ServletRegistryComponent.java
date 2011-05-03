@@ -14,6 +14,7 @@ package org.eclipse.ecr.web.jaxrs.servlet.config;
 import org.eclipse.ecr.runtime.model.ComponentContext;
 import org.eclipse.ecr.runtime.model.ComponentInstance;
 import org.eclipse.ecr.runtime.model.DefaultComponent;
+import org.eclipse.ecr.web.jaxrs.ApplicationManager;
 
 /**
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
@@ -26,6 +27,8 @@ public class ServletRegistryComponent extends DefaultComponent {
     public static final String XP_FILTERS = "filters";
 
     public static final String XP_RESOURCES = "resources";
+
+    public static final String XP_SUBRESOURCES = "subresources";
 
     protected ServletRegistry registry;
 
@@ -56,6 +59,10 @@ public class ServletRegistryComponent extends DefaultComponent {
             ResourcesDescriptor rd = (ResourcesDescriptor)contribution;
             rd.setBundle(contributor.getContext().getBundle());
             registry.addResources(rd);
+        } else if (XP_SUBRESOURCES.equals(extensionPoint)) {
+            ResourceExtension rxt = (ResourceExtension)contribution;
+            rxt.setBundle(contributor.getContext().getBundle());
+            ApplicationManager.getInstance().getOrCreateApplication(rxt.getApplication()).addExtension(rxt);
         }
     }
 
@@ -71,6 +78,10 @@ public class ServletRegistryComponent extends DefaultComponent {
             ResourcesDescriptor rd = (ResourcesDescriptor)contribution;
             rd.setBundle(contributor.getContext().getBundle());
             registry.removeResources(rd);
+        } else if (XP_SUBRESOURCES.equals(extensionPoint)) {
+            ResourceExtension rxt = (ResourceExtension)contribution;
+            rxt.setBundle(contributor.getContext().getBundle());
+            ApplicationManager.getInstance().getOrCreateApplication(rxt.getApplication()).removeExtension(rxt);
         }
     }
 
