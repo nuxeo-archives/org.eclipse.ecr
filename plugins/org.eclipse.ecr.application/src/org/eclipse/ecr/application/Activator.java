@@ -180,6 +180,8 @@ public class Activator implements BundleActivator, Constants {
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
     protected Environment createEnvironment() throws Exception {
+        // enable OSGi services
+        System.setProperty("ecr.osgi.services", "true");
         Map<String,String> vars = createDefaultConfiguration();
         String configUri = System.getProperty(ECR_APP_CONFIG);
         if (configUri != null) {

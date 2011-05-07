@@ -47,7 +47,7 @@ import org.nuxeo.common.collections.ListenerList;
  * type of service allows multiple service instances for the same class of
  * services. Each instance is uniquely defined in the system by an URI.
  * </ul>
- *
+ * 
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  */
 public final class Framework {
@@ -74,13 +74,19 @@ public final class Framework {
      */
     protected static SharedResourceLoader resourceLoader;
 
+    /**
+     * Whether or not services should be exported as OSGI services. This is
+     * controlled by the ${ecr.osgi.services} property. The default is false.
+     */
+    protected static Boolean isOSGiServiceSupported;
+
     // Utility class.
     private Framework() {
     }
 
     // FIXME: this method can't work as it is implemented here.
     public static void initialize(RuntimeService runtimeService)
-            throws Exception {
+    throws Exception {
         if (runtime != null) {
             throw new Exception("Nuxeo Framework was already initialized");
         }
@@ -93,9 +99,8 @@ public final class Framework {
     public static void reloadResourceLoader() throws Exception {
         File rs = new File(Environment.getDefault().getData(), "resources");
         rs.mkdirs();
-        resourceLoader = new SharedResourceLoader(
-                new URL[] { rs.toURI().toURL() },
-                Framework.class.getClassLoader());
+        resourceLoader = new SharedResourceLoader(new URL[] { rs.toURI()
+                .toURL() }, Framework.class.getClassLoader());
     }
 
     public static void shutdown() throws Exception {
@@ -107,7 +112,7 @@ public final class Framework {
 
     /**
      * Tests whether or not the runtime was initialized.
-     *
+     * 
      * @return true if the runtime was initialized, false otherwise
      */
     public static synchronized boolean isInitialized() {
@@ -124,7 +129,7 @@ public final class Framework {
 
     /**
      * Gets the runtime service instance.
-     *
+     * 
      * @return the runtime service instance
      */
     public static RuntimeService getRuntime() {
@@ -142,7 +147,7 @@ public final class Framework {
      * Gets a service given its class and an identifier.
      */
     public static <T> T getService(Class<T> serviceClass, String name)
-            throws Exception {
+    throws Exception {
         return serviceMgr.getService(serviceClass, name);
     }
 
@@ -168,9 +173,10 @@ public final class Framework {
     /**
      * Login in the system as the system user (a pseudo-user having all
      * privileges).
-     *
+     * 
      * @return the login session if successful. Never returns null.
-     * @throws LoginException on login failure
+     * @throws LoginException
+     *             on login failure
      */
     public static LoginContext login() throws LoginException {
         if (null == runtime) {
@@ -187,10 +193,12 @@ public final class Framework {
      * Login in the system as the system user (a pseudo-user having all
      * privileges). The given username will be used to identify the user id that
      * called this method.
-     *
-     * @param username the originating user id
+     * 
+     * @param username
+     *            the originating user id
      * @return the login session if successful. Never returns null.
-     * @throws LoginException on login failure
+     * @throws LoginException
+     *             on login failure
      */
     public static LoginContext loginAs(String username) throws LoginException {
         if (null == runtime) {
@@ -205,27 +213,33 @@ public final class Framework {
 
     /**
      * Login in the system as the given user without checking the password.
-     *
-     * @param username the user name to login as.
+     * 
+     * @param username
+     *            the user name to login as.
      * @return the login context
-     * @throws LoginException if any error occurs
-     *
+     * @throws LoginException
+     *             if any error occurs
+     * 
      * @since 5.4.2
      */
-    public static LoginContext loginAsUser(String username) throws LoginException {
+    public static LoginContext loginAsUser(String username)
+    throws LoginException {
         return getLocalService(LoginAs.class).loginAs(username);
     }
 
     /**
      * Login in the system as the given user using the given password.
-     *
-     * @param username the username to login
-     * @param password the password
+     * 
+     * @param username
+     *            the username to login
+     * @param password
+     *            the password
      * @return a login session if login was successful. Never returns null.
-     * @throws LoginException if login failed
+     * @throws LoginException
+     *             if login failed
      */
     public static LoginContext login(String username, Object password)
-            throws LoginException {
+    throws LoginException {
         LoginService loginService = runtime.getService(LoginService.class);
         if (loginService != null) {
             return loginService.login(username, password);
@@ -236,13 +250,14 @@ public final class Framework {
     /**
      * Login in the system using the given callback handler for login info
      * resolution.
-     *
-     * @param cbHandler used to fetch the login info
+     * 
+     * @param cbHandler
+     *            used to fetch the login info
      * @return the login context
      * @throws LoginException
      */
     public static LoginContext login(CallbackHandler cbHandler)
-            throws LoginException {
+    throws LoginException {
         LoginService loginService = runtime.getService(LoginService.class);
         if (loginService != null) {
             return loginService.login(cbHandler);
@@ -261,8 +276,9 @@ public final class Framework {
      * Registers a listener to be notified about runtime events.
      * <p>
      * If the listener is already registered, do nothing.
-     *
-     * @param listener the listener to register
+     * 
+     * @param listener
+     *            the listener to register
      */
     public static void addListener(RuntimeServiceListener listener) {
         listeners.add(listener);
@@ -272,8 +288,9 @@ public final class Framework {
      * Removes the given listener.
      * <p>
      * If the listener is not registered, do nothing.
-     *
-     * @param listener the listener to remove
+     * 
+     * @param listener
+     *            the listener to remove
      */
     public static void removeListener(RuntimeServiceListener listener) {
         listeners.remove(listener);
@@ -284,8 +301,9 @@ public final class Framework {
      * <p>
      * The framework properties will be searched first then if any matching
      * property is found the system properties are searched too.
-     *
-     * @param key the property key
+     * 
+     * @param key
+     *            the property key
      * @return the property value if any or null otherwise
      */
     public static String getProperty(String key) {
@@ -298,9 +316,11 @@ public final class Framework {
      * <p>
      * The framework properties will be searched first then if any matching
      * property is found the system properties are searched too.
-     *
-     * @param key the property key
-     * @param defValue the default value to use
+     * 
+     * @param key
+     *            the property key
+     * @param defValue
+     *            the default value to use
      * @return the property value if any otherwise the default value
      */
     public static String getProperty(String key, String defValue) {
@@ -310,7 +330,7 @@ public final class Framework {
     /**
      * Gets all the framework properties. The system properties are not included
      * in the returned map.
-     *
+     * 
      * @return the framework properties map. Never returns null.
      */
     public static Properties getProperties() {
@@ -359,7 +379,7 @@ public final class Framework {
                     String varName = varBuf.toString();
                     varBuf.setLength(0);
                     String varValue = getProperty(varName); // get the variable
-                                                            // value
+                    // value
                     if (varValue != null) {
                         result.append(varValue);
                     } else { // let the variable as is
@@ -379,6 +399,14 @@ public final class Framework {
             }
         }
         return result.toString();
+    }
+
+    public static boolean isOSGiServiceSupported() {
+        if (isOSGiServiceSupported == null) {
+            isOSGiServiceSupported = Boolean.valueOf(getProperty(
+                    "ecr.osgi.services", "false"));
+        }
+        return isOSGiServiceSupported;
     }
 
     public static boolean isDevModeSet() {
@@ -413,8 +441,9 @@ public final class Framework {
      * <li>Broken Nuxeo-Component MANIFEST entry. (i.e. the entry cannot be
      * resolved to a resource)
      * </ul>
-     *
-     * @param t the exception or null if none
+     * 
+     * @param t
+     *            the exception or null if none
      */
     public static void handleDevError(Throwable t) {
         if (isDevModeSet()) {
@@ -426,9 +455,11 @@ public final class Framework {
 
     /**
      * Deletes the given file when the marker object is collected by GC.
-     *
-     * @param file The file to delete
-     * @param marker the marker Object
+     * 
+     * @param file
+     *            The file to delete
+     * @param marker
+     *            the marker Object
      */
     public static void trackFile(File file, Object marker) {
         fileCleaningTracker.track(file, marker);
@@ -438,10 +469,13 @@ public final class Framework {
      * Deletes the given file when the marker object is collected by GC. The
      * fileDeleteStrategy can be used for instance do delete only empty
      * directory or force deletion.
-     *
-     * @param file The file to delete
-     * @param marker the marker Object
-     * @param fileDeleteStrategy add a custom delete strategy
+     * 
+     * @param file
+     *            The file to delete
+     * @param marker
+     *            the marker Object
+     * @param fileDeleteStrategy
+     *            add a custom delete strategy
      */
     public static void trackFile(File file, Object marker,
             FileDeleteStrategy fileDeleteStrategy) {
