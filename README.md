@@ -71,12 +71,10 @@ For this you should create a new Run Configuration as follow:
 
 You are done. Launch your server now.
 
-By default ECR will create a `~/.nxserver-osgi directory` as its working directory.
+By default ECR will create a `~/.ecr` directory as its working directory.
 
-Also, the Jetty HTTP server will listen at port 8080. You can change these properties
-by defining some system properties in the VM args of your launch configuration:
+Also, the Jetty HTTP server will listen at port 8080. You can change this by defining the following some system property in the VM args of your launch configuration:
 
-* `nuxeo.home` - to control the working directory location
 * `org.eclipse.equinox.http.jetty.http.port` - to control the jetty port.
 
 You can also use any property defined by Jetty bundle to configure the HTTP server.
@@ -128,15 +126,15 @@ If you want to expose the repository content using a Web User Interface, you can
 
 You can find more information about developing with ECR in the [Wiki](/nuxeo/org.eclipse.ecr/wiki) section
 
-## Using the Nuxeo Shell
+## Using the ECR Shell
 
-You can use the Nuxeo Shell (a command line application) to connect to an ECR server to create documents, browse the repository etc.
+You can use the ECR Shell (a command line application) to connect to an ECR server to create documents, browse the repository etc.
 The shell is available as a standalone application (running in terminal on Unix like systems or on Windows).
-[Download Nuxeo Shell from maven.nuxeo.org](https://maven.nuxeo.org/nexus/service/local/artifact/maven/redirect?r=public-releases&g=org.nuxeo.shell&a=nuxeo-shell&v=5.4.1-I20110125_0115&e=jar)
+[Download ECR Shell from maven.nuxeo.org](https://maven.nuxeo.org/nexus/service/local/artifact/maven/redirect?r=public-releases&g=org.nuxeo.shell&a=nuxeo-shell&v=5.4.1-I20110125_0115&e=jar)
 
 To connect to the server type `connect http://localhost:8080/ecr/automation -u admin`.
 
-[See complete documentation of the Nuxeo Shell on doc.nuxeo.com.](https://doc.nuxeo.com/x/E4dH)
+[See complete documentation of the ECR Shell on doc.nuxeo.com.](https://doc.nuxeo.com/x/E4dH)
 
 You can also install the shell as an Eclipse Plugin (tested on Helios and Indigo) with the following update site:  <http://osgi.nuxeo.org/p2/ecr/ide/>.
 To connect to a development instance type `connect -u admin`. You can also connect to other remote ECR servers by specifying the right automation URL when connecting. 
