@@ -39,8 +39,8 @@ public class SimpleLoginModule implements LoginModule {
     protected Principal principal;
 
 
-    public Principal authenticate(String[] login) throws LoginException {
-        return Framework.getLocalService(SimpleUserRegistry.class).getPrincipal(login[0], login[1]);
+    public Principal authenticate(String[] login) {
+        return Framework.getLocalService(SimpleUserRegistry.class).authenticate(login[0], login[1]);
     }
 
     @Override

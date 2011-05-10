@@ -15,8 +15,6 @@ import java.security.Principal;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javax.security.auth.login.LoginException;
-
 import org.eclipse.ecr.core.api.NuxeoPrincipal;
 import org.eclipse.ecr.runtime.api.login.Authenticator;
 
@@ -45,12 +43,9 @@ public class SimpleUserRegistry implements Authenticator {
         return users.values().toArray(new NuxeoPrincipal[users.size()]);
     }
 
-    public Principal getPrincipal(String name, String password) throws LoginException {
-        NuxeoPrincipal principal = doAuthenticate(name, password);
-        if (principal == null) {
-            throw new LoginException("Failed to authenticate user "+name);
-        }
-        return principal;
+    @Override
+    public Principal authenticate(String name, String password) {
+        return doAuthenticate(name, password);
     }
 
     public NuxeoPrincipal doAuthenticate(String name, String password) {
@@ -66,7 +61,7 @@ public class SimpleUserRegistry implements Authenticator {
     }
 
     @Override
-    public boolean authenticate(String name, String password) {
+    public boolean checkUsernamePassword(String name, String password) {
         return doAuthenticate(name, password) != null;
     }
 
