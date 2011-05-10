@@ -75,7 +75,7 @@ By default ECR will create a `~/.ecr` directory as its working directory.
 
 Also, the Jetty HTTP server will listen at port 8080. You can change this by defining the following some system property in the VM args of your launch configuration:
 
-* `org.eclipse.equinox.http.jetty.http.port` - to control the jetty port.
+    org.eclipse.equinox.http.jetty.http.port
 
 You can also use any property defined by Jetty bundle to configure the HTTP server.
 
