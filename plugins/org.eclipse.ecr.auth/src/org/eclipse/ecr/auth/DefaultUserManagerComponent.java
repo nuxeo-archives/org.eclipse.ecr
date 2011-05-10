@@ -11,6 +11,7 @@
  */
 package org.eclipse.ecr.auth;
 
+import org.eclipse.ecr.runtime.api.login.Authenticator;
 import org.eclipse.ecr.runtime.model.ComponentContext;
 import org.eclipse.ecr.runtime.model.ComponentInstance;
 import org.eclipse.ecr.runtime.model.DefaultComponent;
@@ -28,7 +29,7 @@ public class DefaultUserManagerComponent extends DefaultComponent {
     @SuppressWarnings("unchecked")
     @Override
     public <T> T getAdapter(Class<T> adapter) {
-        if (adapter == SimpleUserRegistry.class) {
+        if (adapter == Authenticator.class || adapter == SimpleUserRegistry.class) {
             return (T)registry;
         }
         return null;

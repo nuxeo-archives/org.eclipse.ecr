@@ -9,7 +9,7 @@
  * Contributors:
  *     bstefanescu
  */
-package org.eclipse.ecr.auth;
+package org.eclipse.ecr.runtime.api.login;
 
 import java.io.IOException;
 import java.security.Principal;
@@ -27,10 +27,13 @@ import javax.security.auth.spi.LoginModule;
 import org.eclipse.ecr.runtime.api.Framework;
 
 /**
+ * A login module that will use the current registered authenticator to validate
+ * a given username / password pair.
+ * 
  * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
  *
  */
-public class SimpleLoginModule implements LoginModule {
+public class AuthenticationLoginModule implements LoginModule {
 
     protected Subject subject;
     protected CallbackHandler callbackHandler;
@@ -39,8 +42,8 @@ public class SimpleLoginModule implements LoginModule {
     protected Principal principal;
 
 
-    public Principal authenticate(String[] login) {
-        return Framework.getLocalService(SimpleUserRegistry.class).authenticate(login[0], login[1]);
+    public Principal authenticate(String[] login) throws Exception {
+        return Framework.getService(Authenticator.class).authenticate(login[0], login[1]);
     }
 
     @Override
@@ -78,7 +81,11 @@ public class SimpleLoginModule implements LoginModule {
     @Override
     public boolean login() throws LoginException {
         String[] login = retrieveLogin();
-        principal = authenticate(login);
+        try {
+            principal = authenticate(login);
+        } catch (Exception e) {
+            throw new LoginException("Authentication failed for "+login[0]);
+        }
         if (principal == null) {
             throw new LoginException("Authentication failed for "+login[0]);
         }

@@ -9,9 +9,9 @@
 
 	<implementation class="org.eclipse.ecr.auth.DefaultUserManagerComponent" />
 
-	<service>
-		<provide interface="org.eclipse.ecr.auth.SimpleUserRegistry" />
-	</service>
+    <service>
+	    <provide interface="org.eclipse.ecr.runtime.api.login.Authenticator" />
+    </service>
 
 	<extension-point name="users">
 		<documentation>
