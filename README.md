@@ -17,10 +17,13 @@ applications, or simply business-specific applications.
 
 You can read more about the project on <http://www.eclipse.org/proposals/rt.ecr/>
 
+For amore detailed reference guide and tutorial, please look at the wiki:
+<https://github.com/nuxeo/org.eclipse.ecr/wiki>.
+
 ## How to build and run
 
 This project is built using Maven Tycho. The only requirement is to use the
-3.0.3 version of maven. For building the p2 repository you have to
+3.0.3 version of maven. To build the p2 repository, you have to
 invoke the following command line:
 
     $ mvn -f build/pom.xml clean install
