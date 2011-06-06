@@ -6,7 +6,8 @@ WD=`pwd`
 JAVA="java"
 
 # the class path
-JAVA_CP=plugins/org.eclipse.equinox.launcher_*.jar
+# JAVA_CP=plugins/org.eclipse.equinox.launcher_*.jar
+JAVA_CP="plugins/${launcher.bundle}"
 
 # the Java options
 JAVA_OPTS="-Decr.home.dir=${WD}/ecr -Declipse.ignoreApp=true -Dosgi.noShutdown=true"

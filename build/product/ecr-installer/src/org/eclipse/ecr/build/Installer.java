@@ -20,7 +20,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -91,24 +93,12 @@ public class Installer {
             copyPlugins(sortedNodes, dir);
         }
         System.out.println("Generating configuration");
-        generateConfigFile(sortedNodes);
+        Map<String, String> vars = generateConfigFile(sortedNodes);
         System.out.println("Generating launch scripts");
-        InputStream in = Installer.class.getClassLoader().getResourceAsStream("scripts/run.sh");
-        File file = new File(installDir, "run.sh");
-        try {
-            Utils.writeTo(in, file);
-            file.setExecutable(true);
-        } finally {
-            in.close();
-        }
-        in = Installer.class.getClassLoader().getResourceAsStream("scripts/run.bat");
-        file = new File(installDir, "run.bat");
-        try {
-            Utils.writeTo(in, file);
-            file.setExecutable(true);
-        } finally {
-            in.close();
-        }
+        copyTemplateResource("scripts/run.sh", "run.sh", vars).setExecutable(true);
+        copyTemplateResource("scripts/run.bat", "run.bat", vars).setExecutable(true);
+        copyResource("epl-v10.html", "epl-v10.html");
+        copyResource("notice.html", "notice.html");
         File target = installDir;
         if (zipIt) {
             System.out.println("Zipping");
@@ -147,7 +137,8 @@ public class Installer {
     }
 
 
-    public void generateConfigFile(Collection<Node> nodes) throws IOException {
+    public Map<String,String> generateConfigFile(Collection<Node> nodes) throws IOException {
+        HashMap<String, String> vars = new HashMap<String, String>();
         File file = new File(installDir, "configuration");
         file.mkdirs();
         file = new File(file, "config.ini");
@@ -157,7 +148,11 @@ public class Installer {
             String name = node.getFileName();
             if (name.startsWith("org.eclipse.osgi_")) {
                 sysBundle = "file\\:plugins/"+name;
+                vars.put("system.bundle", name);
             } else {
+                if (name.startsWith("org.eclipse.equinox.launcher_")) {
+                    vars.put("launcher.bundle", name);
+                }
                 bundles.append(",reference\\:file\\:").append(name);
                 int startLevel = node.getStartLevel();
                 if (startLevel > -1) {
@@ -188,6 +183,29 @@ public class Installer {
         } finally {
             writer.close();
         }
+        return vars;
     }
+
+    protected void copyResource(String path, String toName) throws IOException {
+        InputStream in = Installer.class.getClassLoader().getResourceAsStream(path);
+        File file = new File(installDir, toName);
+        try {
+            Utils.writeTo(in, file);
+            file.setExecutable(true);
+        } finally {
+            in.close();
+        }
+    }
+
+    protected File copyTemplateResource(String path, String toName, Map<String,String> vars) throws IOException {
+        InputStream in = Installer.class.getClassLoader().getResourceAsStream(path);
+        String data = Utils.read(in);
+        data = Vars.expand(data, vars);
+        File file = new File(installDir, toName);
+        Utils.writeTo(data, file);
+        return file;
+    }
+
+
 
 }

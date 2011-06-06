@@ -206,4 +206,22 @@ public class Utils {
         }
     }
 
+    public static String read(InputStream in) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        int size = in.available();
+        if (size <1 || size > 64*1024) {
+            size = 64*1024;
+        }
+        byte[] buffer = new byte[size];
+        try {
+            int read;
+            while ((read = in.read(buffer)) != -1) {
+                sb.append(new String(buffer, 0, read));
+            }
+        } finally {
+            in.close();
+        }
+        return sb.toString();
+    }
+
 }
