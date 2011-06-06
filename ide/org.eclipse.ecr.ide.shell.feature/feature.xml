@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.ecr.ide.shell.feature"
-      label="ECR Shell Feature"
-      version="1.0.0.qualifier">
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%providerName">
 
-   <description url="https://github.com/nuxeo/org.eclipse.ecr">
+   <description>
       Provides a remote Shell View to a ECR server.
    </description>
 
-   <copyright>
-      Copyright (c) 2006-2011 Nuxeo SA (http://nuxeo.com/) and others.
+   <copyright>%copyright</copyright>
 
-All rights reserved. This program and the accompanying materials
-are made available under the terms of the Eclipse Public License v1.0
-which accompanies this distribution, and is available at
-http://www.eclipse.org/legal/epl-v10.html
-
-Contributors:
-    Nuxeo - initial API and implementation
-   </copyright>
-
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
+   <license url="%licenseURL">%license</license>
 
    <plugin
          id="org.eclipse.ecr.ide.shell"
