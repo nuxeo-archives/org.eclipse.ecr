@@ -4,7 +4,7 @@ REM the Java binary
 set JAVA=java
 
 REM the class path
-REM FOR %%c in (plugins\org.eclipse.equinox.launcher_*.jar) DO set JAVA_CP=plugins\%%c
+REM FOR %%c in (plugins\org.eclipse.equinox.launcher_*.jar) DO set JAVA_CP=%%c
 set JAVA_CP=plugins\${launcher.bundle}
 
 REM current directory
