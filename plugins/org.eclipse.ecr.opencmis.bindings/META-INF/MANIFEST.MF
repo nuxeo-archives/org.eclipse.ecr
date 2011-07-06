@@ -9,8 +9,7 @@ Eclipse-ExtensibleAPI: true
 Nuxeo-Component: OSGI-INF/atom-contrib.xml,
  OSGI-INF/soap-contrib.xml
 Bundle-Version: 0.5.4.qualifier
-Import-Package: com.sun.xml.ws.api.handler;resolution:=optional,
- javax.servlet,
+Import-Package: javax.servlet,
  javax.servlet.http,
  org.apache.chemistry.opencmis.commons.impl.server,
  org.apache.chemistry.opencmis.commons.server,

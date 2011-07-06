@@ -21,8 +21,7 @@ Export-Package: org.eclipse.ecr.testlib,
  org.eclipse.ecr.testlib.protocols.inline,
  org.eclipse.ecr.testlib.runner,
  org.eclipse.ecr.testlib.runner.distrib,
- org.eclipse.ecr.testlib.runner.web,
- org.openqa.selenium.support.ui
+ org.eclipse.ecr.testlib.runner.web
 Require-Bundle: org.nuxeo.osgi;visibility:=reexport,
  org.junit;visibility:=reexport,
  org.jmock;visibility:=reexport,
