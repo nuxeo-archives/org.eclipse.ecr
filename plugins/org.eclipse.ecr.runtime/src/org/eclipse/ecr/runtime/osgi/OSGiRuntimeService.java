@@ -162,7 +162,7 @@ FrameworkListener {
     throws Exception {
         RuntimeContext ctx = contexts.get(bundle.getSymbolicName());
         if (ctx == null) {
-            // hack to handle fragment bundles
+            // workaround to handle fragment bundles
             ctx = new OSGiRuntimeContext(bundle);
             contexts.put(bundle.getSymbolicName(), ctx);
             loadComponents(bundle, ctx);

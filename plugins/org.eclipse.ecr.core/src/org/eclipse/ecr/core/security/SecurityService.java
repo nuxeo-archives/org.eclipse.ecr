@@ -143,7 +143,7 @@ public class SecurityService extends DefaultComponent {
         String username = principal.getName();
 
         // system bypass
-        // :FIXME: tmp hack
+        // :FIXME: temporary workaround
         if (SecurityConstants.SYSTEM_USERNAME.equals(username)) {
             return true;
         }

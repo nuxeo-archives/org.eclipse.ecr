@@ -79,7 +79,7 @@ public class TestQueryVisitor extends TestCase {
         expected = "SELECT * FROM d WHERE (foo BETWEEN DATE '2008-01-01' AND DATE '2008-02-01')";
         check(sql, expected);
 
-        // hack around timezone variations for this test
+        // workaround on timezone variations for this test
         sql = "select * from d where foo = TIMESTAMP '2008-08-08 12:34:56'";
         expected = "SELECT * FROM d WHERE (foo = TIMESTAMP '2008-08-08T12:34:56.000+00:00')";
 

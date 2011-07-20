@@ -2,9 +2,7 @@ Export-Package: org.eclipse.ecr.web.rendering.api,
  org.eclipse.ecr.web.rendering.fm,
  org.eclipse.ecr.web.rendering.fm.adapters,
  org.eclipse.ecr.web.rendering.fm.extensions,
- org.eclipse.ecr.web.rendering.fm.i18n,
- org.eclipse.ecr.web.rendering.wiki,
- org.eclipse.ecr.web.rendering.wiki.extensions
+ org.eclipse.ecr.web.rendering.fm.i18n
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Manifest-Version: 1.0
@@ -32,8 +30,6 @@ Import-Package: freemarker.cache,
  org.eclipse.ecr.runtime.api,
  org.eclipse.ecr.runtime.model,
  org.nuxeo.common.utils,
- org.nuxeo.common.xmap.annotation,
- org.wikimodel.wem;resolution:=optional,
- org.wikimodel.wem.common;resolution:=optional
+ org.nuxeo.common.xmap.annotation
 Bundle-SymbolicName: org.eclipse.ecr.web.rendering;singleton:=true
 Originally-Created-By: 1.6.0_20 (Sun Microsystems Inc.)

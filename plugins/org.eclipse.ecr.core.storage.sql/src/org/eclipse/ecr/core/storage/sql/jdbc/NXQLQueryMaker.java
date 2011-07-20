@@ -76,7 +76,7 @@ import org.nuxeo.common.utils.StringUtils;
  * Transformer of NXQL queries into underlying SQL queries to the actual
  * database.
  * <p>
- * The examples below are based on the NXQL statement:
+ * The examples below are using the NXQL statement syntax:
  *
  * <pre>
  * SELECT * FROM File

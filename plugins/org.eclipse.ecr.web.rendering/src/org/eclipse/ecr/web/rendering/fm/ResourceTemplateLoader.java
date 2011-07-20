@@ -62,8 +62,8 @@ public class ResourceTemplateLoader implements TemplateLoader {
     }
 
     public Object findTemplateSource(String name) throws IOException {
-        if (name.startsWith("fs://")) { // hack for absolute paths - see
-                                        // FreemarkerEngine#render()
+        if (name.startsWith("fs://")) { 
+            // workaround for absolute paths - see FreemarkerEngine#render()
             name = name.substring(5);
         } else if (name.contains(":/")) {
             return urlLoader.findTemplateSource(name);

@@ -16,7 +16,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.naming.Name;
+import javax.naming.NameNotFoundException;
+import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import org.apache.commons.logging.Log;
@@ -183,7 +187,22 @@ public class RuntimeFeature extends SimpleFeature {
 
     public static void bindDatasource(String key, DataSource ds) throws Exception {
         InitialContext initialCtx = new InitialContext();
-        JndiHelper.rebind(initialCtx, DataSourceHelper.getDataSourceJNDIName(key), ds);
+        String dsName = DataSourceHelper.getDataSourceJNDIName(key);
+        rebind(initialCtx, dsName, ds);
     }
 
+    public static void rebind(Context ctx, String key, Object value) throws NamingException {
+        Name name = ctx.getNameParser("").parse(key);
+        int depth = name.size() - 1;
+        for (int i=0; i<depth; i++) {
+            String segment = name.get(i);
+            try {
+                ctx = (Context)ctx.lookup(segment);
+            } catch (NameNotFoundException e) {
+                ctx = ctx.createSubcontext(segment);
+            }
+        }
+        ctx.rebind(name.get(depth), value);
+    }
+    
 }

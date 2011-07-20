@@ -77,19 +77,23 @@ public class JettyFeature extends SimpleFeature implements WorkingDirectoryConfi
         dest.mkdirs();
 
         InputStream in = getResource("jetty/default-web.xml").openStream();
-        dest = new File(workingDir + "/config", "default-web.xml");
-        try {
-            FileUtils.copyToFile(in, dest);
-        } finally {
-            in.close();
+        if (in != null) {
+            dest = new File(workingDir + "/config", "default-web.xml");
+            try {
+                FileUtils.copyToFile(in, dest);
+            } finally {
+                in.close();
+            }
         }
 
         in = getResource("jetty/jetty.xml").openStream();
-        dest = new File(workingDir + "/config", "jetty.xml");
-        try {
-            FileUtils.copyToFile(in, dest);
-        } finally {
-            in.close();
+        if (in != null) {
+            dest = new File(workingDir + "/config", "jetty.xml");
+            try {
+                FileUtils.copyToFile(in, dest);
+            } finally {
+                in.close();
+            }
         }
     }
 

@@ -57,7 +57,7 @@ public class Activator implements BundleActivator, ServiceTrackerCustomizer {
         instance = this;
         this.context = context;
         pkgAdm = context.getServiceReference(PackageAdmin.class.getName());
-        //TODO hack to disable service tracker on regular Nuxeo distribs until finding a better solution
+        //TODO workaround to disable service tracker on regular Nuxeo distribs until finding a better solution
         if (!"Nuxeo".equals(context.getProperty(Constants.FRAMEWORK_VENDOR))) {
             httpServiceTracker = new ServiceTracker(context, HttpService.class.getName(), this);
             httpServiceTracker.open();
