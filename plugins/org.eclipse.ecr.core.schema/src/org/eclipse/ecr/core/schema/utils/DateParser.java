@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     bstefanescu
+ *     Nuxeo - initial API and implementation
  */
 package org.eclipse.ecr.core.schema.utils;
 
@@ -20,7 +20,7 @@ import java.util.TimeZone;
 /**
  * Parse / format ISO 8601 dates.
  * 
- * @author <a href="mailto:bs@nuxeo.com">Bogdan Stefanescu</a>
+ * @author "Stephane Lacoin [aka matic] <slacoin at nuxeo.com>"
  *
  */
 public class DateParser {

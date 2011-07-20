@@ -82,9 +82,9 @@ public class DefaultCallbackHandler implements CallbackHandler {
                     }
                 }
                 pc.setPassword(password);
-            } else if (c instanceof DefaultCallback) {
-                DefaultCallback oc = (DefaultCallback) c;
-                oc.setCredential(credential);
+            } else if (c instanceof ObjectCallback) {
+                ObjectCallback oc = (ObjectCallback) c;
+                oc.setObject(credential);
             } else {
                 throw new UnsupportedCallbackException(c,
                         "Unrecognized Callback");
