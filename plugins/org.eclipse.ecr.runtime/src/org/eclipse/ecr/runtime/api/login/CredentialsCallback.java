@@ -15,29 +15,31 @@
 package org.eclipse.ecr.runtime.api.login;
 
 import javax.security.auth.callback.Callback;
+import javax.security.auth.callback.CallbackHandler;
 
 /**
- * A simple callback handler that can be used to get authentication details
+ * A simple callback handler that can be used to get authentication credentials
  * as a Java Object.
  * <p>
- * The object injected in that callback is specific to each CalbackHandler implementation.
+ * The type of object is specific to each {@link CallbackHandler} that is
+ * accepting this callback.
  *
  * @author  eionica@nuxeo.com
  *
  */
-public class ObjectCallback implements Callback {
+public class CredentialsCallback implements Callback {
 
-    private Object obj;
+    private Object credentials;
 
-    public ObjectCallback() {
+    public CredentialsCallback() {
     }
 
-    public Object getObject() {
-        return obj;
+    public Object getCredentials() {
+        return credentials;
     }
 
-    public void setObject(Object obj) {
-        this.obj = obj;
+    public void setCredentials(Object credentials) {
+        this.credentials = credentials;
     }
     
 }
