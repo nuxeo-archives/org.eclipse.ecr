@@ -26,6 +26,9 @@ import java.util.TimeZone;
 public class DateParser {
 
     public static Calendar parse(String str) throws ParseException {
+        if (str == null) {
+          return null;
+        }
         Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
         cal.clear();
         int len = str.length();
