@@ -84,6 +84,9 @@ public class DateParser {
      * @return
      */
     public static String formatW3CDateTime(Date date) {
+        if (date == null) {
+          return "";
+        }
         Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
         cal.setTime(date);
         StringBuilder buf = new StringBuilder(32);
